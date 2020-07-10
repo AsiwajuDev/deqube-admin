@@ -15,7 +15,7 @@ export let apiHeader = () => {
   ];
 };
 
-let localURL = "";
+let localURL = "https://deqube.herokuapp.com/";
 let prodURL = "";
 
 export let baseUrl = process.env.NODE_ENV === "production" ? prodURL : localURL;
