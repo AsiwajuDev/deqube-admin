@@ -4,7 +4,6 @@ import logo from "../../../assets/images/logo.png";
 
 import { menuItems, items } from "../../../constants/constants";
 import MenuItemList from "../../../components/NavMenu/NavMenuItemList";
-import SideMenu from "./SideMenu";
 
 const NavBar = () => {
   return (

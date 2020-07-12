@@ -11,6 +11,7 @@ class localStorageUtil {
         "What you are adding to the local storage must be an Object"
       );
     }
+
     const keys = Object.keys(object);
     localStorageUtil.RemoveItems(keys);
     for (var property in object) {

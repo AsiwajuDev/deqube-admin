@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import logo from "../../assets/images/logo.png";
@@ -9,6 +9,12 @@ import InputField from "../../components/inputField/InputField";
 import Button from "../../components/button/Button";
 
 const Login = () => {
+  const [control, setControl] = useState({});
+
+  const handleChange = (event) => {};
+
+  const handleClick = (event) => {};
+
   return (
     <div className="login">
       <div className="container sm:px-10">
@@ -52,11 +58,15 @@ const Login = () => {
               <div className="intro-x mt-8">
                 <InputField
                   type="text"
+                  name="email"
+                  onChange={handleChange}
                   className="intro-x login__input input input--lg border border-gray-300 block"
                   placeholder="Email"
                 />
                 <InputField
                   type="password"
+                  name="password"
+                  onChange={handleChange}
                   className="intro-x login__input input input--lg border border-gray-300 block mt-4"
                   placeholder="Password"
                 />
@@ -65,6 +75,8 @@ const Login = () => {
                 <div className="flex items-center mr-auto">
                   <InputField
                     type="checkbox"
+                    name="remember"
+                    onChange={handleChange}
                     className="input border mr-2"
                     id="remember-me"
                   />
@@ -82,6 +94,7 @@ const Login = () => {
                   type="button"
                   className="button button--lg w-full xl:w-32 text-white bg-theme-1 xl:mr-3"
                   value="Login"
+                  onClick={handleClick}
                 />
                 {/* <div className="intro-x mt-10 xl:mt-24 text-gray-700 text-center xl:text-left">
                   By signin up, you agree to our
