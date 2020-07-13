@@ -11,6 +11,7 @@
     "crypto-js": "^4.0.0",
     "nprogress": "^0.2.0",
     "prop-types": "^15.7.2",
+    "querystring": "^0.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-feather": "^2.0.8",
@@ -48,5 +49,6 @@
     "autoprefixer": "^9.8.4",
     "postcss-cli": "^7.1.1",
     "tailwindcss": "^1.4.6"
-  }
+  },
+  "proxy": "https://deqube.herokuapp.com/"
 }

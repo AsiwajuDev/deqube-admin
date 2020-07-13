@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 import logo from "../../assets/images/logo.png";
@@ -8,12 +9,26 @@ import bgImage from "../../assets/dist/images/illustration.svg";
 import InputField from "../../components/inputField/InputField";
 import Button from "../../components/button/Button";
 
+import { login } from "../../actions/User";
+import { userLogin } from "../../apiConstants/ApiConstant";
+
 const Login = () => {
   const [control, setControl] = useState({});
 
-  const handleChange = (event) => {};
+  const dispatch = useDispatch();
 
-  const handleClick = (event) => {};
+  const handleChange = (event) => {
+    setControl({
+      ...control,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleClick = (event) => {
+    event.preventDefault();
+    dispatch(login(userLogin, control));
+    console.log(control);
+  };
 
   return (
     <div className="login">
@@ -58,7 +73,7 @@ const Login = () => {
               <div className="intro-x mt-8">
                 <InputField
                   type="text"
-                  name="email"
+                  name="EmailPhone"
                   onChange={handleChange}
                   className="intro-x login__input input input--lg border border-gray-300 block"
                   placeholder="Email"
@@ -72,7 +87,7 @@ const Login = () => {
                 />
               </div>
               <div className="intro-x flex text-gray-700 text-xs sm:text-sm mt-4">
-                <div className="flex items-center mr-auto">
+                {/* <div className="flex items-center mr-auto">
                   <InputField
                     type="checkbox"
                     name="remember"
@@ -86,15 +101,15 @@ const Login = () => {
                   >
                     Remember me
                   </label>
-                </div>
-                <Link to="/forgot-password">Forgot Password?</Link>
+                </div> */}
+                {/* <Link to="/forgot-password">Forgot Password?</Link> */}
               </div>
               <div className="intro-x mt-5 xl:mt-8 text-center xl:text-left">
                 <Button
                   type="button"
+                  onClick={handleClick}
                   className="button button--lg w-full xl:w-32 text-white bg-theme-1 xl:mr-3"
                   value="Login"
-                  onClick={handleClick}
                 />
                 {/* <div className="intro-x mt-10 xl:mt-24 text-gray-700 text-center xl:text-left">
                   By signin up, you agree to our

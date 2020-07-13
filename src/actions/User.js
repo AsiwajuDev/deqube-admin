@@ -2,8 +2,6 @@ import * as ActionType from "./ActionType";
 
 import { postData, getData } from "./Services";
 
-import { baseUrl, userLogin } from "../apiConstants/ApiConstant";
-
 const onLogin = (payload) => {
   return {
     type: ActionType.ON_LOGIN,
