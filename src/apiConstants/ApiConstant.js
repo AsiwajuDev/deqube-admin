@@ -15,15 +15,13 @@
 //   ];
 // };
 
-// let localURL = "https://deqube.herokuapp.com/";
-let localURL = "https://community-server-app.herokuapp.com";
+let localURL = "https://deqube.herokuapp.com/";
 let prodURL = "";
 
 export let baseUrl = process.env.NODE_ENV === "production" ? prodURL : localURL;
 
 //admin login
 export let userLogin = "api/v1/auth/login";
-// export let userLogin = "/api/users/login";
 
 //settings
 export let getAllSettings = "";

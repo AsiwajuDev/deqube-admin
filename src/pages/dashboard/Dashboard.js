@@ -3,6 +3,7 @@ import * as Icon from "react-feather";
 
 import { Table, Tag, Space } from "antd";
 import ProfileCard from "../../components/profileCard/ProfileCard";
+import Card from "../../components/card/Card";
 
 const Dashboard = () => {
   const columns = [
@@ -84,6 +85,12 @@ const Dashboard = () => {
 
   return (
     <div>
+      <div class="grid grid-cols-3 gap-4">
+        <Card />
+        <Card />
+        <Card />
+      </div>
+      <Card />
       <ProfileCard />
       <Table dataSource={data} columns={columns} />
     </div>

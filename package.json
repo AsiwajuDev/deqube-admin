@@ -49,6 +49,5 @@
     "autoprefixer": "^9.8.4",
     "postcss-cli": "^7.1.1",
     "tailwindcss": "^1.4.6"
-  },
-  "proxy": "https://deqube.herokuapp.com/"
+  }
 }

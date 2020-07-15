@@ -1,10 +1,24 @@
-import * as ActionType from "./ActionType";
+import { ON_ERROR } from "./ActionType";
 
-const onError = (status) => {
-  return {
-    type: ActionType.ON_ERROR,
-    status,
-  };
-};
+const initialState = {};
 
-export default onError;
+export default function (state = initialState, action) {
+  switch (action.type) {
+    case ON_ERROR:
+      return action.payload;
+
+    default:
+      return state;
+  }
+}
+
+// const onError = (status) => {
+//   return {
+//     type: ActionType.ON_ERROR,
+//     status,
+//   };
+// };
+
+// export default onError;
+
+// import { GET_ERRORS } from "../../actions/types";
