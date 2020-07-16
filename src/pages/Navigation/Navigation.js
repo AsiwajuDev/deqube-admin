@@ -8,7 +8,7 @@ const Navigation = () => {
       <div className="flex">
         <NavBar />
         <div className="content">
-          <div className="m-6 mt-10">
+          <div className="m-1">
             <MainBody />
           </div>
         </div>

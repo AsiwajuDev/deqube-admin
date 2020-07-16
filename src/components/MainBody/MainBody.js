@@ -1,15 +1,14 @@
 import React from "react";
 
 import RouterPage from "../../pages/RouterPage";
-import Dashboard from "../../pages/dashboard/Dashboard";
+import TopBar from "../topbar/TopBar";
 
 function MainBody() {
   return (
     <div className="content">
-      <div className="mt-10">
-        {/* <Dashboard /> */}
-        <RouterPage />
-      </div>
+      <TopBar />
+      <hr className="mb-3" />
+      <RouterPage />
     </div>
   );
 }

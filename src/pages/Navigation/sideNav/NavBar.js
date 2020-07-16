@@ -13,8 +13,6 @@ const NavBar = () => {
       </a>
       <div className="side-nav__devider my-6 border-t-2"></div>
       <MenuItemList items={menuItems} />
-      {/* <SideMenu items={items} /> */}
-      {/* <SideMenu /> */}
     </nav>
   );
 };
