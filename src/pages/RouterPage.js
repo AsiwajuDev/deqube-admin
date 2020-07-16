@@ -1,7 +1,6 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 
-import Login from "./login/Login";
 import Dashboard from "./dashboard/Dashboard";
 import {
   GeneralSettings,
@@ -14,6 +13,7 @@ import {
   SystemSettings,
   UploadSettings,
 } from "./settings/Index";
+
 import {
   ListAdmin,
   ListUsers,
@@ -24,10 +24,17 @@ import {
   ListPages,
 } from "./users/Index.js";
 
+import {
+  UserAds,
+  SystemAds,
+  AdSettings,
+  CreateSystemAds,
+} from "./adContent/Index";
+import Posts from "./posts/Posts";
+
 const RouterPage = () => {
   return (
     <div>
-      {/* <Redirect from="/" to="/dashboard" component={Dashboard} /> */}
       <Route path="/dashboard" name="dashboard" component={Dashboard} />
 
       {/* Settings Route */}
@@ -81,6 +88,19 @@ const RouterPage = () => {
       <Route path="/list-online" name="list-online" component={ListOnline} />
       <Route path="/list-page" name="list-page" component={ListPages} />
       <Route path="/list-user" name="list-user" component={ListUsers} />
+
+      {/* Posts */}
+      <Route path="/posts" name="posts" component={Posts} />
+
+      {/*Ads Route  */}
+      <Route path="/ads-settings" name="ads-settings" component={AdSettings} />
+      <Route path="/system-ads" name="system-ads" component={SystemAds} />
+      <Route path="/user-ads" name="user-ads" component={UserAds} />
+      <Route
+        path="/create-system-ads"
+        name="create-system-ads"
+        component={CreateSystemAds}
+      />
     </div>
   );
 };

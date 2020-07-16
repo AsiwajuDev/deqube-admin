@@ -7,9 +7,9 @@ const InputTextArea = ({
   placeholder,
   value,
   id,
+  className,
   onChange,
   onClick,
-  placeholder,
 }) => {
   return (
     <textarea
@@ -25,12 +25,12 @@ const InputTextArea = ({
 };
 
 InputTextArea.propTypes = {
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   placeholder: PropTypes.string,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   info: PropTypes.string,
   error: PropTypes.string,
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
 };
 
 export default InputTextArea;
