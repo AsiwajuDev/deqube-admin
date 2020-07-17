@@ -31,6 +31,8 @@ import {
   CreateSystemAds,
 } from "./adContent/Index";
 import Posts from "./posts/Posts";
+import { Reaction, AddReaction } from "./reaction/Index";
+import { Emojis, AddEmojis } from "./emojis/Index";
 
 const RouterPage = () => {
   return (
@@ -101,6 +103,14 @@ const RouterPage = () => {
         name="create-system-ads"
         component={CreateSystemAds}
       />
+
+      {/* Reaction */}
+      <Route path="/reaction" name="reaction" component={Reaction} />
+      <Route path="/add-reaction" name="add-reaction" component={AddReaction} />
+
+      {/* Emojis */}
+      <Route path="/emojis" name="emojis" component={Emojis} />
+      <Route path="/add-emojis" name="add-emojis" component={AddEmojis} />
     </div>
   );
 };

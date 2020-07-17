@@ -5,7 +5,12 @@ import ButtonToggleInput from "../../components/buttonToggleInput/ButtonToggleIn
 const Registration = () => {
   return (
     <div className="intro-y box py-10 px-10 sm:py-16 mt-5">
-      <BannerInfo bannerBody="If registration is Free and pro package enabled they will be be used as an optional upgrading plans" />
+      <div className="mb-10">
+        <BannerInfo
+          svgClassName="fill-current h-6 w-6 text-white-500 mr-4"
+          bannerBody="If registration is Free and pro package enabled they will be be used as an optional upgrading plans"
+        />
+      </div>
 
       <ButtonToggleInput
         className="text-gray-600 text-sm"

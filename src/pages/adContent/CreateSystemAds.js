@@ -4,6 +4,7 @@ import * as Icon from "react-feather";
 
 import InputField from "../../components/inputField/InputField";
 import InputTextArea from "../../components/inputTextArea/InputTextArea";
+import Button from "../../components/button/Button";
 
 const CreateSystemAds = () => {
   return (
@@ -36,6 +37,10 @@ const CreateSystemAds = () => {
           </div>
         </div>
       </div>
+      <Button
+        className="bg-red-700 m-8 text-white font-bold py-2 px-4 rounded"
+        value="Save Changes"
+      />
     </div>
   );
 };
