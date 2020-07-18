@@ -8,7 +8,6 @@ import { store } from "./store";
 
 import "./assets/main.css";
 import "react-notifications/lib/notifications.css";
-import "antd/dist/antd.css";
 
 ReactDOM.render(
   <React.StrictMode>

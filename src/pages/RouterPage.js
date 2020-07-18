@@ -33,11 +33,18 @@ import {
 import Posts from "./posts/Posts";
 import { Reaction, AddReaction } from "./reaction/Index";
 import { Emojis, AddEmojis } from "./emojis/Index";
+import FollowSuggest from "./followSuggest/FollowSuggest";
+import Directory from "./directory/Directory";
+import GarbageCollector from "./garbageCollector/GarbageCollector";
 
 const RouterPage = () => {
   return (
     <div>
+      {/* Dashboard Route */}
       <Route path="/dashboard" name="dashboard" component={Dashboard} />
+
+      {/* Direcotry Route */}
+      <Route path="/directory" name="directory" component={Directory} />
 
       {/* Settings Route */}
       <Route path="/settings" name="settings" component={GeneralSettings} />
@@ -111,6 +118,16 @@ const RouterPage = () => {
       {/* Emojis */}
       <Route path="/emojis" name="emojis" component={Emojis} />
       <Route path="/add-emojis" name="add-emojis" component={AddEmojis} />
+
+      {/* Follow Suggest */}
+      <Route
+        path="/follow-suggest"
+        name="follow-suggest"
+        component={FollowSuggest}
+      />
+
+      {/* Garbage Collector */}
+      <Route path="/gabbage" name="gabbage" component={GarbageCollector} />
     </div>
   );
 };

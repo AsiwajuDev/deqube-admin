@@ -11,7 +11,7 @@ const NavBar = () => {
       <a href="#" className="intro-x flex items-center pl-5 pt-4">
         <img alt="DeQube Logo" src={logo} className="w-25" />
       </a>
-      <div className="side-nav__devider my-6 border-t-2"></div>
+      <div className="side-nav__devider my-6 border-t-1"></div>
       <MenuItemList items={menuItems} />
     </nav>
   );

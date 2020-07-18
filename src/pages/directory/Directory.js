@@ -1,7 +1,8 @@
 import React from "react";
+
 import Card from "../../components/card/Card";
 
-const ListUsers = () => {
+const Directory = () => {
   return (
     <div>
       <div class="col-span-12 mt-8">
@@ -16,4 +17,4 @@ const ListUsers = () => {
   );
 };
 
-export default ListUsers;
+export default Directory;

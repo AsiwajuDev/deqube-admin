@@ -64,7 +64,7 @@ const NavMenuItem = ({
 
   const renderDivider = () => {
     if (divider) {
-      return <div className="side-nav__devider my-6 border-t-2"></div>;
+      return <div className="side-nav__devider my-6 border-t-1"></div>;
     }
   };
 

@@ -1,9 +1,14 @@
 import React from "react";
 
-const BannerInfo = ({ bannerTitle, bannerBody, svgClassName }) => {
+const BannerInfo = ({
+  bannerTitle,
+  bannerBody,
+  svgClassName,
+  bannerBottomLine,
+}) => {
   return (
     <div
-      className="bg-red-800 border-t-4 border-red-800 rounded-md text-white px-4 py-3"
+      className="bg-red-700 border-t-4 border-red-700 rounded-md text-white px-4 py-3"
       role="alert"
     >
       <div className="flex">
@@ -16,7 +21,7 @@ const BannerInfo = ({ bannerTitle, bannerBody, svgClassName }) => {
         </svg>
         <div>
           <span className="block text-lg">{bannerTitle}</span>
-          <span className="text-base">{bannerBody}</span>
+          <span className="text-base block">{bannerBody}</span>
         </div>
       </div>
     </div>

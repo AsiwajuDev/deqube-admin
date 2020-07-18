@@ -2,12 +2,20 @@ import React from "react";
 import PropTypes from "prop-types";
 import InputField from "../inputField/InputField";
 
-const ButtonToggleInput = ({ title, body, onClick, onChange, className }) => {
+const ButtonToggleInput = ({
+  title,
+  body,
+  onClick,
+  onChange,
+  className,
+  bodyLine,
+}) => {
   return (
     <div className="flex items-center my-2">
       <div className="">
-        <span className="text-xl font-bold">{title}</span>
+        <span className="text-2xl">{title}</span>
         <p className={className}>{body}</p>
+        <span className="block text-base">{bodyLine}</span>
       </div>
 
       <InputField
