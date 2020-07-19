@@ -126,7 +126,7 @@ export const menuItems = [
       {
         label: "List Users",
         isActive: false,
-        url: "/list-user",
+        url: "/list-users",
         icon: <Icon.User />,
         subItems: [],
       },
@@ -273,7 +273,7 @@ export const menuItems = [
     divider: false,
     subItems: [
       {
-        label: "Settins",
+        label: "Settings",
         isActive: false,
         url: "/package",
         icon: <Icon.Briefcase />,

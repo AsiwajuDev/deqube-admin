@@ -17,6 +17,7 @@ import {
 import {
   ListAdmin,
   ListUsers,
+  ListUser,
   ListAgency,
   ListBanned,
   ListGroups,
@@ -90,13 +91,14 @@ const RouterPage = () => {
       />
 
       {/* Users Route */}
+      <Route path="/user" name="user" component={ListUser} />
       <Route path="/list-admin" name="list-admin" component={ListAdmin} />
       <Route path="/list-agency" name="list-agency" component={ListAgency} />
       <Route path="/list-banned" name="list-banned" component={ListBanned} />
       <Route path="/list-group" name="list-group" component={ListGroups} />
       <Route path="/list-online" name="list-online" component={ListOnline} />
       <Route path="/list-page" name="list-page" component={ListPages} />
-      <Route path="/list-user" name="list-user" component={ListUsers} />
+      <Route path="/list-users" name="list-users" component={ListUsers} />
 
       {/* Posts */}
       <Route path="/posts" name="posts" component={Posts} />
