@@ -86,42 +86,20 @@ const Login = () => {
                   placeholder="Password"
                 />
               </div>
-              <div className="intro-x flex text-gray-700 text-xs sm:text-sm mt-4">
-                {/* <div className="flex items-center mr-auto">
-                  <InputField
-                    type="checkbox"
-                    name="remember"
-                    onChange={handleChange}
-                    className="input border mr-2"
-                    id="remember-me"
-                  />
-                  <label
-                    className="cursor-pointer select-none"
-                    htmlFor="remember-me"
-                  >
-                    Remember me
-                  </label>
-                </div> */}
-                {/* <Link to="/forgot-password">Forgot Password?</Link> */}
-              </div>
+              <div className="intro-x flex text-gray-700 text-xs sm:text-sm mt-4"></div>
               <div className="intro-x mt-5 xl:mt-8 text-center xl:text-left">
-                <Button
+                {/* <Button
                   type="button"
                   onClick={handleClick}
                   className="button button--lg w-full xl:w-32 text-white bg-theme-1 xl:mr-3"
                   value="Login"
-                />
-                {/* <div className="intro-x mt-10 xl:mt-24 text-gray-700 text-center xl:text-left">
-                  By signin up, you agree to our
-                  <br />
-                  <a className="text-theme-1" href="#">
-                    Terms and Conditions
-                  </a>{" "}
-                  &{" "}
-                  <a className="text-theme-1" href="#">
-                    Privacy Policy
-                  </a>
-                </div> */}
+                /> */}
+                <Link
+                  to="/dashboard"
+                  className="button button--lg w-full xl:w-32 text-white bg-theme-1 xl:mr-3"
+                >
+                  Login
+                </Link>
               </div>
             </div>
           </div>
