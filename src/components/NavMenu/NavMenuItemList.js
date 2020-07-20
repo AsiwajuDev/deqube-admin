@@ -5,6 +5,7 @@ const MenuItemList = ({ items }) => {
   const handleClick = (id) => {
     console.log("Clicked: " + id);
   };
+
   return (
     <ul>
       {items.map((item, itemKey) => {

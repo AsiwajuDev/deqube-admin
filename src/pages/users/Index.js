@@ -5,7 +5,7 @@ import ListGroups from "./ListGroups";
 import ListOnline from "./ListOnline";
 import ListPages from "./ListPages";
 import ListUsers from "./ListUsers";
-import ListUser from "./ListUser";
+import ListUser from "./listUserPages/ListUser";
 
 export {
   ListAdmin,

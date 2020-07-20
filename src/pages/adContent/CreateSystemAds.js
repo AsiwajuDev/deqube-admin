@@ -9,7 +9,10 @@ import Button from "../../components/button/Button";
 const CreateSystemAds = () => {
   return (
     <div>
-      <Link to="/system-ads" className="text-red-700 flex hover:text-red-700">
+      <Link
+        to="/system-ads"
+        className="text-red-700 flex mb-4 hover:text-red-700"
+      >
         <Icon.ChevronLeft className="text-red-700" />
         Go Back
       </Link>

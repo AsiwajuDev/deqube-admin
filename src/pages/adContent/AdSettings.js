@@ -27,7 +27,7 @@ const AdSettings = () => {
             </span>
             <span className="">
               <InputField type="checkbox" />
-              <label className="text-lg p-2">Vaccancies</label>
+              <label className="text-lg p-2">Vacancies</label>
             </span>
           </div>
         </div>

@@ -1,9 +1,22 @@
 import React from "react";
+import CustomTable from "../../components/table/CustomTable";
+import Button from "../../components/button/Button";
 
 export default function Emojis() {
   return (
     <div>
-      <h1>Emojis</h1>
+      <div
+        className="intro-y col-span-12 flex items-center m-8 pr-16"
+        style={{ float: "right" }}
+      >
+        <Button
+          className="bg-red-700 text-white font-bold py-2 px-4 rounded"
+          value="Add New Emoji"
+        />
+      </div>
+      <div style={{ marginTop: "50px" }}>
+        <CustomTable pagination search pagerows />
+      </div>
     </div>
   );
 }

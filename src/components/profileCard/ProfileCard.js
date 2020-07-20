@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import * as Icon from "react-feather";
 
 import profileImage from "../../assets/dist/images/preview-3.jpg";
-import Account from "./Account";
-import Privacy from "./Privacy";
+// import Account from "../../pages/users/listUserPages/Account";
+// import Privacy from "./Privacy";
+// import Profile from "./Profile";
 
 const ProfileCard = ({
   userImage,
@@ -15,13 +16,19 @@ const ProfileCard = ({
   followers,
   agencyViews,
   likes,
+  tabAccount,
+  tabProfile,
+  tabPrivacy,
+  tabActivity,
+  tabMembership,
+  tabExtras,
 }) => {
   const [openTab, setOpenTab] = useState(1);
 
   return (
     <div>
       <div className="intro-y box px-5 pt-5 mt-5 mb-5">
-        <div className="flex flex-col lg:flex-row border-b border-gray-200 pb-5 -mx-5">
+        <div className="flex flex-col lg:flex-row border-b border-gray-200 pb-3 -mx-5">
           <div className="flex flex-1 px-5 items-center justify-center lg:justify-start">
             <div className="w-20 h-20 sm:w-24 sm:h-24 flex-none lg:w-32 lg:h-32 image-fit relative">
               <img
@@ -39,63 +46,92 @@ const ProfileCard = ({
               </div>
             </div>
           </div>
-          <div className="flex mt-6 lg:mt-0 items-center lg:items-start flex-1 flex-col justify-center text-gray-600 px-5 border-l border-r border-gray-200 border-t lg:border-t-0 pt-5 lg:pt-0">
-            <div className="flex mb-8 mt-4">
-              <div className="truncate sm:whitespace-normal items-center">
-                {"Joined"}
+
+          <div className="lg:mt-4 items-center lg:items-start flex-1 flex-col justify-center text-gray-600 px-5 border-l-2 border-r-2 border-gray-200 border-t lg:border-t-0 pt-5 lg:pt-0">
+            <div class="flex">
+              <div class="h-12 w-3/5">
+                <div className="truncate sm:whitespace-normal items-center">
+                  {"Joined"}
+                </div>
               </div>
-              <div className="truncate sm:whitespace-normal ml-32 text-blue-400 underline">
-                17 May, 2020
-              </div>
-            </div>
-            <div className="flex mb-8">
-              <div className="truncate sm:whitespace-normal mr-3 items-center">
-                Last Login
-              </div>
-              <div className="truncate sm:whitespace-normal ml-24 text-blue-400 underline">
-                17 May, 2020
+              <div class="w-2/5 h-12">
+                <div className="truncate sm:whitespace-normal text-blue-400 underline">
+                  17 May, 2020
+                </div>
               </div>
             </div>
-            <div className="flex">
-              <div className="truncate sm:whitespace-normal items-center">
-                Qubed Level
+            <div class="flex mt-3">
+              <div class="h-12 w-3/5">
+                <div className="truncate sm:whitespace-normal items-center">
+                  Last Login
+                </div>
               </div>
-              <div className="truncate sm:whitespace-normal ml-24 text-blue-400 underline">
-                Expert
+              <div class="w-2/5 h-12">
+                <div className="truncate sm:whitespace-normal text-blue-400 underline">
+                  17 May, 2020
+                </div>
+              </div>
+            </div>
+            <div class="flex mt-3">
+              <div class="h-12 w-3/5">
+                <div className="truncate sm:whitespace-normal items-center">
+                  Qubed Level
+                </div>
+              </div>
+              <div class="w-2/5 h-12">
+                <div className="truncate sm:whitespace-normal text-blue-400 underline">
+                  Expert
+                </div>
               </div>
             </div>
           </div>
-          <div className="mt-6 lg:mt-0 flex-1 px-5 border-t lg:border-0 border-gray-200 pt-5 lg:pt-0">
-            <div className="flex my-4 mt-2">
-              <div className="truncate sm:whitespace-normal items-center">
-                {"Joined"}
+          <div className="mt-4 lg:mt-4 flex-1 px-5 border-t lg:border-0 border-gray-200 pt-5 lg:pt-0">
+            <div class="flex">
+              <div class="w-2/3 h-10">
+                <div className="truncate sm:whitespace-normal items-center">
+                  Qubed Level
+                </div>
               </div>
-              <div className="truncate sm:whitespace-normal ml-32 text-blue-400 underline">
-                17 May, 2020
-              </div>
-            </div>
-            <div className="flex my-4">
-              <div className="truncate sm:whitespace-normal items-center">
-                {"Joined"}
-              </div>
-              <div className="truncate sm:whitespace-normal ml-32 text-blue-400 underline">
-                17 May, 2020
+              <div class="w-1/3 h-10">
+                <div className="truncate sm:whitespace-normal text-blue-400 underline">
+                  Expert
+                </div>
               </div>
             </div>
-            <div className="flex my-4">
-              <div className="truncate sm:whitespace-normal items-center">
-                {"Joined"}
+            <div class="flex">
+              <div class="w-2/3 h-10">
+                <div className="truncate sm:whitespace-normal items-center">
+                  Qubed Level
+                </div>
               </div>
-              <div className="truncate sm:whitespace-normal ml-32 text-blue-400 underline">
-                17 May, 2020
+              <div class="w-1/3 h-10">
+                <div className="truncate sm:whitespace-normal text-blue-400 underline">
+                  Expert
+                </div>
               </div>
             </div>
-            <div className="flex my-4">
-              <div className="truncate sm:whitespace-normal items-center">
-                {"Joined"}
+            <div class="flex">
+              <div class="h-10 w-2/3">
+                <div className="truncate sm:whitespace-normal items-center">
+                  Qubed Level
+                </div>
               </div>
-              <div className="truncate sm:whitespace-normal ml-32 text-blue-400 underline">
-                17 May, 2020
+              <div class="w-1/3 h-10">
+                <div className="truncate sm:whitespace-normal text-blue-400 underline">
+                  Expert
+                </div>
+              </div>
+            </div>
+            <div class="flex">
+              <div class="h-10 w-2/3">
+                <div className="truncate sm:whitespace-normal items-center">
+                  Qubed Level
+                </div>
+              </div>
+              <div class="w-1/3 h-10">
+                <div className="truncate sm:whitespace-normal text-blue-400 underline">
+                  Expert
+                </div>
               </div>
             </div>
           </div>
@@ -193,54 +229,26 @@ const ProfileCard = ({
           </a>
         </div>
       </div>
+
       <div className="py-5 flex-auto">
         <div className="tab-content tab-space">
           <div className={openTab === 1 ? "block" : "hidden"} id="account">
-            <Account />
+            {tabAccount}
           </div>
           <div className={openTab === 2 ? "block" : "hidden"} id="profile">
-            <p>
-              Completely synergize resource taxing relationships via premier
-              niche markets. Professionally cultivate one-to-one customer
-              service with robust ideas.
-              <br />
-              <br />
-              Dynamically innovate resource-leveling customer service for state
-              of the art customer service.
-            </p>
+            {tabProfile}
           </div>
           <div className={openTab === 3 ? "block" : "hidden"} id="privacy">
-            <Privacy />
+            {tabPrivacy}
           </div>
           <div className={openTab === 4 ? "block" : "hidden"} id="activity">
-            <p>
-              Completely synergize resource taxing relationships via premier
-              niche markets. Professionally cultivate one-to-one customer
-              service with robust ideas.
-              <br />
-              <br />
-              Dynamically innovate resource-leveling customer service for state
-              of the art customer service.
-            </p>
+            {tabActivity}
           </div>
           <div className={openTab === 5 ? "block" : "hidden"} id="membership">
-            <p>
-              Collaboratively administrate empowered markets via plug-and-play
-              networks. Dynamically procrastinate B2C users after installed base
-              benefits.
-              <br />
-              <br /> Dramatically visualize customer directed convergence
-              without revolutionary ROI.
-            </p>
+            {tabMembership}
           </div>
           <div className={openTab === 6 ? "block" : "hidden"} id="extra">
-            <p>
-              Efficiently unleash cross-media information without cross-media
-              value. Quickly maximize timely deliverables for real-time schemas.
-              <br />
-              <br /> Dramatically maintain clicks-and-mortar solutions without
-              functional solutions.
-            </p>
+            {tabExtras}
           </div>
         </div>
       </div>

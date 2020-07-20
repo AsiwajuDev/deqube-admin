@@ -7,6 +7,7 @@ const InputField = ({
   value,
   onChange,
   onClick,
+  disabled,
   className,
   placeholder,
 }) => {
@@ -19,6 +20,7 @@ const InputField = ({
       placeholder={placeholder}
       value={value}
       onChange={onChange}
+      disabled={disabled}
       onClick={onClick}
     />
   );

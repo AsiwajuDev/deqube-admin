@@ -37,6 +37,16 @@ import { Emojis, AddEmojis } from "./emojis/Index";
 import FollowSuggest from "./followSuggest/FollowSuggest";
 import Directory from "./directory/Directory";
 import GarbageCollector from "./garbageCollector/GarbageCollector";
+import ListPage from "./users/listPage/ListPage";
+import ListGroup from "./users/listGroupPages/ListGroup";
+
+import { ListEvents, EventCategory } from "./events/Index";
+import { CoDEarnings, CoDSettings, UserCoD } from "./contentOnDemand/Index";
+import { Points, Payments } from "./qubes/Index";
+import Reports from "./reports/Reports";
+import Verification from "./verification/Verification";
+import MassNotification from "./massNotification/MassNotification";
+import AggregateData from "./aggregateData/AggregateData";
 
 const RouterPage = () => {
   return (
@@ -48,73 +58,193 @@ const RouterPage = () => {
       <Route path="/directory" name="directory" component={Directory} />
 
       {/* Settings Route */}
-      <Route path="/settings" name="settings" component={GeneralSettings} />
       <Route
-        path="/admin-settings"
-        name="admin-settings"
-        component={AdminSettings}
+        exact
+        path="/settings"
+        render={() => <Redirect to="/settings/general-settings" />}
       />
+
       <Route
-        path="/notification-settings"
-        name="notification-settings"
-        component={EmailNotification}
-      />
-      <Route
-        path="/payment-settings"
-        name="payment-settings"
-        component={PaymentSettings}
-      />
-      <Route
-        path="/post-settings"
-        name="post-settings"
-        component={PostSettings}
-      />
-      <Route
-        path="/registration-settings"
-        name="registration-settings"
-        component={RegistrationSettings}
-      />
-      <Route
-        path="/security-settings"
-        name="security-settings"
-        component={SecuritySettings}
-      />
-      <Route
-        path="/system-settings"
-        name="system-settings"
-        component={SystemSettings}
-      />
-      <Route
-        path="/upload-settings"
-        name="upload-settings"
-        component={UploadSettings}
+        path="/settings"
+        render={({ match: { url } }) => (
+          <>
+            <Route
+              path={`${url}/general-settings`}
+              component={GeneralSettings}
+              exact
+            />
+            <Route
+              path={`${url}/admin-settings`}
+              name="admin-settings"
+              component={AdminSettings}
+            />
+            <Route
+              path={`${url}/notification-settings`}
+              name="notification-settings"
+              component={EmailNotification}
+            />
+            <Route
+              path={`${url}/payment-settings`}
+              name="payment-settings"
+              component={PaymentSettings}
+            />
+            <Route
+              path={`${url}/post-settings`}
+              name="post-settings"
+              component={PostSettings}
+            />
+            <Route
+              path={`${url}/registration-settings`}
+              name="registration-settings"
+              component={RegistrationSettings}
+            />
+            <Route
+              path={`${url}/security-settings`}
+              name="security-settings"
+              component={SecuritySettings}
+            />
+            <Route
+              path={`${url}/system-settings`}
+              name="system-settings"
+              component={SystemSettings}
+            />
+            <Route
+              path={`${url}/upload-settings`}
+              name="upload-settings"
+              component={UploadSettings}
+            />
+          </>
+        )}
       />
 
       {/* Users Route */}
       <Route path="/user" name="user" component={ListUser} />
-      <Route path="/list-admin" name="list-admin" component={ListAdmin} />
-      <Route path="/list-agency" name="list-agency" component={ListAgency} />
-      <Route path="/list-banned" name="list-banned" component={ListBanned} />
-      <Route path="/list-group" name="list-group" component={ListGroups} />
-      <Route path="/list-online" name="list-online" component={ListOnline} />
-      <Route path="/list-page" name="list-page" component={ListPages} />
-      <Route path="/list-users" name="list-users" component={ListUsers} />
+      <Route path="/page" name="page" component={ListPage} />
+      <Route path="/group" name="group" component={ListGroup} />
+
+      <Route
+        exact
+        path="/users"
+        render={() => <Redirect to="/users/list-users" />}
+      />
+      <Route
+        path="/users"
+        render={({ match: { url } }) => (
+          <>
+            <Route path={`${url}/list-users`} component={ListUsers} exact />
+            <Route
+              path={`${url}/list-admin`}
+              name="list-admin"
+              component={ListAdmin}
+            />
+            <Route
+              path={`${url}/list-agency`}
+              name="list-agency"
+              component={ListAgency}
+            />
+            <Route
+              path={`${url}/list-banned`}
+              name="list-banned"
+              component={ListBanned}
+            />
+            <Route
+              path={`${url}/list-group`}
+              name="list-group"
+              component={ListGroups}
+            />
+            <Route
+              path={`${url}/list-online`}
+              name="list-online"
+              component={ListOnline}
+            />
+            <Route
+              path={`${url}/list-page`}
+              name="list-page"
+              component={ListPages}
+            />
+          </>
+        )}
+      />
 
       {/* Posts */}
       <Route path="/posts" name="posts" component={Posts} />
+      {/* Events */}
+      <Route
+        exact
+        path="/events"
+        render={() => <Redirect to="/events/list-events" />}
+      />
+      <Route
+        path="/events"
+        render={({ match: { url } }) => (
+          <>
+            <Route path={`${url}/list-events`} component={ListEvents} exact />
+            <Route path={`${url}/event-category`} component={EventCategory} />
+          </>
+        )}
+      />
 
       {/*Ads Route  */}
-      <Route path="/ads-settings" name="ads-settings" component={AdSettings} />
-      <Route path="/system-ads" name="system-ads" component={SystemAds} />
-      <Route path="/user-ads" name="user-ads" component={UserAds} />
+      <Route
+        exact
+        path="/ads"
+        render={() => <Redirect to="/ads/ads-settings" />}
+      />
+      <Route
+        path="/ads"
+        render={({ match: { url } }) => (
+          <>
+            <Route path={`${url}/ads-settings`} component={AdSettings} exact />
+            <Route path={`${url}/system-ads`} component={SystemAds} />
+            <Route path={`${url}/user-ads`} component={UserAds} />
+          </>
+        )}
+      />
+
       <Route
         path="/create-system-ads"
         name="create-system-ads"
         component={CreateSystemAds}
       />
-
+      {/*CoD Route  */}
+      <Route
+        exact
+        path="/cod"
+        render={() => <Redirect to="/cod/cod-settings" />}
+      />
+      <Route
+        path="/cod"
+        render={({ match: { url } }) => (
+          <>
+            <Route path={`${url}/cod-settings`} component={CoDSettings} exact />
+            <Route path={`${url}/user-cod`} component={UserCoD} />
+            <Route path={`${url}/cod-earnings`} component={CoDEarnings} />
+          </>
+        )}
+      />
+      {/*Quibs Route  */}
+      <Route
+        exact
+        path="/qubes"
+        render={() => <Redirect to="/qubes/points" />}
+      />
+      <Route
+        path="/qubes"
+        render={({ match: { url } }) => (
+          <>
+            <Route path={`${url}/points`} component={Points} exact />
+            <Route path={`${url}/qube-payments`} component={Payments} />
+          </>
+        )}
+      />
+      {/* Report */}
+      <Route path="/reports" component={Reports} />
+      {/* Verification */}
+      <Route path="/verification" component={Verification} />
+      {/* Verification */}
+      <Route path="/mass-notification" component={MassNotification} />
       {/* Reaction */}
-      <Route path="/reaction" name="reaction" component={Reaction} />
+      <Route path="/reactions" component={Reaction} />
       <Route path="/add-reaction" name="add-reaction" component={AddReaction} />
 
       {/* Emojis */}
@@ -127,7 +257,8 @@ const RouterPage = () => {
         name="follow-suggest"
         component={FollowSuggest}
       />
-
+      {/* Aggregate Data */}
+      <Route path="/aggregate-data" component={AggregateData} />
       {/* Garbage Collector */}
       <Route path="/gabbage" name="gabbage" component={GarbageCollector} />
     </div>
