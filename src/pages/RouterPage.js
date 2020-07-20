@@ -47,6 +47,7 @@ import Reports from "./reports/Reports";
 import Verification from "./verification/Verification";
 import MassNotification from "./massNotification/MassNotification";
 import AggregateData from "./aggregateData/AggregateData";
+import { Earnings, ListSubscribers, Settings } from "./proPackages/Index";
 
 const RouterPage = () => {
   return (
@@ -222,7 +223,7 @@ const RouterPage = () => {
           </>
         )}
       />
-      {/*Quibs Route  */}
+      {/*Qubes Route  */}
       <Route
         exact
         path="/qubes"
@@ -237,6 +238,24 @@ const RouterPage = () => {
           </>
         )}
       />
+
+      {/*Qubes Route  */}
+      <Route
+        exact
+        path="/package"
+        render={() => <Redirect to="/package/settings" />}
+      />
+      <Route
+        path="/package"
+        render={({ match: { url } }) => (
+          <>
+            <Route path={`${url}/settings`} component={Settings} exact />
+            <Route path={`${url}/subscribers`} component={ListSubscribers} />
+            <Route path={`${url}/earnings`} component={Earnings} />
+          </>
+        )}
+      />
+
       {/* Report */}
       <Route path="/reports" component={Reports} />
       {/* Verification */}

@@ -4764,7 +4764,7 @@
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   padding: 0.75rem 1rem;
-  font-family: Roboto;
+  font-family: "Poppins";
   font-size: 0.875rem;
   color: #2d3748;
 }
@@ -6234,7 +6234,7 @@ select.input.input--sm {
   height: 50px;
   display: flex;
   align-items: center;
-  padding-left: 1.25rem;
+  padding-left: 1rem;
   color: #fff;
   margin-bottom: 0.25rem;
   position: relative;
@@ -6242,7 +6242,7 @@ select.input.input--sm {
 }
 .side-nav .side-menu .side-menu__title {
   width: 100%;
-  margin-left: 0.75rem;
+  margin-left: 0.5rem;
   display: flex;
   align-items: center;
 }
@@ -8108,7 +8108,7 @@ select.input.input--sm {
   > li
   > .side-menu:hover:not(.side-menu--active):not(.side-menu--open)
   .side-menu__icon:before {
-  background-color: #3151bc;
+  background-color: #C3272E;
 }
 @-webkit-keyframes intro-devider-animation {
   to {

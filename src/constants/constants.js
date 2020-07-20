@@ -225,7 +225,7 @@ export const menuItems = [
     divider: false,
     subItems: [
       {
-        label: "CoD Settins",
+        label: "CoD Settings",
         isActive: false,
         url: "/cod/cod-settings",
         icon: <Icon.Package />,
@@ -257,21 +257,21 @@ export const menuItems = [
       {
         label: "Settings",
         isActive: false,
-        url: "/package",
+        url: "/package/settings",
         icon: <Icon.Briefcase />,
         subItems: [],
       },
       {
         label: "List Subscribers",
         isActive: false,
-        url: "/subscribers",
+        url: "/package/subscribers",
         icon: <Icon.Briefcase />,
         subItems: [],
       },
       {
         label: "Earnings",
         isActive: false,
-        url: "/earnings",
+        url: "/package/earnings",
         icon: <Icon.Briefcase />,
         subItems: [],
       },
