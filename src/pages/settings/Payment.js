@@ -9,14 +9,12 @@ const Payment = () => {
       <div className="intro-y box py-10 px-10 sm:py-16 mt-3">
         <div className="m-8">
           <ButtonToggleInput
-            className="text-gray-600 text-sm w-9/12"
             title="Users can request for payment"
             body="Enable the directory for better SEO results Make the website public to allow non logged users to view website content"
           />
         </div>
         <div className="m-8">
           <ButtonToggleInput
-            className="text-gray-600 text-sm"
             title="Users can request for payment anytime"
             body="Users can create pages or only admins/moderators"
           />

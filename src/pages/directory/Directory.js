@@ -9,8 +9,8 @@ const Directory = () => {
     <div>
       <div class="col-span-12 mt-8">
         <div class="grid grid-cols-9 gap-6 mt-5">
-          <Card cardTitle="116,000" cardBody="Team" />
-          <Card cardTitle="116,000" cardBody="Male" />
+          <Card cardTitle="116,000" cardBody="Directory" />
+          <Card cardTitle="116,000" cardBody="Attributes" />
         </div>
         <div className="intro-y col-span-12 flex items-center justify-center sm:justify-end m-8 mr-0">
           <Button

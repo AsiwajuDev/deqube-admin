@@ -29,7 +29,7 @@ const ProfileCard = ({
     <div>
       <div className="intro-y box px-5 pt-5 mt-5 mb-5">
         <div className="flex flex-col lg:flex-row border-b border-gray-200 pb-3 -mx-5">
-          <div className="flex flex-1 px-5 items-center justify-center lg:justify-start">
+          <div className="flex flex-1 px-5 mx-4 items-center justify-center lg:justify-start">
             <div className="w-20 h-20 sm:w-24 sm:h-24 flex-none lg:w-32 lg:h-32 image-fit relative">
               <img
                 alt="DeQube User Image"
@@ -41,7 +41,7 @@ const ProfileCard = ({
               <div className="w-24 sm:w-40 truncate sm:whitespace-normal font-medium text-lg">
                 User ID
               </div>
-              <div className="text-gray-600">
+              <div className="text-blue-400 underline">
                 {`/${userId}` || "DevOps Engineer"}
               </div>
             </div>

@@ -6,37 +6,55 @@ import Button from "../../components/button/Button";
 const AdminSettings = () => {
   return (
     <div>
-      <div className="intro-y box py-10 px-10 sm:py-16 mt-5">
-        <ButtonToggleInput
-          className="text-gray-600 w-9/12 text-sm"
-          title="AdminSettings"
-          body="If you’re thinking of doing data visualization in React, take a look at Semiotic, a data visualization framework I developed for React."
-        />
-        <ButtonToggleInput
-          className="text-gray-600 w-9/12 text-sm"
-          title="AdminSettings"
-          body="If you’re thinking of doing data visualization in React, take a look at Semiotic, a data visualization framework I developed for React."
-        />
-        <ButtonToggleInput
-          className="text-gray-600 w-9/12 text-sm"
-          title="AdminSettings"
-          body="If you’re thinking of doing data visualization in React, take a look at Semiotic, a data visualization framework I developed for React."
-        />
-        <ButtonToggleInput
-          className="text-gray-600 w-9/12 text-sm"
-          title="AdminSettings"
-          body="If you’re thinking of doing data visualization in React, take a look at Semiotic, a data visualization framework I developed for React."
-        />
-        <ButtonToggleInput
-          className="text-gray-600 w-9/12 text-sm"
-          title="AdminSettings"
-          body="If you’re thinking of doing data visualization in React, take a look at Semiotic, a data visualization framework I developed for React."
-        />
-        <ButtonToggleInput
-          className="text-gray-600 w-9/12 text-sm"
-          title="AdminSettings"
-          body="If you’re thinking of doing data visualization in React, take a look at Semiotic, a data visualization framework I developed for React."
-        />
+      <div className="intro-y box px-16 sm:py-10 my-5">
+        <div className="my-8">
+          <ButtonToggleInput
+            title="Ban Member"
+            body="Admin ability to ban memebers in a page/group On and Off"
+          />
+        </div>
+        <div className="my-8">
+          <ButtonToggleInput
+            title="Send Consent Notification"
+            body="Admin ability to send consent notifications to users On and Off"
+          />
+        </div>
+        <div className="my-8">
+          <ButtonToggleInput
+            title="Write Reviews & Recommendation"
+            body="Admin ability to write reviews & recommendations about users On and Off"
+          />
+        </div>
+        <div className="my-8">
+          <ButtonToggleInput
+            title="Post Vacancies"
+            body="Admin ability to post vacancies On and Off"
+          />
+        </div>
+        <div className="my-8">
+          <ButtonToggleInput
+            title="Post Events"
+            body="Admin ability to post Events On and Off"
+          />
+        </div>
+        <div className="my-8">
+          <ButtonToggleInput
+            title="Approve Every Post"
+            body="Admin ability to approve every post On and Off"
+          />
+        </div>
+        <div className="my-8">
+          <ButtonToggleInput
+            title="Promote Content"
+            body="Admin ability to promote content On and Off"
+          />
+        </div>
+        <div className="my-8">
+          <ButtonToggleInput
+            title="Delete Page/Group"
+            body="Admin ability to promote content On and Off"
+          />
+        </div>
       </div>
       <div className="intro-y col-span-12 flex items-center justify-center sm:justify-end m-8 pr-16">
         <Button

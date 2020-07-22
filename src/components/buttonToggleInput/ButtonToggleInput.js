@@ -8,22 +8,27 @@ const ButtonToggleInput = ({
   onClick,
   onChange,
   className,
+  classNameText,
   bodyLine,
+  bodyText,
 }) => {
   return (
     <div className="flex items-center my-2">
-      <div className="">
-        <span className="text-2xl">{title}</span>
-        <p className={className}>{body}</p>
+      <div className="w-11/12">
+        <span className="text-lg font-bold">{title}</span>
+        <p className="text-gray-600 text-sm">{body}</p>
+        <p className="text-gray-600 text-sm">{bodyText}</p>
         <span className="block text-base">{bodyLine}</span>
       </div>
 
-      <InputField
-        className="input input--switch ml-auto justify-end border-2 border-red-600"
-        type="checkbox"
-        onClick={onClick}
-        onChange={onChange}
-      />
+      <div className="w-1/12 ml-auto">
+        <InputField
+          className="input input--switch ml-auto justify-end border-2 border-red-600"
+          type="checkbox"
+          onClick={onClick}
+          onChange={onChange}
+        />
+      </div>
     </div>
   );
 };

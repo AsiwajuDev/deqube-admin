@@ -8,60 +8,71 @@ import InputDropdown from "../../components/inputDropdown/InputDropdown";
 const PostSettings = () => {
   return (
     <div>
-      <div className="intro-y box py-10 px-10 sm:py-16 mt-5">
-        <div className="mb-10">
+      <div className="intro-y box px-16 sm:py-10 my-5">
+        <div className="my-8">
           <ButtonToggleInput
-            className="text-gray-600 w-9/12 text-sm"
-            title="AdminSettings"
-            body="If you’re thinking of doing data visualization in React, take a look at Semiotic, a data visualization framework I developed for React."
-          />
-          <ButtonToggleInput
-            className="text-gray-600 w-9/12 text-sm"
-            title="AdminSettings"
-            body="If you’re thinking of doing data visualization in React, take a look at Semiotic, a data visualization framework I developed for React."
-          />
-          <ButtonToggleInput
-            className="text-gray-600 w-9/12 text-sm"
-            title="AdminSettings"
-            body="If you’re thinking of doing data visualization in React, take a look at Semiotic, a data visualization framework I developed for React."
-          />
-          <ButtonToggleInput
-            className="text-gray-600 w-9/12 text-sm"
-            title="AdminSettings"
-            body="If you’re thinking of doing data visualization in React, take a look at Semiotic, a data visualization framework I developed for React."
+            title="Stories"
+            body="Turn the stories On and Off"
+            bodyText="Stories are photos and videos that only last 24 hours"
           />
         </div>
-        <div className="grid grid-cols-12 gap-4 row-gap-5 mt-10">
+        <div className="my-8">
+          <ButtonToggleInput
+            title="Popular Posts"
+            body="Turn the stories On and Off"
+            bodyText="Popular posts are public posts ordered by most reactions, comments & Shares"
+          />
+        </div>
+        <div className="my-8">
+          <ButtonToggleInput
+            title="Discover Posts"
+            body="Turn the stories On and Off"
+            bodyText="Discover posts are public posts ordered from most recent to old"
+          />
+        </div>
+        <div className="my-8">
+          <ButtonToggleInput
+            title="Post Vacancies"
+            body="Admin ability to post vacancies On and Off"
+          />
+        </div>
+        <div className="my-8">
+          <ButtonToggleInput
+            title="Post Events"
+            body="Admin ability to post Events On and Off"
+          />
+        </div>
+        <div className="grid grid-cols-12 gap-4 row-gap-5 mt-16">
           <div className="intro-y col-span-12 sm:col-span-6 mb-3 mr-4">
-            <span className="text-2xl">Max Post Characters</span>
+            <span className="text-xl font-bold">Max Post Characters</span>
             <InputField type="text" className="input w-full border flex-1" />
             <span className="text-gray-500">
               The Maximum allowed post xharacters length (0 for unlimited)
             </span>
           </div>
           <div className="intro-y col-span-12 sm:col-span-6 mb-3 ml-4">
-            <span className="text-2xl">Max Post Characters</span>
+            <span className="text-xl font-bold">Max Post Characters</span>
             <InputField type="text" className="input w-full border flex-1" />
             <span className="text-gray-500">
               The Maximum allowed post xharacters length (0 for unlimited)
             </span>
           </div>
           <div className="intro-y col-span-12 sm:col-span-6 mb-3 mr-4">
-            <span className="text-2xl">Max Post Characters</span>
+            <span className="text-xl font-bold">Max Post Characters</span>
             <InputField type="text" className="input w-full border flex-1" />
             <span className="text-gray-500">
               The Maximum allowed post xharacters length (0 for unlimited)
             </span>
           </div>
           <div className="intro-y col-span-12 sm:col-span-6 mb-3 ml-4">
-            <span className="text-2xl">Max Post Characters</span>
+            <span className="text-xl font-bold">Max Post Characters</span>
             <InputField type="text" className="input w-full border flex-1" />
             <span className="text-gray-500">
               The Maximum allowed post xharacters length (0 for unlimited)
             </span>
           </div>
           <div className="intro-y col-span-12 sm:col-span-6 mb-3 mr-4">
-            <span className="text-2xl">Max Post Characters</span>
+            <span className="text-xl font-bold">Max Post Characters</span>
             <InputDropdown
               type="text"
               className="input w-full border flex-1"

@@ -16,7 +16,6 @@ const Registration = () => {
         </div>
         <div className="m-8">
           <ButtonToggleInput
-            className="text-gray-600 text-sm"
             title="Registration Enabled"
             body="Allow users to create accounts"
           />
@@ -50,14 +49,12 @@ const Registration = () => {
         </div>
         <div className="m-8">
           <ButtonToggleInput
-            className="text-gray-600 text-sm"
             title="Premium Package Enabled"
             body="Enable pro packages to be used as upgrading plans or for subscriptions"
           />
         </div>
         <div className="m-8">
           <ButtonToggleInput
-            className="text-gray-600 text-sm"
             title="Verification Enabled"
             body="Enable account verification to send verification code to user’s email/phone"
           />
@@ -96,7 +93,6 @@ const Registration = () => {
         </div>
         <div className="m-8">
           <ButtonToggleInput
-            className="text-gray-600 text-sm"
             title="Age Restriction"
             body="Enable or Disable Age restricition"
           />
@@ -111,14 +107,12 @@ const Registration = () => {
         </div>
         <div className="m-8">
           <ButtonToggleInput
-            className="text-gray-600 text-sm"
             title="Delete Account"
             body="Allow users to delete their account"
           />
         </div>
         <div className="m-8">
           <ButtonToggleInput
-            className="text-gray-600 text-sm"
             title="Download User Information"
             body="Allow users to download their account information from settings page"
           />
