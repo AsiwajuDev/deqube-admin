@@ -1,17 +1,21 @@
 import React from "react";
 import Button from "../../../components/button/Button";
-import TextField from "../../../components/TextField/TextField";
+import InputDropdown from "../../../components/inputDropdown/InputDropdown";
 
 export default function Membership() {
   return (
     <div>
-      <div className="intro-y box py-4">
+      <div className="intro-y box py-10">
         <div className="px-10">
-          <div className="m-8">
-            <TextField
-              textTitle="Who can see your basic info"
-              textBody="Banner and profile, followers, likes, page view, bio"
-            />
+          <div className="grid grid-cols-12 gap-4 row-gap-5 mt-10">
+            <div className="intro-y col-span-12 sm:col-span-6 mb-3 ml-4">
+              <span className="text-lg font-bold">Current Package</span>
+              <InputDropdown
+                type="text"
+                className="input w-full border flex-1"
+                dropdownElements=""
+              />
+            </div>
           </div>
         </div>
       </div>

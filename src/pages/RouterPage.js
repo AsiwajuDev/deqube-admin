@@ -39,6 +39,8 @@ import Directory from "./directory/Directory";
 import GarbageCollector from "./garbageCollector/GarbageCollector";
 import ListPage from "./users/listPage/ListPage";
 import ListGroup from "./users/listGroupPages/ListGroup";
+import ListAdminPage from "./users/listAdminPage/ListAdminPage";
+import ListAgencyPage from "./users/listAgencyPage/ListAgencyPage";
 
 import { ListEvents, EventCategory } from "./events/Index";
 import { CoDEarnings, CoDSettings, UserCoD } from "./contentOnDemand/Index";
@@ -122,6 +124,8 @@ const RouterPage = () => {
       <Route path="/user" name="user" component={ListUser} />
       <Route path="/page" name="page" component={ListPage} />
       <Route path="/group" name="group" component={ListGroup} />
+      <Route path="/agency" name="agency" component={ListAgencyPage} />
+      <Route path="/admin" name="admin" component={ListAdminPage} />
 
       <Route
         exact

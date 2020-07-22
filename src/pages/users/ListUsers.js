@@ -5,14 +5,14 @@ import CustomTable from "../../components/table/CustomTable";
 const ListUsers = () => {
   return (
     <div>
-      <div class="col-span-12 mt-8">
-        <div class="grid grid-cols-9 gap-6 mt-5">
+      <div className="col-span-12 mt-8">
+        <div className="grid grid-cols-9 gap-6 mt-5">
           <Card cardTitle="116,000" cardBody="Users" />
           <Card cardTitle="116,000" cardBody="Banned" />
           <Card cardTitle="116,000" cardBody="Not Activated" />
         </div>
       </div>
-      <div style={{ marginTop: "50px" }}>
+      <div className="mt-20">
         <CustomTable pagination search pagerows />
       </div>
     </div>

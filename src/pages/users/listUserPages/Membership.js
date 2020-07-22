@@ -8,10 +8,7 @@ export default function Membership() {
       <div className="intro-y box py-4">
         <div className="px-10">
           <div className="m-8">
-            <TextField
-              textTitle="Who can see your basic info"
-              textBody="Banner and profile, followers, likes, page view, bio"
-            />
+            <TextField textTitle="Current Package" textBodyLine="Premium" />
           </div>
         </div>
       </div>

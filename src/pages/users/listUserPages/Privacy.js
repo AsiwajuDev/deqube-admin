@@ -51,9 +51,9 @@ const Privacy = () => {
               </div>
               <div className="intro-y col-span-12 sm:col-span-6 mb-3 ml-4">
                 <TextField
-                  textTitle="Who can see your basic info"
-                  textBody="Banner and profile, followers, likes, page view, bio"
-                  textBodyLine="Everyone"
+                  textTitle="Who can see other info"
+                  textBody="Shows, Videos, Recommendation etc"
+                  textBodyLine="Only Followers"
                 />
               </div>
             </div>
@@ -69,7 +69,7 @@ const Privacy = () => {
               </div>
               <div className="intro-y col-span-12 sm:col-span-6 mb-3 ml-4">
                 <TextField
-                  textTitle="Who can see your basic info"
+                  textTitle="Who can block you"
                   textBody="Banner and profile, followers, likes, page view, bio"
                   textBodyLine="Everyone"
                 />
@@ -80,14 +80,14 @@ const Privacy = () => {
             <div className="grid grid-cols-12 gap-4 row-gap-5 mt-10">
               <div className="intro-y col-span-12 sm:col-span-6 mb-3 mr-4">
                 <TextField
-                  textTitle="Who can see your basic info"
+                  textTitle="Who can see your post"
                   textBody="Banner and profile, followers, likes, page view, bio"
                   textBodyLine="Everyone"
                 />
               </div>
               <div className="intro-y col-span-12 sm:col-span-6 mb-3 ml-4">
                 <TextField
-                  textTitle="Who can see your basic info"
+                  textTitle="Who can message you"
                   textBody="Banner and profile, followers, likes, page view, bio"
                   textBodyLine="Everyone"
                 />

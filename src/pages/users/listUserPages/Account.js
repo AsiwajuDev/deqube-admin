@@ -2,7 +2,6 @@ import React from "react";
 import ToggleButton from "../../../components/buttonToggleInput/ToggleButton";
 import Card from "../../../components/card/Card";
 import Button from "../../../components/button/Button";
-import ButtonToggleInput from "../../../components/buttonToggleInput/ButtonToggleInput";
 
 export default function Account() {
   return (

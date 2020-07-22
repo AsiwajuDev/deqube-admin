@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonToggleInput from "../../../components/buttonToggleInput/ButtonToggleInput";
+import ToggleButton from "../../../components/buttonToggleInput/ToggleButton";
 import Card from "../../../components/card/Card";
 import Button from "../../../components/button/Button";
 import InputField from "../../../components/inputField/InputField";
@@ -21,10 +21,8 @@ export default function Account() {
                       Verified User
                     </a>
                   </div>
-                  <div class="flex">
-                    <div class="text-center">
-                      <ButtonToggleInput />
-                    </div>
+                  <div class="text-center">
+                    <ToggleButton />
                   </div>
                 </div>
                 <div class="flex flex-col sm:flex-row mt-5">
@@ -33,10 +31,8 @@ export default function Account() {
                       Banned
                     </a>
                   </div>
-                  <div class="flex">
-                    <div class="text-center">
-                      <ButtonToggleInput />
-                    </div>
+                  <div class="text-center">
+                    <ToggleButton />
                   </div>
                 </div>
                 <div class="flex flex-col sm:flex-row mt-5">
@@ -45,10 +41,8 @@ export default function Account() {
                       Account Activated
                     </a>
                   </div>
-                  <div class="flex">
-                    <div class="text-center">
-                      <ButtonToggleInput />
-                    </div>
+                  <div class="text-center">
+                    <ToggleButton />
                   </div>
                 </div>
                 <div class="flex flex-col sm:flex-row mt-5">
@@ -57,10 +51,8 @@ export default function Account() {
                       Email Verified
                     </a>
                   </div>
-                  <div class="flex">
-                    <div class="text-center">
-                      <ButtonToggleInput />
-                    </div>
+                  <div class="text-center">
+                    <ToggleButton />
                   </div>
                 </div>
               </div>
@@ -111,6 +103,7 @@ export default function Account() {
                       Password
                     </div>
                   </div>
+
                   <div class="w-1/2 h-10">
                     <div className="truncate sm:whitespace-normal text-blue-400 underline">
                       <InputField
@@ -128,9 +121,9 @@ export default function Account() {
       </div>
       <div class="col-span-12 mt-8">
         <div class="grid grid-cols-9 gap-6 mt-5">
-          <Card cardTitle="116,000" cardBody="Team" />
-          <Card cardTitle="116,000" cardBody="Male" />
-          <Card cardTitle="116,000" cardBody="Female" />
+          <Card cardTitle="116,000" cardBody="Total Likes" />
+          <Card cardTitle="116,000" cardBody="Total Comments" />
+          <Card cardTitle="116,000" cardBody="Total Shared" />
         </div>
       </div>
 

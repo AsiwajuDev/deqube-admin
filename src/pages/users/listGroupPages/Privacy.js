@@ -11,36 +11,36 @@ const Privacy = () => {
           <div className="m-8">
             <ButtonToggleInput
               className="text-gray-600 text-sm"
-              title="Download User Information"
-              body="Allow users to download their account information from settings page"
+              title="Make group open to only members"
+              body="If chat disabled you will appear offline and will not see who is online too"
             />
           </div>
           <div className="m-8">
             <ButtonToggleInput
               className="text-gray-600 text-sm"
-              title="Download User Information"
-              body="Allow users to download their account information from settings page"
+              title="Email group with our newsletter"
+              body="From time to time, we send newsletter email to all of our members"
             />
           </div>
           <div className="m-8">
             <ButtonToggleInput
               className="text-gray-600 text-sm"
-              title="Download User Information"
-              body="Allow users to download their account information from settings page"
+              title="Allow group to give reviews & recommendations"
+              body="If chat disabled you will appear offline and will not see who is online too"
             />
           </div>
           <div className="m-8">
             <ButtonToggleInput
               className="text-gray-600 text-sm"
-              title="Download User Information"
-              body="Allow users to download their account information from settings page"
+              title="Allow group to post vacancies and openings"
+              body="From time to time, we send newsletter email to all of our members"
             />
           </div>
           <div className="m-8">
             <ButtonToggleInput
               className="text-gray-600 text-sm"
-              title="Download User Information"
-              body="Allow users to download their account information from settings page"
+              title="Allow to send consent notification to user"
+              body="From time to time, we send newsletter email to all of our members"
             />
           </div>
           <div className="intro-y col-span-12 flex items-center m-8 pr-16">
@@ -54,9 +54,11 @@ const Privacy = () => {
         <div className="px-10 m-8">
           <div className="grid grid-cols-12 gap-4 row-gap-5 mt-10">
             <div className="intro-y col-span-12 sm:col-span-6 mb-3 mr-4">
-              <span className="text-2xl">Max Post Characters</span>
+              <span className="text-base font-bold">
+                Who can see group basic info
+              </span>
               <span className="text-gray-500 py-6 block">
-                The Maximum allowed post xharacters length (0 for unlimited)
+                Banner and profile, followers, likes, page view, bio
               </span>
               <InputDropdown
                 type="text"
@@ -65,9 +67,11 @@ const Privacy = () => {
               />
             </div>
             <div className="intro-y col-span-12 sm:col-span-6 mb-3 ml-4">
-              <span className="text-2xl">Max Post Characters</span>
+              <span className="text-base font-bold">
+                Who can see other info
+              </span>
               <span className="text-gray-500 py-6 block">
-                The Maximum allowed post xharacters length (0 for unlimited)
+                Shows, Videos, Recommendation etc{" "}
               </span>
               <InputDropdown
                 type="text"
