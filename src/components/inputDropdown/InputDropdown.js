@@ -8,9 +8,6 @@ const InputDropdown = ({ dropdownElements }) => {
           Select an option
         </option>
         {dropdownElements}
-        <option value="bug">report a bug</option>
-        <option value="feature">Request a feature</option>
-        <option value="feedback">Feedback</option>
       </select>
     </div>
   );

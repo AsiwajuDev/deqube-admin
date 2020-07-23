@@ -5,7 +5,7 @@ import CustomTable from "../../components/table/CustomTable";
 const ListSubscribers = () => {
   return (
     <div class="col-span-12 mt-8">
-      <div class="grid grid-cols-9 gap-6 mt-5">
+      <div class="grid grid-cols-6 gap-6 mt-5">
         <Card cardTitle="116,000" cardBody="Total Subscribers" />
         <Card cardTitle="116,000" cardBody="This Month Subscribers" />
       </div>

@@ -5,10 +5,7 @@ import Button from "../../components/button/Button";
 export default function AggregateData() {
   return (
     <div>
-      <div
-        className="intro-y col-span-12 flex items-center m-8 pr-16"
-        style={{ float: "right" }}
-      >
+      <div className="intro-y col-span-12 flex items-center justify-center sm:justify-end">
         <Button
           className="bg-red-700 text-white font-bold py-2 px-4 rounded"
           value="Mark All As Safe"

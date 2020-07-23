@@ -30,6 +30,7 @@ import {
   SystemAds,
   AdSettings,
   CreateSystemAds,
+  EditUserAds,
 } from "./adContent/Index";
 import Posts from "./posts/Posts";
 import { Reaction, AddReaction } from "./reaction/Index";
@@ -42,7 +43,7 @@ import ListGroup from "./users/listGroupPages/ListGroup";
 import ListAdminPage from "./users/listAdminPage/ListAdminPage";
 import ListAgencyPage from "./users/listAgencyPage/ListAgencyPage";
 
-import { ListEvents, EventCategory } from "./events/Index";
+import { ListEvents, EventCategory, EventDetails } from "./events/Index";
 import { CoDEarnings, CoDSettings, UserCoD } from "./contentOnDemand/Index";
 import { Points, Payments } from "./qubes/Index";
 import Reports from "./reports/Reports";
@@ -180,6 +181,11 @@ const RouterPage = () => {
         render={() => <Redirect to="/events/list-events" />}
       />
       <Route
+        path="/event-details"
+        name="event-details"
+        component={EventDetails}
+      />
+      <Route
         path="/events"
         render={({ match: { url } }) => (
           <>
@@ -207,9 +213,14 @@ const RouterPage = () => {
       />
 
       <Route
-        path="/create-system-ads"
+        path="/ads/create-system-ads"
         name="create-system-ads"
         component={CreateSystemAds}
+      />
+      <Route
+        path="/ads/edit-user-ads"
+        name="edit-user-ads"
+        component={EditUserAds}
       />
       {/*CoD Route  */}
       <Route
@@ -267,12 +278,20 @@ const RouterPage = () => {
       {/* Verification */}
       <Route path="/mass-notification" component={MassNotification} />
       {/* Reaction */}
-      <Route path="/reactions" component={Reaction} />
-      <Route path="/add-reaction" name="add-reaction" component={AddReaction} />
+      <Route path="/reactions/reaction" component={Reaction} />
+      <Route
+        path="/reactions/add-reaction"
+        name="add-reaction"
+        component={AddReaction}
+      />
 
       {/* Emojis */}
-      <Route path="/emojis" name="emojis" component={Emojis} />
-      <Route path="/add-emojis" name="add-emojis" component={AddEmojis} />
+      <Route path="/emojis/emojis" name="emojis" component={Emojis} />
+      <Route
+        path="/emojis/add-emojis"
+        name="add-emojis"
+        component={AddEmojis}
+      />
 
       {/* Follow Suggest */}
       <Route

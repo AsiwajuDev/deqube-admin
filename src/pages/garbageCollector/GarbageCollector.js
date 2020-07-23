@@ -3,8 +3,27 @@ import React from "react";
 import BannerInfo from "../../components/bannerInfo/BannerInfo";
 import InputDropdown from "../../components/inputDropdown/InputDropdown";
 import Button from "../../components/button/Button";
+import { data } from "autoprefixer";
 
 const GarbageCollector = () => {
+  const datas = [
+    "Delete all not activated accounts",
+    "Delete Users that are not logged in more than 1 week",
+    "Delete Users that are not logged in more than 1 month",
+    "Delete Users that are not logged in more than 1 year",
+    "Delete posts that are longer than 1 week",
+    "Delete posts that are longer than 1 month",
+    "Delete posts that are longer than 1 year",
+  ];
+
+  const dropdownElements = datas.map((data, id) => {
+    return (
+      <option value={data} key={id}>
+        {data}
+      </option>
+    );
+  });
+
   return (
     <div className="mt-10">
       <div className="mb-10">
@@ -18,7 +37,7 @@ const GarbageCollector = () => {
         <InputDropdown
           type="text"
           className="input w-full border flex-1 mb-6"
-          dropdownElements=""
+          dropdownElements={dropdownElements}
         />
         <Button
           className="bg-red-700 my-8 text-white font-bold py-2 px-4 rounded"

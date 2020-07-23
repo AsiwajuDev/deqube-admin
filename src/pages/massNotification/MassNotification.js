@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../../components/button/Button";
 import BannerInfo from "../../components/bannerInfo/BannerInfo";
 import InputField from "../../components/inputField/InputField";
+import InputTextArea from "../../components/inputTextArea/InputTextArea";
 
 export default function MassNotification() {
   return (
@@ -28,6 +29,16 @@ export default function MassNotification() {
           <InputField type="text" className="input w-full border flex-1" />
         </div>
       </div>
+      <div>
+        <InputTextArea
+          type="text"
+          className="input w-full border flex-1 mt-5 h-32"
+        />
+      </div>
+      <Button
+        className="bg-red-700 my-8 text-white font-bold py-2 px-4 rounded"
+        value="Run"
+      />
     </div>
   );
 }
