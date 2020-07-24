@@ -28,7 +28,9 @@ export default function CustomBreadcrumb({ data }) {
         separator={<Icon.ChevronRight fontSize="small" />}
         aria-label="breadcrumb"
       >
-        <Typography color="textPrimary">{data.start}</Typography>
+        <Typography style={{ fontFamily: "Poppins" }} color="textPrimary">
+          {data.start}
+        </Typography>
         {data.links.map((link, i) => {
           return (
             <Link

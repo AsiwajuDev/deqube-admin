@@ -14,8 +14,8 @@ const FollowSuggest = () => {
         <ButtonToggleInput
           className="text-gray-600 w-9/12 text-sm"
           title="Follow Suggest"
-          bannerBody="Enable the directory for better SEO results"
-          bannerBottomLine="Make the website public to allow non logged users to view website content"
+          body="Enable the directory for better SEO results"
+          bodyText="Make the website public to allow non logged users to view website content"
         />
         <div className="side-nav__devider border-t-2 my-8"></div>
         <div className="grid grid-cols-12 gap-4 row-gap-5 mt-10">

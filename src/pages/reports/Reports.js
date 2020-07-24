@@ -20,8 +20,6 @@ const Reports = () => {
     <div>
       <div className="top-bar text-lg text-gray-600 mt-1">Reports</div>
       <hr className="mb-3" />
-      <div className="top-bar text-lg text-gray-600 mt-1">Reports</div>
-      <hr className="mb-3" />
       <div class="col-span-12 mt-8">
         <div
           className="intro-y col-span-12 flex items-center m-8 pr-16"

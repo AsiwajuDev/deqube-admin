@@ -9,7 +9,7 @@ const data = {
   start: "Qubes",
   links: [
     {
-      label: "Qubes Point",
+      label: "Point",
       url: "/qubes/points",
     },
   ],

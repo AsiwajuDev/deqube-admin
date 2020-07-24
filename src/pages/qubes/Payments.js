@@ -8,7 +8,7 @@ const data = {
   start: "Qubes",
   links: [
     {
-      label: "Qubes",
+      label: "Payment",
       url: "/qubes/qubes-payment",
     },
   ],
