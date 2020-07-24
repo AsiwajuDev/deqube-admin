@@ -4,15 +4,15 @@ import ButtonToggleInput from "../../../components/buttonToggleInput/ButtonToggl
 import Button from "../../../components/button/Button";
 import CustomTable from "../../../components/table/CustomTable";
 
-export default function Extras() {
+export default function GroupExtras() {
+  const onActionClicked = (e, payload) => {
+    alert(JSON.stringify(payload));
+  };
+
   const history = useHistory();
   const onLinkClicked = (e, payload) => {
     console.log(JSON.stringify(payload));
     history.push("/users/list-users/user");
-  };
-
-  const onActionClicked = (e, payload) => {
-    alert(JSON.stringify(payload));
   };
   return (
     <div>

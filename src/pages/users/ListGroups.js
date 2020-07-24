@@ -9,7 +9,7 @@ const data = {
   links: [
     {
       label: "List Groups",
-      url: "/users/list-groups",
+      url: "/users/list-group",
     },
   ],
 };
@@ -18,7 +18,7 @@ const ListGroups = () => {
   const history = useHistory();
   const onLinkClicked = (e, payload) => {
     console.log(JSON.stringify(payload));
-    history.push("/users/list-users/user");
+    history.push("/users/list-group/user");
   };
 
   const onActionClicked = (e, payload) => {
@@ -36,29 +36,38 @@ const ListGroups = () => {
       </div>
       <div className="mt-20">
         <CustomTable
+          id="listgroupsone"
           pagination
           search
           pagerows
           columns={[
-            { id: "id", label: "ID", minWidth: 170, color: (value) => "blue" },
+            { id: "id", label: "ID", minWidth: 100, color: (value) => "blue" },
             {
-              id: "name",
-              label: "Name",
-              minWidth: 100,
+              id: "groupname",
+              label: "Group Name",
+              minWidth: 170,
               color: (value) => "blue",
               type: "link",
             },
             {
-              id: "username",
-              label: "Username",
-              minWidth: 170,
+              id: "admin",
+              label: "Admin",
+              minWidth: 150,
               align: "center",
               color: (value) => "blue",
             },
             {
               id: "joined",
               label: "Joined",
-              minWidth: 170,
+              minWidth: 100,
+              align: "center",
+              format: (value) => value.toLocaleString("en-US"),
+              color: (value) => "blue",
+            },
+            {
+              id: "members",
+              label: "Members",
+              minWidth: 100,
               align: "center",
               format: (value) => value.toLocaleString("en-US"),
               color: (value) => "blue",
@@ -79,65 +88,74 @@ const ListGroups = () => {
           rows={[
             {
               id: 1,
-              name: "India",
-              username: "IN",
-              joined: 1324171354,
+              groupname: "Lion",
+              admin: "sarahdoe",
+              joined: "19/06/2020",
+              members: 5,
               status: "Published",
             },
             {
               id: 2,
-              name: "India",
-              username: "IN",
-              joined: 1324171354,
+              groupname: "Dance",
+              admin: "sarahdoe",
+              joined: "19/06/2020",
+              members: 5,
               status: "Published",
             },
             {
               id: 3,
-              name: "China",
-              username: "CN",
-              joined: 1403500365,
-              status: "Not-Published",
+              groupname: "Lionance",
+              admin: "sarahdoe",
+              joined: "19/06/2020",
+              members: 5,
+              status: "Published",
             },
             {
               id: 4,
-              name: "Italy",
-              username: "IT",
-              joined: 60483973,
+              groupname: "Lion Dance",
+              admin: "sarahdoe",
+              joined: "19/06/2020",
+              members: 5,
               status: "Published",
             },
             {
               id: 5,
-              name: "United States",
-              username: "US",
-              joined: 327167434,
-              status: "Published",
+              groupname: "Lion Dance",
+              admin: "sarahdoe",
+              joined: "19/06/2020",
+              members: 5,
+              status: "Not Published",
             },
             {
               id: 6,
-              name: "Canada",
-              username: "CA",
-              joined: 37602103,
+              groupname: "Lion Dance",
+              admin: "sarahdoe",
+              joined: "19/06/2020",
+              members: 5,
               status: "Published",
             },
             {
               id: 7,
-              name: "Australia",
-              username: "AU",
-              joined: 25475400,
-              status: "Waiting",
+              groupname: "Lion Dance",
+              admin: "sarahdoe",
+              joined: "19/06/2020",
+              members: 5,
+              status: "Published",
             },
             {
               id: 8,
-              name: "Germany",
-              username: "DE",
-              joined: 83019200,
-              status: "Not-Published",
+              groupname: "Lion Dance",
+              admin: "sarahdoe",
+              joined: "19/06/2020",
+              members: 5,
+              status: "Not Published",
             },
             {
               id: 9,
-              name: "Ireland",
-              username: "IE",
-              joined: 4857000,
+              groupname: "Lion Dance",
+              admin: "sarahdoe",
+              joined: "19/06/2020",
+              members: 5,
               status: "Published",
             },
           ]}

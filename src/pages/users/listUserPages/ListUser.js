@@ -28,7 +28,7 @@ const ListUser = () => {
       <CustomBreadcrumb data={data} />
       <div className="flex justify-between">
         <Link
-          to="/system-ads"
+          to="/users/list-users"
           className="text-red-700 flex mb-4 hover:text-red-700"
         >
           <Icon.ChevronLeft className="text-red-700" />

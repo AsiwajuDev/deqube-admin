@@ -1,9 +1,8 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import CustomTable from "../../components/table/CustomTable";
-import Card from "../../components/card/Card";
+import CustomTable from "../../../components/table/CustomTable";
 
-const Posts = () => {
+export default function GroupActivity() {
   const history = useHistory();
   const onLinkClicked = (e, payload) => {
     console.log(JSON.stringify(payload));
@@ -13,19 +12,9 @@ const Posts = () => {
   const onActionClicked = (e, payload) => {
     alert(JSON.stringify(payload));
   };
-
   return (
     <div>
-      <div className="top-bar text-lg text-gray-600 mt-1">Posts</div>
-      <hr className="mb-3" />
-      <div class="col-span-12 mt-8">
-        <div class="grid grid-cols-9 gap-6 mt-5">
-          <Card cardTitle="116,000" cardBody="Posts" />
-          <Card cardTitle="116,000" cardBody="Comment" />
-          <Card cardTitle="116,000" cardBody="Reactions" />
-        </div>
-      </div>
-      <div style={{ marginTop: "50px" }}>
+      <div className="mt-10">
         <CustomTable
           pagination
           search
@@ -43,14 +32,14 @@ const Posts = () => {
             {
               id: "type",
               label: "Type",
-              minWidth: 70,
+              minWidth: 170,
               align: "left",
               color: (value) => "blue",
             },
             {
               id: "time",
               label: "Time",
-              minWidth: 170,
+              minWidth: 70,
               align: "center",
               format: (value) => value.toLocaleString("en-US"),
               color: (value) => "blue",
@@ -147,13 +136,11 @@ const Posts = () => {
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSL9gD35eD_Df-JgpsplnHFyXNhb8r23madbg&usqp=CAU",
             },
           ]}
-          actions={["edit", "delete"]}
+          actions={["delete"]}
           handleActionClick={onActionClicked}
           handleLinkClick={onLinkClicked}
         />
       </div>
     </div>
   );
-};
-
-export default Posts;
+}

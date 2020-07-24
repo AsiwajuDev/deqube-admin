@@ -23,6 +23,10 @@ import {
   ListGroups,
   ListOnline,
   ListPages,
+  ListGroup,
+  ListAdminPage,
+  ListAgencyPage,
+  ListPage,
 } from "./users/Index.js";
 
 import {
@@ -37,8 +41,6 @@ import { Emojis, AddEmojis } from "./emojis/Index";
 import FollowSuggest from "./followSuggest/FollowSuggest";
 import Directory from "./directory/Directory";
 import GarbageCollector from "./garbageCollector/GarbageCollector";
-import ListPage from "./users/listPage/ListPage";
-import ListGroup from "./users/listGroupPages/ListGroup";
 
 import { ListEvents, EventCategory } from "./events/Index";
 import { CoDEarnings, CoDSettings, UserCoD } from "./contentOnDemand/Index";
@@ -47,15 +49,16 @@ import Reports from "./reports/Reports";
 import Verification from "./verification/Verification";
 import MassNotification from "./massNotification/MassNotification";
 import AggregateData from "./aggregateData/AggregateData";
-import { Earnings, ListSubscribers, Settings } from "./proPackages/Index";
 
 const RouterPage = () => {
   return (
     <div>
       {/* Dashboard Route */}
       <Route path="/dashboard" name="dashboard" component={Dashboard} />
+
       {/* Direcotry Route */}
       <Route path="/directory" name="directory" component={Directory} />
+
       {/* Settings Route */}
       <Route
         exact
@@ -114,10 +117,12 @@ const RouterPage = () => {
           </>
         )}
       />
+
       {/* Users Route */}
-      <Route path="/user" name="user" component={ListUser} />
-      <Route path="/page" name="page" component={ListPage} />
-      <Route path="/group" name="group" component={ListGroup} />
+
+      {/* <Route path="/page" name="page" component={ListPage} />
+      <Route path="/group" name="group" component={ListGroup} /> */}
+
       <Route
         exact
         path="/users"
@@ -127,40 +132,48 @@ const RouterPage = () => {
         path="/users"
         render={({ match: { url } }) => (
           <>
-            <Route path={`${url}/list-users`} component={ListUsers} exact />
-            <Route
-              path={`${url}/list-admin`}
-              name="list-admin"
-              component={ListAdmin}
-            />
-            <Route
-              path={`${url}/list-agency`}
-              name="list-agency"
-              component={ListAgency}
-            />
             <Route
               path={`${url}/list-banned`}
               name="list-banned"
               component={ListBanned}
             />
-            <Route
-              path={`${url}/list-group`}
-              name="list-group"
-              component={ListGroups}
-            />
+
             <Route
               path={`${url}/list-online`}
               name="list-online"
               component={ListOnline}
             />
-            <Route
-              path={`${url}/list-page`}
-              name="list-page"
-              component={ListPages}
-            />
           </>
         )}
       />
+      {/* List Users Route */}
+      <Route path="/users/list-users" component={ListUsers} exact />
+      <Route path="/users/list-users/user" component={ListUser} />
+      {/* List Group Route */}
+      <Route path="/users/list-group" component={ListGroups} exact />
+      <Route path="/users/list-group/user" component={ListGroup} />
+      {/* List Agency Route */}
+      <Route path="/users/list-agency" component={ListAgency} exact />
+      <Route path="/users/list-agency/user" component={ListAgencyPage} />
+      {/* List Admin Page */}
+      <Route path="/users/list-admin" component={ListAdmin} exact />
+      <Route path="/users/list-admin/user" component={ListAdminPage} />
+      {/* List Page Route */}
+      <Route path="/users/list-page" component={ListPages} exact />
+      <Route path="/users/list-page/user" component={ListPage} />
+      {/* <Route
+        exact
+        path="/users"
+        render={() => <Redirect to="/users/list-users" />}
+      /> */}
+      {/* <Route
+        path="/users/list-groups"
+        render={({ match: { url } }) => (
+          <Route path={`${url}/user`} component={ListGroup} exact />
+        )}
+      /> */}
+
+      <Route path="/users/list-groups/group" component={ListGroup} exact />
       {/* Posts */}
       <Route path="/posts" name="posts" component={Posts} />
       {/* Events */}
@@ -194,6 +207,7 @@ const RouterPage = () => {
           </>
         )}
       />
+
       <Route
         path="/create-system-ads"
         name="create-system-ads"
@@ -212,22 +226,6 @@ const RouterPage = () => {
             <Route path={`${url}/cod-settings`} component={CoDSettings} exact />
             <Route path={`${url}/user-cod`} component={UserCoD} />
             <Route path={`${url}/cod-earnings`} component={CoDEarnings} />
-          </>
-        )}
-      />
-      {/* Pro Package route */}{" "}
-      <Route
-        exact
-        path="/package"
-        render={() => <Redirect to="/package/settings" />}
-      />
-      <Route
-        path="/package"
-        render={({ match: { url } }) => (
-          <>
-            <Route path={`${url}/settings`} component={Settings} exact />
-            <Route path={`${url}/subscribers`} component={ListSubscribers} />
-            <Route path={`${url}/earnings`} component={Earnings} />
           </>
         )}
       />
@@ -255,9 +253,11 @@ const RouterPage = () => {
       {/* Reaction */}
       <Route path="/reactions" component={Reaction} />
       <Route path="/add-reaction" name="add-reaction" component={AddReaction} />
+
       {/* Emojis */}
       <Route path="/emojis" name="emojis" component={Emojis} />
       <Route path="/add-emojis" name="add-emojis" component={AddEmojis} />
+
       {/* Follow Suggest */}
       <Route
         path="/follow-suggest"

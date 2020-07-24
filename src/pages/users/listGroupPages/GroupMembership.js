@@ -2,7 +2,7 @@ import React from "react";
 import Button from "../../../components/button/Button";
 import InputDropdown from "../../../components/inputDropdown/InputDropdown";
 
-export default function Membership() {
+export default function GroupMembership() {
   return (
     <div>
       <div className="intro-y box py-10">

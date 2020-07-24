@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Table from "@material-ui/core/Table";
@@ -19,6 +19,7 @@ import Link from "@material-ui/core/Link";
 import * as Icon from "react-feather";
 
 import Search from "./Search";
+import { Avatar } from "@material-ui/core";
 
 const iconComponent = (props) => {
   return (
@@ -29,21 +30,30 @@ const iconComponent = (props) => {
   );
 };
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
   },
+  small: {
+    width: theme.spacing(3),
+    height: theme.spacing(3),
+  },
   container: {
-    maxHeight: 440,
+    maxHeight: 900,
+    maxWidth: 980,
   },
   paginationContainer: {
     marginTop: 20,
     height: 32,
   },
+  cell: {
+    paddingTop: 0,
+    paddingBottom: 0,
+  },
   rowPageContainer: {
     height: "2px",
   },
-});
+}));
 const StyledTableRow = withStyles((theme) => ({
   root: {
     "&:nth-of-type(odd)": {
@@ -69,18 +79,7 @@ const BootstrapInput = withStyles((theme) => ({
     padding: "5px 26px 5px 12px",
     transition: theme.transitions.create(["border-color", "box-shadow"]),
     // Use the system font instead of the default Roboto font.
-    fontFamily: [
-      "-apple-system",
-      "BlinkMacSystemFont",
-      '"Segoe UI"',
-      "Roboto",
-      '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(","),
+    fontFamily: ["Poppins"].join(","),
     "&:focus": {
       borderRadius: 4,
       //borderColor: '#80bdff',
@@ -100,7 +99,9 @@ export default function CustomTable({
   actions,
   handleLinkClick,
   handleActionClick,
+  id,
 }) {
+  const refs = useRef(0);
   const classes = useStyles();
   const [page, setPage] = React.useState(1);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
@@ -143,7 +144,7 @@ export default function CustomTable({
       nColumn = column;
       return (
         <TableCell
-          key={column.id}
+          key={column.id + id}
           align={column.align}
           style={{ minWidth: column.minWidth }}
         >
@@ -154,7 +155,7 @@ export default function CustomTable({
     if (actions) {
       nActions = (
         <TableCell
-          key={nColumn.id}
+          key={nColumn.id + id}
           align={nColumn.align}
           style={{ minWidth: nColumn.minWidth }}
         >
@@ -175,24 +176,39 @@ export default function CustomTable({
       .slice((page - 1) * rowsPerPage, (page - 1) * rowsPerPage + rowsPerPage)
       .map((row) => {
         return (
-          <StyledTableRow role="checkbox" tabIndex={-1} key={row.code + "Row"}>
+          <StyledTableRow role="checkbox" tabIndex={-1} key={row.id + "Row"}>
             {columns.map((column) => {
               nColumn = column;
               const value = row[column.id];
+
               return (
                 <TableCell
-                  key={column.id + "Cell"}
+                  key={column.id + "Cell" + id}
                   align={column.align}
-                  style={{ color: column.color(value) }}
+                  className={classes.cell}
+                  style={{
+                    color: column.color(value),
+                  }}
                 >
                   {column.type && column.type === "link" ? (
-                    <Link
+                    <div
                       color="inherit"
                       onClick={(e) => handleLinkClick(e, row)}
                       style={{ cursor: "pointer" }}
                     >
                       {value}
-                    </Link>
+                    </div>
+                  ) : column.type && column.type === "image" ? (
+                    <span
+                      style={{
+                        display: "inline-flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                      }}
+                    >
+                      <Avatar src={row.src && row.src} className="small" />{" "}
+                      <span className="px-4">{value}</span>
+                    </span>
                   ) : (
                     value
                   )}
@@ -204,7 +220,7 @@ export default function CustomTable({
                 {actions.map((action, i) => {
                   return (
                     <IconButton
-                      key={i + "Action"}
+                      key={i + "Action" + id}
                       aria-label="upload picture"
                       component="span"
                       onClick={(e) =>
@@ -234,6 +250,8 @@ export default function CustomTable({
         return <Icon.PlayCircle key={index} color="black" />;
       case "pause":
         return <Icon.PauseCircle key={index} color="black" />;
+      case "attachment":
+        return <Icon.Paperclip key={index} color="black" />;
     }
   };
   return (
@@ -248,11 +266,11 @@ export default function CustomTable({
       <Grid item>
         <Paper elevation={1}>
           <TableContainer className={classes.container}>
-            <Table aria-label="table">
+            <Table>
               <TableHead className={classes.table_head}>
                 {renderTableColumns()}
               </TableHead>
-              <TableBody>{renderTableRows()}</TableBody>
+              <TableBody ref={refs}>{renderTableRows()}</TableBody>
             </Table>
           </TableContainer>
         </Paper>

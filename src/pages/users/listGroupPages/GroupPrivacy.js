@@ -3,7 +3,7 @@ import ButtonToggleInput from "../../../components/buttonToggleInput/ButtonToggl
 import Button from "../../../components/button/Button";
 import InputDropdown from "../../../components/inputDropdown/InputDropdown";
 
-const Privacy = () => {
+const GroupPrivacy = () => {
   return (
     <div>
       <div className="intro-y box py-4">
@@ -91,4 +91,4 @@ const Privacy = () => {
     </div>
   );
 };
-export default Privacy;
+export default GroupPrivacy;

@@ -4,7 +4,7 @@ import Card from "../../../components/card/Card";
 import Button from "../../../components/button/Button";
 import InputField from "../../../components/inputField/InputField";
 
-export default function Account() {
+export default function GroupAccount() {
   return (
     <div className="">
       <div class="intro-y tab-content mt-5">

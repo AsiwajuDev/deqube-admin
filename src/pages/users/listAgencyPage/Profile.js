@@ -17,7 +17,7 @@ export default function Profile() {
               <div className="w-full py-3 capitalize text-xl text-black">
                 Members
               </div>
-              <CustomTable pagination pagerows />
+              {/* <CustomTable pagination pagerows /> */}
             </div>
             <div>
               <h4 className="uppercase">bio</h4>

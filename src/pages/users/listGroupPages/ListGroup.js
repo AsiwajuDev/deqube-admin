@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import * as Icon from "react-feather";
 
 import ProfileCard from "../../../components/profileCard/ProfileCard";
-import Account from "../listGroupPages/Account";
-import Profile from "./Profile";
-import Privacy from "./Privacy";
-import Activity from "./Activity";
-import Membership from "./Membership";
-import Extras from "./Extras";
+import Account from "./GroupAccount";
+import Profile from "./GroupProfile";
+import Privacy from "./GroupPrivacy";
+import Activity from "./GroupActivity";
+import Membership from "./GroupMembership";
+import Extras from "./GroupExtras";
 
 import Button from "../../../components/button/Button";
 import CustomBreadcrumb from "../../../components/breadcrumb/CustomBreadcrumb";
@@ -18,7 +18,7 @@ const data = {
   links: [
     {
       label: "List Group",
-      url: "/users/list-group",
+      url: "/users/list-groups",
     },
   ],
 };
