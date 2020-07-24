@@ -7,10 +7,21 @@ import Profile from "../../components/profileCardWithoutTab/Profile";
 import InputField from "../../components/inputField/InputField";
 import InputDropdown from "../../components/inputDropdown/InputDropdown";
 import InputTextArea from "../../components/inputTextArea/InputTextArea";
+import CustomBreadcrumb from "../../components/breadcrumb/CustomBreadcrumb";
 
 export default function EventDetails() {
+  const data = {
+    start: "Events",
+    links: [
+      {
+        label: "List Events",
+        url: "/events/list-events",
+      },
+    ],
+  };
   return (
     <div>
+      <CustomBreadcrumb data={data} />
       <div className="flex justify-between">
         <Link
           to="/system-ads"

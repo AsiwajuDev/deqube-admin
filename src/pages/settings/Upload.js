@@ -3,10 +3,22 @@ import ButtonToggleInput from "../../components/buttonToggleInput/ButtonToggleIn
 import Button from "../../components/button/Button";
 import InputField from "../../components/inputField/InputField";
 import InputDropdown from "../../components/inputDropdown/InputDropdown";
+import CustomBreadcrumb from "../../components/breadcrumb/CustomBreadcrumb";
+
+const data = {
+  start: "Settings",
+  links: [
+    {
+      label: "Upload Settings",
+      url: "/settings/upload-settings",
+    },
+  ],
+};
 
 export default function Upload() {
   return (
     <div>
+      <CustomBreadcrumb data={data} />
       <div className="intro-y box py-10 px-10 sm:py-16 mt-5">
         <div className="mt-8">
           <div>

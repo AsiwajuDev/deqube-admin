@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "../../components/card/Card";
 import BarChart from "../../components/barChart/BarChart";
+import CustomBreadcrumb from "../../components/breadcrumb/CustomBreadcrumb";
 
 const Earnings = () => {
   const data = [
@@ -23,8 +24,19 @@ const Earnings = () => {
     },
   };
 
+  const datas = {
+    start: "Pro Packages",
+    links: [
+      {
+        label: "Earnings",
+        url: "/package/earnings",
+      },
+    ],
+  };
+
   return (
     <div>
+      <CustomBreadcrumb data={datas} />
       <div class="col-span-12 mt-8">
         <div class="grid grid-cols-6 gap-6 mt-5">
           <Card cardTitle="116,000" cardBody="Total Earnings" />

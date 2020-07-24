@@ -1,10 +1,22 @@
 import React from "react";
 import Button from "../../components/button/Button";
 import ButtonToggleInput from "../../components/buttonToggleInput/ButtonToggleInput";
+import CustomBreadcrumb from "../../components/breadcrumb/CustomBreadcrumb";
+
+const data = {
+  start: "Settings",
+  links: [
+    {
+      label: "Email Notification",
+      url: "/settings/notification-settings",
+    },
+  ],
+};
 
 export default function EmailNotification() {
   return (
     <div>
+      <CustomBreadcrumb data={data} />
       <div className="intro-y box px-16 sm:py-10 my-5">
         <div className="my-8">
           <ButtonToggleInput

@@ -3,10 +3,22 @@ import Card from "../../components/card/Card";
 import ButtonToggleInput from "../../components/buttonToggleInput/ButtonToggleInput";
 import InputField from "../../components/inputField/InputField";
 import Button from "../../components/button/Button";
+import CustomBreadcrumb from "../../components/breadcrumb/CustomBreadcrumb";
+
+const data = {
+  start: "Qubes",
+  links: [
+    {
+      label: "Qubes Point",
+      url: "/qubes/points",
+    },
+  ],
+};
 
 const Points = () => {
   return (
     <div>
+      <CustomBreadcrumb data={data} />
       <div className="intro-y box py-3 px-10 sm:py-8 mt-5 mb-5">
         <div className="pl-4">
           <ButtonToggleInput

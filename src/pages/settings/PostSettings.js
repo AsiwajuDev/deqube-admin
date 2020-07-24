@@ -4,10 +4,22 @@ import ButtonToggleInput from "../../components/buttonToggleInput/ButtonToggleIn
 import Button from "../../components/button/Button";
 import InputField from "../../components/inputField/InputField";
 import InputDropdown from "../../components/inputDropdown/InputDropdown";
+import CustomBreadcrumb from "../../components/breadcrumb/CustomBreadcrumb";
+
+const data = {
+  start: "Settings",
+  links: [
+    {
+      label: "Post Settings",
+      url: "/settings/post-settings",
+    },
+  ],
+};
 
 const PostSettings = () => {
   return (
     <div>
+      <CustomBreadcrumb data={data} />
       <div className="intro-y box px-16 sm:py-10 my-5">
         <div className="my-8">
           <ButtonToggleInput

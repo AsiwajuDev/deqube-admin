@@ -2,10 +2,22 @@ import React from "react";
 import ButtonToggleInput from "../../components/buttonToggleInput/ButtonToggleInput";
 import InputField from "../../components/inputField/InputField";
 import Button from "../../components/button/Button";
+import CustomBreadcrumb from "../../components/breadcrumb/CustomBreadcrumb";
+
+const data = {
+  start: "Settings",
+  links: [
+    {
+      label: "Payment Settings",
+      url: "/settings/payment-settings",
+    },
+  ],
+};
 
 const Payment = () => {
   return (
     <div>
+      <CustomBreadcrumb data={data} />
       <div className="intro-y box py-10 px-10 sm:py-16 mt-3">
         <div className="m-8">
           <ButtonToggleInput

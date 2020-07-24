@@ -3,10 +3,22 @@ import BannerInfo from "../../components/bannerInfo/BannerInfo";
 import ButtonToggleInput from "../../components/buttonToggleInput/ButtonToggleInput";
 import InputField from "../../components/inputField/InputField";
 import Button from "../../components/button/Button";
+import CustomBreadcrumb from "../../components/breadcrumb/CustomBreadcrumb";
+
+const data = {
+  start: "Settings",
+  links: [
+    {
+      label: "Registration Settings",
+      url: "/settings/registration-settings",
+    },
+  ],
+};
 
 const Registration = () => {
   return (
     <div>
+      <CustomBreadcrumb data={data} />
       <div className="intro-y box py-10 px-10 sm:py-16 mt-5">
         <div className="mb-16">
           <BannerInfo

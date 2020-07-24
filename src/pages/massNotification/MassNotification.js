@@ -3,10 +3,15 @@ import Button from "../../components/button/Button";
 import BannerInfo from "../../components/bannerInfo/BannerInfo";
 import InputField from "../../components/inputField/InputField";
 import InputTextArea from "../../components/inputTextArea/InputTextArea";
+import CustomBreadcrumb from "../../components/breadcrumb/CustomBreadcrumb";
 
 export default function MassNotification() {
   return (
     <div>
+      <div className="top-bar text-lg text-gray-600 mt-1">
+        Mass Notification
+      </div>
+      <hr className="mb-3" />
       <div className="intro-y col-span-12 flex items-center justify-center sm:justify-end mb-8">
         <Button
           className="bg-red-700 text-white font-bold py-2 px-4 rounded"

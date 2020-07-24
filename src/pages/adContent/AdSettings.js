@@ -3,22 +3,22 @@ import React from "react";
 import ButtonToggleInput from "../../components/buttonToggleInput/ButtonToggleInput";
 import InputField from "../../components/inputField/InputField";
 import Button from "../../components/button/Button";
-// import CustomBreadcrumb from "../../components/breadcrumb/CustomBreadcrumb";
+import CustomBreadcrumb from "../../components/breadcrumb/CustomBreadcrumb";
 
-// const data = {
-//   start: "Ads",
-//   links: [
-//     {
-//       label: "Ad Settings",
-//       url: "/ads/ads-settings",
-//     },
-//   ],
-// };
+const data = {
+  start: "Ads",
+  links: [
+    {
+      label: "Ad Settings",
+      url: "/ads/ads-settings",
+    },
+  ],
+};
 
 const AdSettings = () => {
   return (
     <div>
-      {/* <CustomBreadcrumb data={data} /> */}
+      <CustomBreadcrumb data={data} />
       <div className="mt-6">
         <div className="pl-4">
           <ButtonToggleInput

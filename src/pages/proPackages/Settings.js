@@ -5,10 +5,21 @@ import * as Icon from "react-feather";
 import Button from "../../components/button/Button";
 import ToggleButton from "../../components/buttonToggleInput/ToggleButton";
 import ButtonToggleInput from "../../components/buttonToggleInput/ButtonToggleInput";
+import CustomBreadcrumb from "../../components/breadcrumb/CustomBreadcrumb";
 
 export default function Settings() {
+  const data = {
+    start: "Pro Package",
+    links: [
+      {
+        label: "Settings",
+        url: "/package/settings",
+      },
+    ],
+  };
   return (
     <div className="">
+      <CustomBreadcrumb data={data} />
       <div class="intro-y tab-content mt-5">
         <div class="tab-content__pane active" id="dashboard">
           <div className="pl-4">

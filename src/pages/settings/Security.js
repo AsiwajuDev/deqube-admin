@@ -3,10 +3,22 @@ import React from "react";
 import ButtonToggleInput from "../../components/buttonToggleInput/ButtonToggleInput";
 import Button from "../../components/button/Button";
 import InputField from "../../components/inputField/InputField";
+import CustomBreadcrumb from "../../components/breadcrumb/CustomBreadcrumb";
+
+const data = {
+  start: "Settings",
+  links: [
+    {
+      label: "Security Settings",
+      url: "/settings/security-settings",
+    },
+  ],
+};
 
 export default function Security() {
   return (
     <div>
+      <CustomBreadcrumb data={data} />
       <div className="intro-y box py-10 px-10 sm:py-16 mt-5">
         <div className="my-8">
           <ButtonToggleInput

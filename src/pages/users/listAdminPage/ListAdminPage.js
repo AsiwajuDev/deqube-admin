@@ -4,12 +4,23 @@ import * as Icon from "react-feather";
 
 import ProfileCard from "../../../components/profileCard/ProfileCard";
 import Account from "../listAdminPage/Account";
-
 import Button from "../../../components/button/Button";
+import CustomBreadcrumb from "../../../components/breadcrumb/CustomBreadcrumb";
+
+const data = {
+  start: "Users",
+  links: [
+    {
+      label: "List Admin",
+      url: "/users/list-admin",
+    },
+  ],
+};
 
 const ListAdminPage = () => {
   return (
     <div>
+      <CustomBreadcrumb data={data} />
       <div className="flex justify-between">
         <Link
           to="/system-ads"

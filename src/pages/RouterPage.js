@@ -30,7 +30,6 @@ import {
   SystemAds,
   AdSettings,
   CreateSystemAds,
-  EditUserAds,
 } from "./adContent/Index";
 import Posts from "./posts/Posts";
 import { Reaction, AddReaction } from "./reaction/Index";
@@ -40,10 +39,8 @@ import Directory from "./directory/Directory";
 import GarbageCollector from "./garbageCollector/GarbageCollector";
 import ListPage from "./users/listPage/ListPage";
 import ListGroup from "./users/listGroupPages/ListGroup";
-import ListAdminPage from "./users/listAdminPage/ListAdminPage";
-import ListAgencyPage from "./users/listAgencyPage/ListAgencyPage";
 
-import { ListEvents, EventCategory, EventDetails } from "./events/Index";
+import { ListEvents, EventCategory } from "./events/Index";
 import { CoDEarnings, CoDSettings, UserCoD } from "./contentOnDemand/Index";
 import { Points, Payments } from "./qubes/Index";
 import Reports from "./reports/Reports";
@@ -57,17 +54,14 @@ const RouterPage = () => {
     <div>
       {/* Dashboard Route */}
       <Route path="/dashboard" name="dashboard" component={Dashboard} />
-
       {/* Direcotry Route */}
       <Route path="/directory" name="directory" component={Directory} />
-
       {/* Settings Route */}
       <Route
         exact
         path="/settings"
         render={() => <Redirect to="/settings/general-settings" />}
       />
-
       <Route
         path="/settings"
         render={({ match: { url } }) => (
@@ -120,14 +114,10 @@ const RouterPage = () => {
           </>
         )}
       />
-
       {/* Users Route */}
       <Route path="/user" name="user" component={ListUser} />
       <Route path="/page" name="page" component={ListPage} />
       <Route path="/group" name="group" component={ListGroup} />
-      <Route path="/agency" name="agency" component={ListAgencyPage} />
-      <Route path="/admin" name="admin" component={ListAdminPage} />
-
       <Route
         exact
         path="/users"
@@ -171,7 +161,6 @@ const RouterPage = () => {
           </>
         )}
       />
-
       {/* Posts */}
       <Route path="/posts" name="posts" component={Posts} />
       {/* Events */}
@@ -179,11 +168,6 @@ const RouterPage = () => {
         exact
         path="/events"
         render={() => <Redirect to="/events/list-events" />}
-      />
-      <Route
-        path="/event-details"
-        name="event-details"
-        component={EventDetails}
       />
       <Route
         path="/events"
@@ -194,7 +178,6 @@ const RouterPage = () => {
           </>
         )}
       />
-
       {/*Ads Route  */}
       <Route
         exact
@@ -211,16 +194,10 @@ const RouterPage = () => {
           </>
         )}
       />
-
       <Route
-        path="/ads/create-system-ads"
+        path="/create-system-ads"
         name="create-system-ads"
         component={CreateSystemAds}
-      />
-      <Route
-        path="/ads/edit-user-ads"
-        name="edit-user-ads"
-        component={EditUserAds}
       />
       {/*CoD Route  */}
       <Route
@@ -238,23 +215,7 @@ const RouterPage = () => {
           </>
         )}
       />
-      {/*Qubes Route  */}
-      <Route
-        exact
-        path="/qubes"
-        render={() => <Redirect to="/qubes/points" />}
-      />
-      <Route
-        path="/qubes"
-        render={({ match: { url } }) => (
-          <>
-            <Route path={`${url}/points`} component={Points} exact />
-            <Route path={`${url}/qube-payments`} component={Payments} />
-          </>
-        )}
-      />
-
-      {/*Qubes Route  */}
+      {/* Pro Package route */}{" "}
       <Route
         exact
         path="/package"
@@ -270,7 +231,21 @@ const RouterPage = () => {
           </>
         )}
       />
-
+      {/*Quibs Route  */}
+      <Route
+        exact
+        path="/qubes"
+        render={() => <Redirect to="/qubes/points" />}
+      />
+      <Route
+        path="/qubes"
+        render={({ match: { url } }) => (
+          <>
+            <Route path={`${url}/points`} component={Points} exact />
+            <Route path={`${url}/qube-payments`} component={Payments} />
+          </>
+        )}
+      />
       {/* Report */}
       <Route path="/reports" component={Reports} />
       {/* Verification */}
@@ -278,21 +253,11 @@ const RouterPage = () => {
       {/* Verification */}
       <Route path="/mass-notification" component={MassNotification} />
       {/* Reaction */}
-      <Route path="/reactions/reaction" component={Reaction} />
-      <Route
-        path="/reactions/add-reaction"
-        name="add-reaction"
-        component={AddReaction}
-      />
-
+      <Route path="/reactions" component={Reaction} />
+      <Route path="/add-reaction" name="add-reaction" component={AddReaction} />
       {/* Emojis */}
-      <Route path="/emojis/emojis" name="emojis" component={Emojis} />
-      <Route
-        path="/emojis/add-emojis"
-        name="add-emojis"
-        component={AddEmojis}
-      />
-
+      <Route path="/emojis" name="emojis" component={Emojis} />
+      <Route path="/add-emojis" name="add-emojis" component={AddEmojis} />
       {/* Follow Suggest */}
       <Route
         path="/follow-suggest"

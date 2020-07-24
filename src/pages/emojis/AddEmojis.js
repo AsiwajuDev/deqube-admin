@@ -3,10 +3,21 @@ import React from "react";
 import Button from "../../components/button/Button";
 import BannerInfo from "../../components/bannerInfo/BannerInfo";
 import InputField from "../../components/inputField/InputField";
+import CustomBreadcrumb from "../../components/breadcrumb/CustomBreadcrumb";
 
 const AddEmojis = () => {
+  const data = {
+    start: "Verification",
+    links: [
+      {
+        label: "Verification",
+        url: "/verification",
+      },
+    ],
+  };
   return (
     <div>
+      <CustomBreadcrumb data={data} />
       <div className="intro-y col-span-12 flex items-center justify-center sm:justify-end mb-8">
         <Button
           className="bg-red-700 text-white font-bold py-2 px-4 rounded"

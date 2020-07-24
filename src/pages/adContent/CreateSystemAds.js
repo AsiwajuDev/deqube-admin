@@ -5,10 +5,22 @@ import * as Icon from "react-feather";
 import InputField from "../../components/inputField/InputField";
 import InputTextArea from "../../components/inputTextArea/InputTextArea";
 import Button from "../../components/button/Button";
+import CustomBreadcrumb from "../../components/breadcrumb/CustomBreadcrumb";
+
+const data = {
+  start: "Ads",
+  links: [
+    {
+      label: "Create System Ads",
+      url: "/ads/system-ads/create-system-ads",
+    },
+  ],
+};
 
 const CreateSystemAds = () => {
   return (
     <div>
+      <CustomBreadcrumb data={data} />
       <Link
         to="/system-ads"
         className="text-red-700 flex mb-4 hover:text-red-700"

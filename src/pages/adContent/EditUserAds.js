@@ -8,10 +8,22 @@ import Button from "../../components/button/Button";
 import InputField from "../../components/inputField/InputField";
 import InputTextArea from "../../components/inputTextArea/InputTextArea";
 import TextField from "../../components/TextField/TextField";
+import CustomBreadcrumb from "../../components/breadcrumb/CustomBreadcrumb";
+
+const data = {
+  start: "Ads",
+  links: [
+    {
+      label: "User Ads",
+      url: "/ads/user-ads/edit-user-ads",
+    },
+  ],
+};
 
 export default function EditUserAds({ userImage }) {
   return (
     <div>
+      <CustomBreadcrumb data={data} />
       <div className="flex justify-between">
         <Link
           to="/system-ads"

@@ -13,42 +13,13 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import InputBase from "@material-ui/core/InputBase";
-//import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import IconButton from "@material-ui/core/IconButton";
 import Grid from "@material-ui/core/Grid";
+import Link from "@material-ui/core/Link";
 import * as Icon from "react-feather";
 
 import Search from "./Search";
 
-const columns = [
-  { id: "name", label: "Name", minWidth: 170 },
-  { id: "code", label: "ISO\u00a0Code", minWidth: 100 },
-  {
-    id: "population",
-    label: "Population",
-    minWidth: 170,
-    align: "right",
-    format: (value) => value.toLocaleString("en-US"),
-  },
-  {
-    id: "size",
-    label: "Size\u00a0(km\u00b2)",
-    minWidth: 170,
-    align: "right",
-    format: (value) => value.toLocaleString("en-US"),
-  },
-  {
-    id: "density",
-    label: "Density",
-    minWidth: 170,
-    align: "right",
-    format: (value) => value.toFixed(2),
-  },
-];
-
-function createData(name, code, population, size) {
-  const density = population / size;
-  return { name, code, population, size, density };
-}
 const iconComponent = (props) => {
   return (
     <Icon.ChevronDown
@@ -58,48 +29,12 @@ const iconComponent = (props) => {
   );
 };
 
-const rows = [
-  createData("India", "IN", 1324171354, 3287263),
-  createData("China", "CN", 1403500365, 9596961),
-  createData("Italy", "IT", 60483973, 301340),
-  createData("United States", "US", 327167434, 9833520),
-  createData("Canada", "CA", 37602103, 9984670),
-  createData("Australia", "AU", 25475400, 7692024),
-  createData("Germany", "DE", 83019200, 357578),
-  createData("Ireland", "IE", 4857000, 70273),
-  createData("Mexico", "MX", 126577691, 1972550),
-  createData("Japan", "JP", 126317000, 377973),
-  createData("France", "FR", 67022000, 640679),
-  createData("United Kingdom", "GB", 67545757, 242495),
-  createData("Russia", "RU", 146793744, 17098246),
-  createData("Nigeria", "NG", 200962417, 923768),
-  createData("Brazil", "BR", 210147125, 8515767),
-  createData("India2", "IN2", 1324171354, 3287263),
-  createData("China2", "CN2", 1403500365, 9596961),
-  createData("Italy2", "IT2", 60483973, 301340),
-  createData("United States2", "US2", 327167434, 9833520),
-  createData("Canada2", "CA2", 37602103, 9984670),
-  createData("Australia2", "AU2", 25475400, 7692024),
-  createData("Germany2", "DE2", 83019200, 357578),
-  createData("Ireland2", "IE2", 4857000, 70273),
-  createData("Mexico2", "MX2", 126577691, 1972550),
-  createData("Japan2", "JP2", 126317000, 377973),
-  createData("France2", "FR2", 67022000, 640679),
-  createData("United Kingdom2", "GB2", 67545757, 242495),
-  createData("Russia2", "RU2", 146793744, 17098246),
-  createData("Nigeria2", "NG2", 200962417, 923768),
-  createData("Brazil2", "BR2", 210147125, 8515767),
-];
-
 const useStyles = makeStyles({
   root: {
     width: "100%",
   },
   container: {
-    maxHeight: 600,
-  },
-  table_head: {
-    //borderBottom: '2px solid gray'
+    maxHeight: 440,
   },
   paginationContainer: {
     marginTop: 20,
@@ -156,7 +91,16 @@ const BootstrapInput = withStyles((theme) => ({
   },
 }))(InputBase);
 
-export default function CustomTable({ pagination, search, pagerows }) {
+export default function CustomTable({
+  pagination,
+  search,
+  pagerows,
+  rows,
+  columns,
+  actions,
+  handleLinkClick,
+  handleActionClick,
+}) {
   const classes = useStyles();
   const [page, setPage] = React.useState(1);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
@@ -167,7 +111,6 @@ export default function CustomTable({ pagination, search, pagerows }) {
   const handleChange = (event, value) => {
     setPage(value);
   };
-
   const handleChangeRowsPerPage = (event) => {
     setPage(1);
     setRowsPerPage(+event.target.value);
@@ -191,8 +134,107 @@ export default function CustomTable({ pagination, search, pagerows }) {
     }
   };
   const handleFilterChange = (event) => {
-    console.log("Column: " + event.target.value);
     setFilter(event.target.value);
+  };
+  const renderTableColumns = () => {
+    let nColumn = null;
+    let nActions = null;
+    const nColumns = columns.map((column) => {
+      nColumn = column;
+      return (
+        <TableCell
+          key={column.id}
+          align={column.align}
+          style={{ minWidth: column.minWidth }}
+        >
+          {column.label}
+        </TableCell>
+      );
+    });
+    if (actions) {
+      nActions = (
+        <TableCell
+          key={nColumn.id}
+          align={nColumn.align}
+          style={{ minWidth: nColumn.minWidth }}
+        >
+          Actions
+        </TableCell>
+      );
+    }
+    return (
+      <TableRow>
+        {nColumns}
+        {nActions}
+      </TableRow>
+    );
+  };
+  const renderTableRows = () => {
+    let nColumn = null;
+    return items
+      .slice((page - 1) * rowsPerPage, (page - 1) * rowsPerPage + rowsPerPage)
+      .map((row) => {
+        return (
+          <StyledTableRow role="checkbox" tabIndex={-1} key={row.code + "Row"}>
+            {columns.map((column) => {
+              nColumn = column;
+              const value = row[column.id];
+              return (
+                <TableCell
+                  key={column.id + "Cell"}
+                  align={column.align}
+                  style={{ color: column.color(value) }}
+                >
+                  {column.type && column.type === "link" ? (
+                    <Link
+                      color="inherit"
+                      onClick={(e) => handleLinkClick(e, row)}
+                      style={{ cursor: "pointer" }}
+                    >
+                      {value}
+                    </Link>
+                  ) : (
+                    value
+                  )}
+                </TableCell>
+              );
+            })}
+            {actions ? (
+              <TableCell key={nColumn.id + "Cell"} align={nColumn.align}>
+                {actions.map((action, i) => {
+                  return (
+                    <IconButton
+                      key={i + "Action"}
+                      aria-label="upload picture"
+                      component="span"
+                      onClick={(e) =>
+                        handleActionClick(e, { type: action, ...row })
+                      }
+                    >
+                      {getActionIconType(action, i)}
+                    </IconButton>
+                  );
+                })}
+              </TableCell>
+            ) : (
+              ""
+            )}
+          </StyledTableRow>
+        );
+      });
+  };
+
+  const getActionIconType = (type, index) => {
+    switch (type) {
+      case "delete":
+        return <Icon.Trash2 key={index} color="red" />;
+      case "edit":
+        return <Icon.Edit key={index} color="black" />;
+      case "play":
+        return <Icon.PlayCircle key={index} color="black" />;
+      case "pause":
+        return <Icon.PauseCircle key={index} color="black" />;
+    }
   };
   return (
     <Grid conatiner>
@@ -203,54 +245,14 @@ export default function CustomTable({ pagination, search, pagerows }) {
           </Grid>
         </Grid>
       </Grid>
-
       <Grid item>
         <Paper elevation={1}>
           <TableContainer className={classes.container}>
             <Table aria-label="table">
               <TableHead className={classes.table_head}>
-                <TableRow>
-                  {columns.map((column) => (
-                    <TableCell
-                      key={column.id}
-                      align={column.align}
-                      style={{ minWidth: column.minWidth }}
-                    >
-                      {column.label}
-                    </TableCell>
-                  ))}
-                </TableRow>
+                {renderTableColumns()}
               </TableHead>
-              <TableBody>
-                {items
-                  .slice(
-                    (page - 1) * rowsPerPage,
-                    (page - 1) * rowsPerPage + rowsPerPage
-                  )
-                  .map((row) => {
-                    return (
-                      <StyledTableRow
-                        role="checkbox"
-                        tabIndex={-1}
-                        key={row.code + "Row"}
-                      >
-                        {columns.map((column) => {
-                          const value = row[column.id];
-                          return (
-                            <TableCell
-                              key={column.id + "Cell"}
-                              align={column.align}
-                            >
-                              {column.format && typeof value === "number"
-                                ? column.format(value)
-                                : value}
-                            </TableCell>
-                          );
-                        })}
-                      </StyledTableRow>
-                    );
-                  })}
-              </TableBody>
+              <TableBody>{renderTableRows()}</TableBody>
             </Table>
           </TableContainer>
         </Paper>

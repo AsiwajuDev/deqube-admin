@@ -1,5 +1,4 @@
 import React from "react";
-import { Bar } from "react-chartjs-2";
 
 import Card from "../../components/card/Card";
 import BarChart from "../../components/barChart/BarChart";
@@ -24,34 +23,10 @@ const Dashboard = () => {
       position: "center",
     },
   };
-  // const data = {
-  //   labels: [
-  //     "January",
-  //     "February",
-  //     "March",
-  //     "April",
-  //     "May",
-  //     "June",
-  //     "July",
-  //     "August",
-  //     "September",
-  //     "July",
-  //     "August",
-  //     "September",
-  //   ],
-  //   datasets: [
-  //     {
-  //       label: "Rainfall",
-  //       backgroundColor: "rgba(75,192,192,1)",
-  //       borderColor: "rgba(0,0,0,1)",
-  //       borderWidth: 0,
-  //       data: [65, 59, 80, 81, 56],
-  //     },
-  //   ],
-  // };
-
   return (
     <div>
+      <div className="top-bar text-lg text-gray-600 mt-1">Dashboard</div>
+      <hr className="mb-3" />
       <BarChart data={data} options={options} />
       {/* <Bar data={data} /> */}
       <div class="col-span-12 mt-8">
