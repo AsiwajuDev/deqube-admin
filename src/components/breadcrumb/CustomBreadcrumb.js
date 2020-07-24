@@ -6,24 +6,14 @@ import Link from "@material-ui/core/Link";
 //
 import * as Icon from "react-feather";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    "& > * + *": {
-      marginTop: theme.spacing(2),
-    },
-  },
-}));
-
 function handleClick(event) {
   event.preventDefault();
   console.info("You clicked a breadcrumb.");
 }
 
 export default function CustomBreadcrumb({ data }) {
-  const classes = useStyles();
-
   return (
-    <div className="top-bar text-lg text-gray-600 mt-1">
+    <div className="top-bar text-base text-gray-600 mb-3">
       <Breadcrumbs
         separator={<Icon.ChevronRight fontSize="small" />}
         aria-label="breadcrumb"
