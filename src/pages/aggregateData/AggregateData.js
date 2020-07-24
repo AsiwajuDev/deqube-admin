@@ -11,7 +11,7 @@ export default function AggregateData() {
           value="Mark All As Safe"
         />
       </div>
-      <div style={{ marginTop: "50px" }}>
+      <div className="">
         <CustomTable pagination search pagerows />
       </div>
     </div>
