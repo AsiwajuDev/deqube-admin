@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 import Card from "../../components/card/Card";
 import CustomTable from "../../components/table/CustomTable";
@@ -9,12 +9,12 @@ import Button from "../../components/button/Button";
 const Reports = () => {
   const history = useHistory();
   const onLinkClicked = (e, payload) => {
-    console.log(JSON.stringify(payload));
-    history.push("/users/list-users/user");
+    // console.log(JSON.stringify(payload));
+    // history.push("/users/list-users/user");
   };
 
   const onActionClicked = (e, payload) => {
-    alert(JSON.stringify(payload));
+    // alert(JSON.stringify(payload));
   };
   return (
     <div>
@@ -39,103 +39,119 @@ const Reports = () => {
           columns={[
             { id: "id", label: "ID", minWidth: 170, color: (value) => "blue" },
             {
-              id: "name",
-              label: "Name",
+              id: "node",
+              label: "Node",
               minWidth: 100,
-              color: (value) => "blue",
+              color: (value) => "green",
               type: "link",
+              align: "center",
             },
             {
-              id: "username",
-              label: "Username",
+              id: "type",
+              label: "Type",
               minWidth: 170,
               align: "center",
               color: (value) => "blue",
             },
             {
-              id: "joined",
-              label: "Joined",
-              minWidth: 170,
+              id: "reported",
+              label: "Reported By",
+              minWidth: 200,
+              color: (value) => "blue",
+              align: "left",
+              type: "image",
+            },
+            {
+              id: "time",
+              label: "Time",
+              minWidth: 70,
               align: "center",
               format: (value) => value.toLocaleString("en-US"),
               color: (value) => "blue",
             },
-            {
-              id: "status",
-              label: "Status",
-              minWidth: 170,
-              align: "center",
-              color: (value) =>
-                value.startsWith("Not")
-                  ? "red"
-                  : value.startsWith("Waiting")
-                  ? "black"
-                  : "green",
-            },
           ]}
           rows={[
             {
-              id: 1,
-              name: "India",
-              username: "IN",
-              joined: 1324171354,
-              status: "Published",
+              id: 111,
+              node: (
+                <Link className="bg-red-700 text-white rounded-full px-6 py-2">
+                  View Post
+                </Link>
+              ),
+              reported: "Sarah Doe",
+              type: "Post",
+              time: "14 Nov, 2019",
+              link: "View",
+              src:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSL9gD35eD_Df-JgpsplnHFyXNhb8r23madbg&usqp=CAU",
             },
             {
-              id: 2,
-              name: "India",
-              username: "IN",
-              joined: 1324171354,
-              status: "Published",
+              id: 111,
+              node: "DMW",
+              reported: "Sarah Doe",
+              type: "Post",
+              time: "14 Nov, 2019",
+              link: "View",
+              src:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSL9gD35eD_Df-JgpsplnHFyXNhb8r23madbg&usqp=CAU",
             },
             {
-              id: 3,
-              name: "China",
-              username: "CN",
-              joined: 1403500365,
-              status: "Not-Published",
+              id: 111,
+              node: (
+                <Link className="bg-red-700 text-white rounded-full px-6 py-2">
+                  View Post
+                </Link>
+              ),
+              reported: "Sarah Doe",
+              type: "Post",
+              time: "14 Nov, 2019",
+              link: "View",
+              src:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSL9gD35eD_Df-JgpsplnHFyXNhb8r23madbg&usqp=CAU",
             },
             {
-              id: 4,
-              name: "Italy",
-              username: "IT",
-              joined: 60483973,
-              status: "Published",
+              id: 111,
+              node: "DMW",
+              reported: "Sarah Doe",
+              type: "Post",
+              time: "14 Nov, 2019",
+              link: "View",
+              src:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSL9gD35eD_Df-JgpsplnHFyXNhb8r23madbg&usqp=CAU",
             },
             {
-              id: 5,
-              name: "United States",
-              username: "US",
-              joined: 327167434,
-              status: "Published",
+              id: 111,
+              node: "DMW",
+              reported: "Sarah Doe",
+              type: "Post",
+              time: "14 Nov, 2019",
+              link: "View",
+              src:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSL9gD35eD_Df-JgpsplnHFyXNhb8r23madbg&usqp=CAU",
             },
             {
-              id: 6,
-              name: "Canada",
-              username: "CA",
-              joined: 37602103,
-              status: "Published",
+              id: 111,
+              node: "DMW",
+              reported: "Sarah Doe",
+              type: "Post",
+              time: "14 Nov, 2019",
+              link: "View",
+              src:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSL9gD35eD_Df-JgpsplnHFyXNhb8r23madbg&usqp=CAU",
             },
             {
-              id: 7,
-              name: "Australia",
-              username: "AU",
-              joined: 25475400,
-              status: "Waiting",
-            },
-            {
-              id: 8,
-              name: "Germany",
-              username: "DE",
-              joined: 83019200,
-              status: "Not-Published",
-            },
-            {
-              id: 9,
-              name: "Ireland",
-              username: "IE",
-              joined: 4857000,
-              status: "Published",
+              id: 111,
+              node: (
+                <Link className="bg-red-700 text-white rounded-full px-6 py-2">
+                  View Post
+                </Link>
+              ),
+              reported: "Sarah Doe",
+              type: "Post",
+              time: "14 Nov, 2019",
+              link: "View",
+              src:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSL9gD35eD_Df-JgpsplnHFyXNhb8r23madbg&usqp=CAU",
             },
           ]}
           actions={["edit", "delete"]}

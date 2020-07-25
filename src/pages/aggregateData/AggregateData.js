@@ -1,20 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import CustomTable from "../../components/table/CustomTable";
 import Button from "../../components/button/Button";
+import VerifyModal from "../../components/verifyModal/VerifyModal";
 
 export default function AggregateData() {
   const history = useHistory();
+  let [show, setShow] = useState(false);
   const onLinkClicked = (e, payload) => {
     console.log(JSON.stringify(payload));
     history.push("/users/list-users/user");
   };
 
+  const onClose = (status) => {
+    setShow(!show);
+  };
   const onActionClicked = (e, payload) => {
-    alert(JSON.stringify(payload));
+    switch (payload.type) {
+      case "attachment":
+        setShow(true);
+        break;
+      case "cancel":
+        setShow(false);
+      case "correct":
+      //To do
+    }
   };
   return (
     <div>
+      <VerifyModal show={show} handleClose={onClose} />
       <div className="top-bar text-lg text-gray-600 mt-1">Aggregate Data</div>
       <hr className="mb-3" />
       <div className="intro-y col-span-12 flex items-center justify-center sm:justify-end">
@@ -29,7 +43,7 @@ export default function AggregateData() {
           search
           pagerows
           columns={[
-            { id: "id", label: "ID", minWidth: 170, color: (value) => "blue" },
+            { id: "id", label: "ID", minWidth: 70, color: (value) => "blue" },
             {
               id: "name",
               label: "Name",
@@ -130,7 +144,7 @@ export default function AggregateData() {
               status: "Published",
             },
           ]}
-          actions={["edit", "delete"]}
+          actions={["correct", "close", "attachment"]}
           handleActionClick={onActionClicked}
           handleLinkClick={onLinkClicked}
         />

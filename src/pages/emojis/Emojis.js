@@ -1,11 +1,11 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
+import { Twemoji } from "react-emoji-render";
 
 import CustomTable from "../../components/table/CustomTable";
-import Button from "../../components/button/Button";
 import CustomBreadcrumb from "../../components/breadcrumb/CustomBreadcrumb";
 
-export default function Emojis() {
+export default function Emojis(props) {
   const history = useHistory();
   const onLinkClicked = (e, payload) => {
     console.log(JSON.stringify(payload));
@@ -24,6 +24,8 @@ export default function Emojis() {
       },
     ],
   };
+
+  // let pattern = props.id.pattern;
   return (
     <div>
       <CustomBreadcrumb data={data} />
@@ -35,7 +37,8 @@ export default function Emojis() {
           Add New Emoji
         </Link>
       </div>
-      <div style={{ marginTop: "50px" }}>
+
+      <div className="mt-10">
         <CustomTable
           pagination
           search
@@ -43,105 +46,85 @@ export default function Emojis() {
           columns={[
             { id: "id", label: "ID", minWidth: 170, color: (value) => "blue" },
             {
-              id: "name",
-              label: "Name",
+              id: "preview",
+              label: "Preview",
               minWidth: 100,
               color: (value) => "blue",
-              type: "link",
+              type: "emoji",
             },
             {
-              id: "username",
-              label: "Username",
+              id: "pattern",
+              label: "Pattern",
               minWidth: 170,
               align: "center",
               color: (value) => "blue",
             },
             {
-              id: "joined",
-              label: "Joined",
+              id: "class",
+              label: "Class",
               minWidth: 170,
               align: "center",
               format: (value) => value.toLocaleString("en-US"),
               color: (value) => "blue",
             },
-            {
-              id: "status",
-              label: "Status",
-              minWidth: 170,
-              align: "center",
-              color: (value) =>
-                value.startsWith("Not")
-                  ? "red"
-                  : value.startsWith("Waiting")
-                  ? "black"
-                  : "green",
-            },
           ]}
           rows={[
             {
-              id: 1,
-              name: "India",
-              username: "IN",
-              joined: 1324171354,
-              status: "Published",
+              id: 111,
+              preview: <Twemoji text=":)" />,
+              pattern: ":)",
+              class: "Laugh",
             },
             {
-              id: 2,
-              name: "India",
-              username: "IN",
-              joined: 1324171354,
-              status: "Published",
+              id: 322,
+              preview: <Twemoji text=":)" />,
+              pattern: ":)",
+              class: "Laugh",
             },
             {
-              id: 3,
-              name: "China",
-              username: "CN",
-              joined: 1403500365,
-              status: "Not-Published",
+              id: 351,
+              preview: <Twemoji text=":)" />,
+              pattern: ":)",
+              class: "Laugh",
             },
             {
-              id: 4,
-              name: "Italy",
-              username: "IT",
-              joined: 60483973,
-              status: "Published",
+              id: 111,
+              preview: <Twemoji text=":)" />,
+              pattern: ":)",
+              class: "Laugh",
             },
             {
-              id: 5,
-              name: "United States",
-              username: "US",
-              joined: 327167434,
-              status: "Published",
+              id: 351,
+              preview: <Twemoji text=":)" />,
+              pattern: ":)",
+              class: "Laugh",
             },
             {
-              id: 6,
-              name: "Canada",
-              username: "CA",
-              joined: 37602103,
-              status: "Published",
+              id: 322,
+              preview: <Twemoji text=":)" />,
+              pattern: ":)",
+              class: "Laugh",
             },
             {
-              id: 7,
-              name: "Australia",
-              username: "AU",
-              joined: 25475400,
-              status: "Waiting",
+              id: 111,
+              preview: <Twemoji text=":)" />,
+              pattern: ":)",
+              class: "Laugh",
             },
             {
-              id: 8,
-              name: "Germany",
-              username: "DE",
-              joined: 83019200,
-              status: "Not-Published",
+              id: 111,
+              preview: <Twemoji text=":)" />,
+              pattern: ":)",
+              class: "Laugh",
             },
             {
-              id: 9,
-              name: "Ireland",
-              username: "IE",
-              joined: 4857000,
-              status: "Published",
+              id: 111,
+              preview: <Twemoji text=":)" />,
+              pattern: ":)",
+              class: "Laugh",
             },
           ]}
+          withEmoji
           actions={["edit", "delete"]}
           handleActionClick={onActionClicked}
           handleLinkClick={onLinkClicked}

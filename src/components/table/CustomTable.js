@@ -16,6 +16,7 @@ import InputBase from "@material-ui/core/InputBase";
 import IconButton from "@material-ui/core/IconButton";
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
+import { Twemoji } from "react-emoji-render";
 import * as Icon from "react-feather";
 
 import Search from "./Search";
@@ -97,6 +98,7 @@ export default function CustomTable({
   handleLinkClick,
   handleActionClick,
   id,
+  withEmoji,
 }) {
   const refs = useRef(0);
   const classes = useStyles();
@@ -137,8 +139,10 @@ export default function CustomTable({
   const renderTableColumns = () => {
     let nColumn = null;
     let nActions = null;
+    let nEmoji = null;
     const nColumns = columns.map((column) => {
       nColumn = column;
+
       return (
         <TableCell
           key={column.id + id}
@@ -161,6 +165,17 @@ export default function CustomTable({
         </TableCell>
       );
     }
+    // if (withEmoji) {
+    //   nEmoji = (
+    //     <TableCell
+    //       key={nColumn.id + id}
+    //       align={nColumn.align}
+    //       style={{ minWidth: nColumn.minWidth }}
+    //     >
+    //       Preview
+    //     </TableCell>
+    //   );
+    // }
     return (
       <TableRow>
         {nColumns}
@@ -216,7 +231,11 @@ export default function CustomTable({
                       //   backgroundColor: column.backgroundColor(value),
                       // }}
                     >
-                      {value}
+                      {column.type && column.type === "emoji" ? (
+                        <Twemoji text=":)" />
+                      ) : (
+                        value
+                      )}
                     </div>
                   ) : (
                     value

@@ -1,29 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import Card from "../../components/card/Card";
 import CustomTable from "../../components/table/CustomTable";
 import Button from "../../components/button/Button";
+import VerifyModal from "../../components/verifyModal/VerifyModal";
 
 const Verification = () => {
   const history = useHistory();
+  let [show, setShow] = useState(false);
   const onLinkClicked = (e, payload) => {
-    console.log(JSON.stringify(payload));
-    history.push("/users/list-users/user");
+    // console.log(JSON.stringify(payload));
+    // history.push("/users/list-users/user");
   };
-
+  const onClose = (status) => {
+    setShow(!show);
+  };
   const onActionClicked = (e, payload) => {
-    alert(JSON.stringify(payload));
+    switch (payload.type) {
+      case "attachment":
+        setShow(true);
+        break;
+      case "cancel":
+        setShow(false);
+      case "correct":
+      //To do
+    }
   };
   return (
     <div>
+      <VerifyModal show={show} handleClose={onClose} />
       <div className="top-bar text-lg text-gray-600 mt-1">Verification</div>
       <hr className="mb-3" />
-      <div class="col-span-12 mt-8">
-        <div
-          className="intro-y col-span-12 flex items-center m-8 pr-16"
-          style={{ float: "right" }}
-        >
+      <div class="col-span-12 mt-4">
+        <div className="intro-y col-span-12 flex justify-end items-center">
           <Button
             className="bg-red-700 text-white font-bold py-2 px-4 rounded"
             value="Mark All As Save"
@@ -36,7 +46,7 @@ const Verification = () => {
           search
           pagerows
           columns={[
-            { id: "id", label: "ID", minWidth: 170, color: (value) => "blue" },
+            { id: "id", label: "ID", minWidth: 70, color: (value) => "blue" },
             {
               id: "name",
               label: "Name",
@@ -137,7 +147,7 @@ const Verification = () => {
               status: "Published",
             },
           ]}
-          actions={["edit", "delete"]}
+          actions={["correct", "close", "attachment"]}
           handleActionClick={onActionClicked}
           handleLinkClick={onLinkClicked}
         />

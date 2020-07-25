@@ -251,7 +251,7 @@ export const menuItems = [
     label: "Pro Packages",
     isActive: false,
     icon: <Icon.Briefcase />,
-    url: "/package",
+    url: "/package/settings",
     divider: false,
     subItems: [
       {
@@ -344,7 +344,7 @@ export const menuItems = [
     label: "Emojis",
     isActive: false,
     icon: <Icon.Smile />,
-    url: "/emojis/emojis",
+    url: "/emojis",
     divider: false,
     subItems: [],
   },
@@ -352,7 +352,7 @@ export const menuItems = [
     label: "Reactions",
     isActive: false,
     icon: <Icon.Target />,
-    url: "/reactions/reaction",
+    url: "/reactions",
     divider: true,
     subItems: [],
   },

@@ -262,12 +262,20 @@ const RouterPage = () => {
       {/* Verification */}
       <Route path="/mass-notification" component={MassNotification} />
       {/* Reaction */}
-      <Route path="/reactions" component={Reaction} />
-      <Route path="/add-reaction" name="add-reaction" component={AddReaction} />
+      <Route path="/reactions" component={Reaction} exact />
+      <Route
+        path="/reactions/add-reaction"
+        name="add-reaction"
+        component={AddReaction}
+      />
 
       {/* Emojis */}
-      <Route path="/emojis" name="emojis" component={Emojis} />
-      <Route path="/add-emojis" name="add-emojis" component={AddEmojis} />
+      <Route path="/emojis" name="emojis" component={Emojis} exact />
+      <Route
+        path="/emojis/add-emojis"
+        name="add-emojis"
+        component={AddEmojis}
+      />
 
       {/* Follow Suggest */}
       <Route
