@@ -2,8 +2,17 @@ import React from "react";
 import ToggleButton from "../../../components/buttonToggleInput/ToggleButton";
 import InputDropdown from "../../../components/inputDropdown/InputDropdown";
 import CustomTable from "../../../components/table/CustomTable";
+import { useHistory } from "react-router-dom";
 
 export default function Account() {
+  const history = useHistory;
+  const onLinkClicked = (e, payload) => {
+    console.log(JSON.stringify(payload));
+  };
+
+  const onActionClicked = (e, payload) => {
+    alert(JSON.stringify(payload));
+  };
   return (
     <div className="">
       <div class="intro-y tab-content mt-5">
@@ -119,7 +128,106 @@ export default function Account() {
             <div class="flex items-center py-3 border-b-2 border-gray-200">
               <h2 class="font-medium text-xl mr-auto">Members</h2>
             </div>
-            <CustomTable pagination search pagerows />
+            <CustomTable
+              pagination
+              pagerows
+              columns={[
+                {
+                  id: "id",
+                  label: "ID",
+                  minWidth: 50,
+                  color: (value) => "blue",
+                },
+                {
+                  id: "name",
+                  label: "Name",
+                  minWidth: 170,
+                  color: (value) => "blue",
+                  type: "link",
+                },
+                {
+                  id: "username",
+                  label: "Username",
+                  minWidth: 100,
+                  align: "center",
+                  color: (value) => "blue",
+                },
+                {
+                  id: "joined",
+                  label: "Joined",
+                  minWidth: 100,
+                  align: "center",
+                  format: (value) => value.toLocaleString("en-US"),
+                  color: (value) => "blue",
+                },
+                {
+                  id: "status",
+                  label: "Status",
+                  minWidth: 100,
+                  align: "center",
+                  color: (value) => (value === "Accepted" ? "green" : "gray"),
+                },
+                {
+                  id: "role",
+                  label: "Role",
+                  minWidth: 100,
+                  align: "center",
+                  color: (value) => "black",
+                },
+              ]}
+              rows={[
+                {
+                  id: 1,
+                  name: "Sarah Doe",
+                  username: "/sarahdoe",
+                  joined: "19/08/2020",
+                  status: "Accepted",
+                  role: "Founder",
+                },
+                {
+                  id: 2,
+                  name: "Sarah Doe",
+                  username: "/sarahdoe",
+                  joined: "19/08/2020",
+                  status: "Waiting",
+                  role: "Admin",
+                },
+                {
+                  id: 3,
+                  name: "Sarah Doe",
+                  username: "/sarahdoe",
+                  joined: "19/08/2020",
+                  status: "Accepted",
+                  role: "Founder",
+                },
+                {
+                  id: 4,
+                  name: "Sarah Doe",
+                  username: "/sarahdoe",
+                  joined: "19/08/2020",
+                  status: "Accepted",
+                  role: "Founder",
+                },
+                {
+                  id: 5,
+                  name: "Sarah Doe",
+                  username: "/sarahdoe",
+                  joined: "19/08/2020",
+                  status: "Accepted",
+                  role: "Founder",
+                },
+                {
+                  id: 6,
+                  name: "Sarah Doe",
+                  username: "/sarahdoe",
+                  joined: "19/08/2020",
+                  status: "Accepted",
+                  role: "Founder",
+                },
+              ]}
+              handleActionClick={onActionClicked}
+              handleLinkClick={onLinkClicked}
+            />
           </div>
         </div>
       </div>

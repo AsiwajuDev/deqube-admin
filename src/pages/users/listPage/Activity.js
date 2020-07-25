@@ -20,105 +20,120 @@ export default function Activity() {
           search
           pagerows
           columns={[
-            { id: "id", label: "ID", minWidth: 170, color: (value) => "blue" },
+            { id: "id", label: "ID", minWidth: 100, color: (value) => "blue" },
             {
-              id: "name",
-              label: "Name",
-              minWidth: 100,
+              id: "author",
+              label: "Author",
+              minWidth: 200,
               color: (value) => "blue",
-              type: "link",
+              align: "left",
+              type: "image",
             },
             {
-              id: "username",
-              label: "Username",
+              id: "type",
+              label: "Type",
               minWidth: 170,
-              align: "center",
+              align: "left",
               color: (value) => "blue",
             },
             {
-              id: "joined",
-              label: "Joined",
-              minWidth: 170,
+              id: "time",
+              label: "Time",
+              minWidth: 70,
               align: "center",
               format: (value) => value.toLocaleString("en-US"),
               color: (value) => "blue",
             },
             {
-              id: "status",
-              label: "Status",
+              id: "link",
+              label: "Link",
               minWidth: 170,
               align: "center",
-              color: (value) =>
-                value.startsWith("Not")
-                  ? "red"
-                  : value.startsWith("Waiting")
-                  ? "black"
-                  : "green",
+              type: "link",
+              color: (value) => "green",
             },
           ]}
           rows={[
             {
               id: 1,
-              name: "India",
-              username: "IN",
-              joined: 1324171354,
-              status: "Published",
+              author: "India",
+              type: "IN",
+              time: "30 MIns Ago",
+              link: "View",
+              src:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSL9gD35eD_Df-JgpsplnHFyXNhb8r23madbg&usqp=CAU",
             },
             {
               id: 2,
-              name: "India",
-              username: "IN",
-              joined: 1324171354,
-              status: "Published",
+              author: "India",
+              type: "IN",
+              time: "30 MIns Ago",
+              link: "View",
+              src:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSL9gD35eD_Df-JgpsplnHFyXNhb8r23madbg&usqp=CAU",
             },
             {
               id: 3,
-              name: "China",
-              username: "CN",
-              joined: 1403500365,
-              status: "Not-Published",
+              author: "India",
+              type: "IN",
+              time: "30 MIns Ago",
+              link: "View",
+              src:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSL9gD35eD_Df-JgpsplnHFyXNhb8r23madbg&usqp=CAU",
             },
             {
               id: 4,
-              name: "Italy",
-              username: "IT",
-              joined: 60483973,
-              status: "Published",
+              author: "India",
+              type: "IN",
+              time: "30 MIns Ago",
+              link: "View",
+              src:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSL9gD35eD_Df-JgpsplnHFyXNhb8r23madbg&usqp=CAU",
             },
             {
               id: 5,
-              name: "United States",
-              username: "US",
-              joined: 327167434,
-              status: "Published",
+              author: "India",
+              type: "IN",
+              time: "30 MIns Ago",
+              link: "View",
+              src:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSL9gD35eD_Df-JgpsplnHFyXNhb8r23madbg&usqp=CAU",
             },
             {
               id: 6,
-              name: "Canada",
-              username: "CA",
-              joined: 37602103,
-              status: "Published",
+              author: "India",
+              type: "IN",
+              time: "30 MIns Ago",
+              link: "View",
+              src:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSL9gD35eD_Df-JgpsplnHFyXNhb8r23madbg&usqp=CAU",
             },
             {
               id: 7,
-              name: "Australia",
-              username: "AU",
-              joined: 25475400,
-              status: "Waiting",
+              author: "India",
+              type: "IN",
+              time: "30 MIns Ago",
+              link: "View",
+              src:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSL9gD35eD_Df-JgpsplnHFyXNhb8r23madbg&usqp=CAU",
             },
             {
               id: 8,
-              name: "Germany",
-              username: "DE",
-              joined: 83019200,
-              status: "Not-Published",
+              author: "India",
+              type: "IN",
+              time: "30 MIns Ago",
+              link: "View",
+              src:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSL9gD35eD_Df-JgpsplnHFyXNhb8r23madbg&usqp=CAU",
             },
             {
               id: 9,
-              name: "Ireland",
-              username: "IE",
-              joined: 4857000,
-              status: "Published",
+              author: "India",
+              type: "IN",
+              time: "30 MIns Ago",
+              link: "View",
+              src:
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSL9gD35eD_Df-JgpsplnHFyXNhb8r23madbg&usqp=CAU",
             },
           ]}
           actions={["edit", "delete"]}

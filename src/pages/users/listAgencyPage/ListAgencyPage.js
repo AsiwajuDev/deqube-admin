@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import * as Icon from "react-feather";
 
@@ -24,6 +24,7 @@ const data = {
 };
 
 const ListAgencyPage = () => {
+  const [openTab, setOpenTab] = useState(1);
   return (
     <div>
       <CustomBreadcrumb data={data} />

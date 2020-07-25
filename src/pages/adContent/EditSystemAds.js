@@ -11,13 +11,13 @@ const data = {
   start: "Ads",
   links: [
     {
-      label: "Create System Ads",
-      url: "/ads/system-ads/create-system-ads",
+      label: "Edit System Ads",
+      url: "/ads/system-ads/edit-system-ads",
     },
   ],
 };
 
-const CreateSystemAds = () => {
+export default function EditSystemAds() {
   return (
     <div>
       <CustomBreadcrumb data={data} />
@@ -58,6 +58,4 @@ const CreateSystemAds = () => {
       />
     </div>
   );
-};
-
-export default CreateSystemAds;
+}

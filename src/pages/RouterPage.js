@@ -34,6 +34,8 @@ import {
   SystemAds,
   AdSettings,
   CreateSystemAds,
+  EditUserAds,
+  EditSystemAds,
 } from "./adContent/Index";
 import Posts from "./posts/Posts";
 import { Reaction, AddReaction } from "./reaction/Index";
@@ -41,8 +43,8 @@ import { Emojis, AddEmojis } from "./emojis/Index";
 import FollowSuggest from "./followSuggest/FollowSuggest";
 import Directory from "./directory/Directory";
 import GarbageCollector from "./garbageCollector/GarbageCollector";
-
-import { ListEvents, EventCategory } from "./events/Index";
+import { Earnings, ListSubscribers, Settings } from "./proPackages/Index";
+import { ListEvents, EventCategory, EventDetails } from "./events/Index";
 import { CoDEarnings, CoDSettings, UserCoD } from "./contentOnDemand/Index";
 import { Points, Payments } from "./qubes/Index";
 import Reports from "./reports/Reports";
@@ -151,27 +153,16 @@ const RouterPage = () => {
       <Route path="/users/list-users/user" component={ListUser} />
       {/* List Group Route */}
       <Route path="/users/list-group" component={ListGroups} exact />
-      <Route path="/users/list-group/user" component={ListGroup} />
+      <Route path="/users/list-group/group" component={ListGroup} />
       {/* List Agency Route */}
       <Route path="/users/list-agency" component={ListAgency} exact />
-      <Route path="/users/list-agency/user" component={ListAgencyPage} />
+      <Route path="/users/list-agency/agency" component={ListAgencyPage} />
       {/* List Admin Page */}
       <Route path="/users/list-admin" component={ListAdmin} exact />
-      <Route path="/users/list-admin/user" component={ListAdminPage} />
+      <Route path="/users/list-admin/admin" component={ListAdminPage} />
       {/* List Page Route */}
       <Route path="/users/list-page" component={ListPages} exact />
-      <Route path="/users/list-page/user" component={ListPage} />
-      {/* <Route
-        exact
-        path="/users"
-        render={() => <Redirect to="/users/list-users" />}
-      /> */}
-      {/* <Route
-        path="/users/list-groups"
-        render={({ match: { url } }) => (
-          <Route path={`${url}/user`} component={ListGroup} exact />
-        )}
-      /> */}
+      <Route path="/users/list-page/page" component={ListPage} />
 
       <Route path="/users/list-groups/group" component={ListGroup} exact />
       {/* Posts */}
@@ -187,10 +178,16 @@ const RouterPage = () => {
         render={({ match: { url } }) => (
           <>
             <Route path={`${url}/list-events`} component={ListEvents} exact />
+            <Route
+              path={`/events/list-events/event-details`}
+              component={EventDetails}
+            />
+
             <Route path={`${url}/event-category`} component={EventCategory} />
           </>
         )}
       />
+
       {/*Ads Route  */}
       <Route
         exact
@@ -202,17 +199,18 @@ const RouterPage = () => {
         render={({ match: { url } }) => (
           <>
             <Route path={`${url}/ads-settings`} component={AdSettings} exact />
-            <Route path={`${url}/system-ads`} component={SystemAds} />
-            <Route path={`${url}/user-ads`} component={UserAds} />
           </>
         )}
       />
-
+      <Route path="/ads/system-ads" component={SystemAds} exact />
       <Route
-        path="/create-system-ads"
-        name="create-system-ads"
+        path="/ads/system-ads/create-system-ad"
         component={CreateSystemAds}
       />
+      <Route path="/ads/system-ads/edit-system-ad" component={EditSystemAds} />
+      <Route path="/ads/user-ads" component={UserAds} exact />
+      <Route path="/ads/user-ads/edit-user-ads" component={EditUserAds} />
+
       {/*CoD Route  */}
       <Route
         exact
@@ -229,6 +227,19 @@ const RouterPage = () => {
           </>
         )}
       />
+
+      {/* Package Route */}
+      <Route
+        path="/package"
+        render={({ match: { url } }) => (
+          <>
+            <Route path={`${url}/settings`} component={Settings} exact />
+            <Route path={`${url}/subscribers`} component={ListSubscribers} />
+            <Route path={`${url}/earnings`} component={Earnings} />
+          </>
+        )}
+      />
+
       {/*Quibs Route  */}
       <Route
         exact

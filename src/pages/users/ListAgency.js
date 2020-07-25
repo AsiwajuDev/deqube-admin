@@ -18,7 +18,7 @@ const ListAgency = () => {
   const history = useHistory();
   const onLinkClicked = (e, payload) => {
     console.log(JSON.stringify(payload));
-    history.push("/users/list-users/user");
+    history.push("/users/list-agency/agency");
   };
 
   const onActionClicked = (e, payload) => {
@@ -40,17 +40,17 @@ const ListAgency = () => {
           search
           pagerows
           columns={[
-            { id: "id", label: "ID", minWidth: 170, color: (value) => "blue" },
+            { id: "id", label: "ID", minWidth: 50, color: (value) => "blue" },
             {
               id: "name",
-              label: "Name",
+              label: "Group Name",
               minWidth: 100,
               color: (value) => "blue",
               type: "link",
             },
             {
-              id: "username",
-              label: "Username",
+              id: "admin",
+              label: "Admin",
               minWidth: 170,
               align: "center",
               color: (value) => "blue",
@@ -61,6 +61,13 @@ const ListAgency = () => {
               minWidth: 170,
               align: "center",
               format: (value) => value.toLocaleString("en-US"),
+              color: (value) => "blue",
+            },
+            {
+              id: "members",
+              label: "Members",
+              minWidth: 100,
+              align: "center",
               color: (value) => "blue",
             },
             {
@@ -79,65 +86,42 @@ const ListAgency = () => {
           rows={[
             {
               id: 1,
-              name: "India",
-              username: "IN",
-              joined: 1324171354,
+              name: "Lion Dance",
+              admin: "Sarah Doe",
+              joined: "19/06/2020",
+              members: 5,
               status: "Published",
             },
             {
               id: 2,
-              name: "India",
-              username: "IN",
-              joined: 1324171354,
+              name: "Lion Dance",
+              admin: "Sarah Doe",
+              joined: "19/06/2020",
+              members: 5,
               status: "Published",
             },
             {
               id: 3,
-              name: "China",
-              username: "CN",
-              joined: 1403500365,
+              name: "Lion Dance",
+              admin: "Sarah Doe",
+              joined: "19/06/2020",
+              members: 5,
               status: "Not-Published",
             },
             {
               id: 4,
-              name: "Italy",
-              username: "IT",
-              joined: 60483973,
+              name: "Lion Dance",
+              admin: "Sarah Doe",
+              joined: "19/06/2020",
+              members: 5,
               status: "Published",
             },
             {
               id: 5,
-              name: "United States",
-              username: "US",
-              joined: 327167434,
-              status: "Published",
-            },
-            {
-              id: 6,
-              name: "Canada",
-              username: "CA",
-              joined: 37602103,
-              status: "Published",
-            },
-            {
-              id: 7,
-              name: "Australia",
-              username: "AU",
-              joined: 25475400,
-              status: "Waiting",
-            },
-            {
-              id: 8,
-              name: "Germany",
-              username: "DE",
-              joined: 83019200,
-              status: "Not-Published",
-            },
-            {
-              id: 9,
-              name: "Ireland",
-              username: "IE",
-              joined: 4857000,
+              name: "Lion Dance",
+              admin: "Sarah Doe",
+              joined: "19/06/2020",
+              members: 5,
               status: "Published",
             },
           ]}

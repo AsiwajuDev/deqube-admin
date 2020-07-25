@@ -7,7 +7,6 @@ const ListOnline = () => {
   const history = useHistory();
   const onLinkClicked = (e, payload) => {
     console.log(JSON.stringify(payload));
-    history.push("/users/list-online/user");
   };
 
   const onActionClicked = (e, payload) => {

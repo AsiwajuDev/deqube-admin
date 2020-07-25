@@ -46,10 +46,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 20,
     height: 32,
   },
-  cell: {
-    paddingTop: 0,
-    paddingBottom: 0,
-  },
+
   rowPageContainer: {
     height: "2px",
   },
@@ -152,6 +149,7 @@ export default function CustomTable({
         </TableCell>
       );
     });
+
     if (actions) {
       nActions = (
         <TableCell
@@ -209,6 +207,17 @@ export default function CustomTable({
                       <Avatar src={row.src && row.src} className="small" />{" "}
                       <span className="px-4">{value}</span>
                     </span>
+                  ) : column.type && column.type === "button" ? (
+                    <div
+                      color="inherit"
+                      className={column.style(value)}
+                      // style={{
+                      //   borderRadius: 5,
+                      //   backgroundColor: column.backgroundColor(value),
+                      // }}
+                    >
+                      {value}
+                    </div>
                   ) : (
                     value
                   )}
@@ -223,6 +232,7 @@ export default function CustomTable({
                       key={i + "Action" + id}
                       aria-label="upload picture"
                       component="span"
+                      style={{ paddingTop: 0, paddingBottom: 0 }}
                       onClick={(e) =>
                         handleActionClick(e, { type: action, ...row })
                       }
@@ -243,9 +253,21 @@ export default function CustomTable({
   const getActionIconType = (type, index) => {
     switch (type) {
       case "delete":
-        return <Icon.Trash2 key={index} color="red" />;
+        return (
+          <Icon.Trash2
+            key={index}
+            color="red"
+            style={{ paddingTop: 0, paddingBottom: 0 }}
+          />
+        );
       case "edit":
-        return <Icon.Edit key={index} color="black" />;
+        return (
+          <Icon.Edit
+            key={index}
+            color="black"
+            style={{ paddingTop: 0, paddingBottom: 0 }}
+          />
+        );
       case "play":
         return <Icon.PlayCircle key={index} color="black" />;
       case "pause":

@@ -8,7 +8,7 @@ const ListEvents = () => {
   const history = useHistory();
   const onLinkClicked = (e, payload) => {
     console.log(JSON.stringify(payload));
-    history.push("/users/list-users/user");
+    history.push("/events/list-events/event-details");
   };
 
   const onActionClicked = (e, payload) => {
@@ -50,7 +50,7 @@ const ListEvents = () => {
             {
               id: "userType",
               label: "User Type",
-              minWidth: 170,
+              minWidth: 100,
               align: "center",
               color: (value) => "blue",
             },

@@ -18,7 +18,7 @@ const ListGroups = () => {
   const history = useHistory();
   const onLinkClicked = (e, payload) => {
     console.log(JSON.stringify(payload));
-    history.push("/users/list-group/user");
+    history.push("/users/list-group/group");
   };
 
   const onActionClicked = (e, payload) => {

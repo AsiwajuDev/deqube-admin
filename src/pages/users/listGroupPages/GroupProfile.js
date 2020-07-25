@@ -33,7 +33,6 @@ export default function GroupProfile() {
               </div>
               <CustomTable
                 pagination
-                search
                 pagerows
                 columns={[
                   {
@@ -44,14 +43,14 @@ export default function GroupProfile() {
                   },
                   {
                     id: "name",
-                    label: "Group Name",
+                    label: "Name",
                     minWidth: 170,
                     color: (value) => "blue",
                     type: "link",
                   },
                   {
-                    id: "admin",
-                    label: "Admin",
+                    id: "username",
+                    label: "Username",
                     minWidth: 100,
                     align: "center",
                     color: (value) => "blue",
@@ -65,101 +64,70 @@ export default function GroupProfile() {
                     color: (value) => "blue",
                   },
                   {
-                    id: "members",
-                    label: "Members",
-                    minWidth: 100,
-                    align: "center",
-                    format: (value) => value.toLocaleString("en-US"),
-                    color: (value) => "blue",
-                  },
-                  {
                     id: "status",
                     label: "Status",
                     minWidth: 100,
                     align: "center",
-                    color: (value) =>
-                      value.startsWith("Not")
-                        ? "red"
-                        : value.startsWith("Waiting")
-                        ? "black"
-                        : "green",
+                    color: (value) => (value === "Accepted" ? "green" : "gray"),
+                  },
+                  {
+                    id: "role",
+                    label: "Role",
+                    minWidth: 100,
+                    align: "center",
+                    color: (value) => "black",
                   },
                 ]}
                 rows={[
                   {
                     id: 1,
-                    name: "Lion Dance",
-                    admin: "sarahdoe",
-                    joined: "19/06/2020",
-                    members: 5,
-                    status: "Published",
+                    name: "Sarah Doe",
+                    username: "/sarahdoe",
+                    joined: "19/08/2020",
+                    status: "Accepted",
+                    role: "Founder",
                   },
                   {
                     id: 2,
-                    name: "Lion Dance",
-                    admin: "sarahdoe",
-                    joined: "19/06/2020",
-                    members: 5,
-                    status: "Published",
+                    name: "Sarah Doe",
+                    username: "/sarahdoe",
+                    joined: "19/08/2020",
+                    status: "Waiting",
+                    role: "Admin",
                   },
                   {
                     id: 3,
-                    name: "Lion Dance",
-                    admin: "sarahdoe",
-                    joined: "19/06/2020",
-                    members: 5,
-                    status: "Published",
+                    name: "Sarah Doe",
+                    username: "/sarahdoe",
+                    joined: "19/08/2020",
+                    status: "Accepted",
+                    role: "Founder",
                   },
                   {
                     id: 4,
-                    name: "Lion Dance",
-                    admin: "sarahdoe",
-                    joined: "19/06/2020",
-                    members: 5,
-                    status: "Published",
+                    name: "Sarah Doe",
+                    username: "/sarahdoe",
+                    joined: "19/08/2020",
+                    status: "Accepted",
+                    role: "Founder",
                   },
                   {
                     id: 5,
-                    name: "Lion Dance",
-                    admin: "sarahdoe",
-                    joined: "19/06/2020",
-                    members: 5,
-                    status: "Not Published",
+                    name: "Sarah Doe",
+                    username: "/sarahdoe",
+                    joined: "19/08/2020",
+                    status: "Accepted",
+                    role: "Founder",
                   },
                   {
                     id: 6,
-                    name: "Lion Dance",
-                    admin: "sarahdoe",
-                    joined: "19/06/2020",
-                    members: 5,
-                    status: "Published",
-                  },
-                  {
-                    id: 7,
-                    name: "Lion Dance",
-                    admin: "sarahdoe",
-                    joined: "19/06/2020",
-                    members: 5,
-                    status: "Published",
-                  },
-                  {
-                    id: 8,
-                    name: "Lion Dance",
-                    admin: "sarahdoe",
-                    joined: "19/06/2020",
-                    members: 5,
-                    status: "Not Published",
-                  },
-                  {
-                    id: 9,
-                    name: "Lion Dance",
-                    admin: "sarahdoe",
-                    joined: "19/06/2020",
-                    members: 5,
-                    status: "Published",
+                    name: "Sarah Doe",
+                    username: "/sarahdoe",
+                    joined: "19/08/2020",
+                    status: "Accepted",
+                    role: "Founder",
                   },
                 ]}
-                actions={["edit", "delete"]}
                 handleActionClick={onActionClicked}
                 handleLinkClick={onLinkClicked}
               />
@@ -194,133 +162,97 @@ export default function GroupProfile() {
               <div className="m-8">
                 <CustomTable
                   pagination
-                  search
                   pagerows
                   columns={[
                     {
-                      id: "id",
-                      label: "ID",
-                      minWidth: 50,
+                      id: "type",
+                      label: "Type",
+                      minWidth: 70,
                       color: (value) => "blue",
                     },
                     {
                       id: "name",
-                      label: "Group Name",
-                      minWidth: 170,
+                      label: "Name",
+                      minWidth: 100,
                       color: (value) => "blue",
-                      type: "link",
                     },
                     {
-                      id: "admin",
-                      label: "Admin",
+                      id: "directory",
+                      label: "Directory",
                       minWidth: 100,
                       align: "center",
                       color: (value) => "blue",
                     },
                     {
-                      id: "joined",
-                      label: "Joined",
+                      id: "date",
+                      label: "Date",
                       minWidth: 70,
                       align: "center",
                       format: (value) => value.toLocaleString("en-US"),
                       color: (value) => "blue",
                     },
                     {
-                      id: "members",
-                      label: "Members",
-                      minWidth: 100,
+                      id: "location",
+                      label: "Location",
+                      minWidth: 70,
                       align: "center",
-                      format: (value) => value.toLocaleString("en-US"),
-                      color: (value) => "blue",
+                      color: (value) => "green",
                     },
                     {
-                      id: "status",
-                      label: "Status",
+                      id: "description",
+                      label: "Description",
                       minWidth: 100,
                       align: "center",
-                      color: (value) =>
-                        value.startsWith("Not")
-                          ? "red"
-                          : value.startsWith("Waiting")
-                          ? "black"
-                          : "green",
+                      color: (value) => "green",
                     },
                   ]}
                   rows={[
                     {
-                      id: 1,
-                      name: "Lion Dance",
-                      admin: "sarahdoe",
-                      joined: "19/06/2020",
-                      members: 5,
-                      status: "Published",
+                      type: "Show",
+                      name: "Maltina Dance",
+                      directory: "Dancing Competition",
+                      date: "19/06/2020",
+                      location: "Nairobi, Kenya",
+                      description:
+                        "lorem ipsum dolor sit amet lorem ipsum again",
                     },
                     {
-                      id: 2,
-                      name: "Lion Dance",
-                      admin: "sarahdoe",
-                      joined: "19/06/2020",
-                      members: 5,
-                      status: "Published",
+                      type: "Show",
+                      name: "Maltina Dance",
+                      directory: "Dancing Competition",
+                      date: "19/06/2020",
+                      location: "Nairobi, Kenya",
+                      description:
+                        "lorem ipsum dolor sit amet lorem ipsum again",
                     },
                     {
-                      id: 3,
-                      name: "Lion Dance",
-                      admin: "sarahdoe",
-                      joined: "19/06/2020",
-                      members: 5,
-                      status: "Published",
+                      type: "Show",
+                      name: "Maltina Dance",
+                      directory: "Dancing Competition",
+                      date: "19/06/2020",
+                      location: "Nairobi, Kenya",
+                      description:
+                        "lorem ipsum dolor sit amet lorem ipsum again",
                     },
                     {
-                      id: 4,
-                      name: "Lion Dance",
-                      admin: "sarahdoe",
-                      joined: "19/06/2020",
-                      members: 5,
-                      status: "Published",
+                      type: "Show",
+                      name: "Maltina Dance",
+                      directory: "Dancing Competition",
+                      date: "19/06/2020",
+                      location: "Nairobi, Kenya",
+                      description:
+                        "lorem ipsum dolor sit amet lorem ipsum again",
                     },
                     {
-                      id: 5,
-                      name: "Lion Dance",
-                      admin: "sarahdoe",
-                      joined: "19/06/2020",
-                      members: 5,
-                      status: "Not Published",
-                    },
-                    {
-                      id: 6,
-                      name: "Lion Dance",
-                      admin: "sarahdoe",
-                      joined: "19/06/2020",
-                      members: 5,
-                      status: "Published",
-                    },
-                    {
-                      id: 7,
-                      name: "Lion Dance",
-                      admin: "sarahdoe",
-                      joined: "19/06/2020",
-                      members: 5,
-                      status: "Published",
-                    },
-                    {
-                      id: 8,
-                      name: "Lion Dance",
-                      admin: "sarahdoe",
-                      joined: "19/06/2020",
-                      members: 5,
-                      status: "Not Published",
-                    },
-                    {
-                      id: 9,
-                      name: "Lion Dance",
-                      admin: "sarahdoe",
-                      joined: "19/06/2020",
-                      members: 5,
-                      status: "Published",
+                      type: "Show",
+                      name: "Maltina Dance",
+                      directory: "Dancing Competition",
+                      date: "19/06/2020",
+                      location: "Nairobi, Kenya",
+                      description:
+                        "lorem ipsum dolor sit amet lorem ipsum again",
                     },
                   ]}
-                  actions={["edit", "delete"]}
                   handleActionClick={onActionClicked}
                   handleLinkClick={onLinkClicked}
                 />
@@ -332,133 +264,87 @@ export default function GroupProfile() {
                 <div className="m-8">
                   <CustomTable
                     pagination
-                    search
                     pagerows
                     columns={[
                       {
-                        id: "id",
-                        label: "ID",
-                        minWidth: 50,
-                        color: (value) => "blue",
-                      },
-                      {
                         id: "name",
-                        label: "Group Name",
-                        minWidth: 170,
-                        color: (value) => "blue",
-                        type: "link",
-                      },
-                      {
-                        id: "admin",
-                        label: "Admin",
+                        label: "Name",
                         minWidth: 100,
-                        align: "center",
                         color: (value) => "blue",
                       },
                       {
-                        id: "joined",
-                        label: "Joined",
+                        id: "date",
+                        label: "Date",
                         minWidth: 70,
                         align: "center",
                         format: (value) => value.toLocaleString("en-US"),
                         color: (value) => "blue",
                       },
                       {
-                        id: "members",
-                        label: "Members",
+                        id: "location",
+                        label: "Location",
+                        minWidth: 100,
+                        align: "center",
+                        color: (value) => "blue",
+                      },
+                      {
+                        id: "description",
+                        label: "Description",
+                        minWidth: 100,
+                        align: "center",
+                        color: (value) => "green",
+                      },
+                      {
+                        id: "schedule",
+                        label: "Schedule",
                         minWidth: 100,
                         align: "center",
                         format: (value) => value.toLocaleString("en-US"),
                         color: (value) => "blue",
                       },
-                      {
-                        id: "status",
-                        label: "Status",
-                        minWidth: 100,
-                        align: "center",
-                        color: (value) =>
-                          value.startsWith("Not")
-                            ? "red"
-                            : value.startsWith("Waiting")
-                            ? "black"
-                            : "green",
-                      },
                     ]}
                     rows={[
                       {
-                        id: 1,
-                        name: "Lion Dance",
-                        admin: "sarahdoe",
-                        joined: "19/06/2020",
-                        members: 5,
-                        status: "Published",
+                        name: "HipHop",
+                        date: "19/06/2020",
+                        schedule: "2 times a week",
+                        location: "Nairobi, Kenya",
+                        description:
+                          "lorem ipsum dolor sit amet lorem ipsum again",
                       },
                       {
-                        id: 2,
-                        name: "Lion Dance",
-                        admin: "sarahdoe",
-                        joined: "19/06/2020",
-                        members: 5,
-                        status: "Published",
+                        name: "HipHop",
+                        date: "19/06/2020",
+                        schedule: "2 times a week",
+                        location: "Nairobi, Kenya",
+                        description:
+                          "lorem ipsum dolor sit amet lorem ipsum again",
                       },
                       {
-                        id: 3,
-                        name: "Lion Dance",
-                        admin: "sarahdoe",
-                        joined: "19/06/2020",
-                        members: 5,
-                        status: "Published",
+                        name: "HipHop",
+                        date: "19/06/2020",
+                        schedule: "2 times a week",
+                        location: "Nairobi, Kenya",
+                        description:
+                          "lorem ipsum dolor sit amet lorem ipsum again",
                       },
                       {
-                        id: 4,
-                        name: "Lion Dance",
-                        admin: "sarahdoe",
-                        joined: "19/06/2020",
-                        members: 5,
-                        status: "Published",
+                        name: "HipHop",
+                        date: "19/06/2020",
+                        schedule: "2 times a week",
+                        location: "Nairobi, Kenya",
+                        description:
+                          "lorem ipsum dolor sit amet lorem ipsum again",
                       },
                       {
-                        id: 5,
-                        name: "Lion Dance",
-                        admin: "sarahdoe",
-                        joined: "19/06/2020",
-                        members: 5,
-                        status: "Not Published",
-                      },
-                      {
-                        id: 6,
-                        name: "Lion Dance",
-                        admin: "sarahdoe",
-                        joined: "19/06/2020",
-                        members: 5,
-                        status: "Published",
-                      },
-                      {
-                        id: 7,
-                        name: "Lion Dance",
-                        admin: "sarahdoe",
-                        joined: "19/06/2020",
-                        members: 5,
-                        status: "Published",
-                      },
-                      {
-                        id: 8,
-                        name: "Lion Dance",
-                        admin: "sarahdoe",
-                        joined: "19/06/2020",
-                        members: 5,
-                        status: "Not Published",
-                      },
-                      {
-                        id: 9,
-                        name: "Lion Dance",
-                        admin: "sarahdoe",
-                        joined: "19/06/2020",
-                        members: 5,
-                        status: "Published",
+                        name: "HipHop",
+                        date: "19/06/2020",
+                        schedule: "2 times a week",
+                        location: "Nairobi, Kenya",
+                        description:
+                          "lorem ipsum dolor sit amet lorem ipsum again",
                       },
                     ]}
-                    actions={["edit", "delete"]}
                     handleActionClick={onActionClicked}
                     handleLinkClick={onLinkClicked}
                   />
@@ -473,133 +359,97 @@ export default function GroupProfile() {
               <div className="m-8">
                 <CustomTable
                   pagination
-                  search
                   pagerows
                   columns={[
                     {
-                      id: "id",
-                      label: "ID",
-                      minWidth: 50,
+                      id: "type",
+                      label: "Type",
+                      minWidth: 70,
                       color: (value) => "blue",
                     },
                     {
                       id: "name",
-                      label: "Group Name",
-                      minWidth: 170,
+                      label: "Name",
+                      minWidth: 100,
                       color: (value) => "blue",
-                      type: "link",
                     },
                     {
-                      id: "admin",
-                      label: "Admin",
+                      id: "directory",
+                      label: "Directory",
                       minWidth: 100,
                       align: "center",
                       color: (value) => "blue",
                     },
                     {
-                      id: "joined",
-                      label: "Joined",
+                      id: "date",
+                      label: "Date",
                       minWidth: 70,
                       align: "center",
                       format: (value) => value.toLocaleString("en-US"),
                       color: (value) => "blue",
                     },
                     {
-                      id: "members",
-                      label: "Members",
-                      minWidth: 100,
+                      id: "location",
+                      label: "Location",
+                      minWidth: 70,
                       align: "center",
-                      format: (value) => value.toLocaleString("en-US"),
-                      color: (value) => "blue",
+                      color: (value) => "green",
                     },
                     {
-                      id: "status",
-                      label: "Status",
+                      id: "description",
+                      label: "Description",
                       minWidth: 100,
                       align: "center",
-                      color: (value) =>
-                        value.startsWith("Not")
-                          ? "red"
-                          : value.startsWith("Waiting")
-                          ? "black"
-                          : "green",
+                      color: (value) => "green",
                     },
                   ]}
                   rows={[
                     {
-                      id: 1,
-                      name: "Lion Dance",
-                      admin: "sarahdoe",
-                      joined: "19/06/2020",
-                      members: 5,
-                      status: "Published",
+                      type: "Show",
+                      name: "Maltina Dance",
+                      directory: "Dancing Competition",
+                      date: "19/06/2020",
+                      location: "Nairobi, Kenya",
+                      description:
+                        "lorem ipsum dolor sit amet lorem ipsum again",
                     },
                     {
-                      id: 2,
-                      name: "Lion Dance",
-                      admin: "sarahdoe",
-                      joined: "19/06/2020",
-                      members: 5,
-                      status: "Published",
+                      type: "Show",
+                      name: "Maltina Dance",
+                      directory: "Dancing Competition",
+                      date: "19/06/2020",
+                      location: "Nairobi, Kenya",
+                      description:
+                        "lorem ipsum dolor sit amet lorem ipsum again",
                     },
                     {
-                      id: 3,
-                      name: "Lion Dance",
-                      admin: "sarahdoe",
-                      joined: "19/06/2020",
-                      members: 5,
-                      status: "Published",
+                      type: "Show",
+                      name: "Maltina Dance",
+                      directory: "Dancing Competition",
+                      date: "19/06/2020",
+                      location: "Nairobi, Kenya",
+                      description:
+                        "lorem ipsum dolor sit amet lorem ipsum again",
                     },
                     {
-                      id: 4,
-                      name: "Lion Dance",
-                      admin: "sarahdoe",
-                      joined: "19/06/2020",
-                      members: 5,
-                      status: "Published",
+                      type: "Show",
+                      name: "Maltina Dance",
+                      directory: "Dancing Competition",
+                      date: "19/06/2020",
+                      location: "Nairobi, Kenya",
+                      description:
+                        "lorem ipsum dolor sit amet lorem ipsum again",
                     },
                     {
-                      id: 5,
-                      name: "Lion Dance",
-                      admin: "sarahdoe",
-                      joined: "19/06/2020",
-                      members: 5,
-                      status: "Not Published",
-                    },
-                    {
-                      id: 6,
-                      name: "Lion Dance",
-                      admin: "sarahdoe",
-                      joined: "19/06/2020",
-                      members: 5,
-                      status: "Published",
-                    },
-                    {
-                      id: 7,
-                      name: "Lion Dance",
-                      admin: "sarahdoe",
-                      joined: "19/06/2020",
-                      members: 5,
-                      status: "Published",
-                    },
-                    {
-                      id: 8,
-                      name: "Lion Dance",
-                      admin: "sarahdoe",
-                      joined: "19/06/2020",
-                      members: 5,
-                      status: "Not Published",
-                    },
-                    {
-                      id: 9,
-                      name: "Lion Dance",
-                      admin: "sarahdoe",
-                      joined: "19/06/2020",
-                      members: 5,
-                      status: "Published",
+                      type: "Show",
+                      name: "Maltina Dance",
+                      directory: "Dancing Competition",
+                      date: "19/06/2020",
+                      location: "Nairobi, Kenya",
+                      description:
+                        "lorem ipsum dolor sit amet lorem ipsum again",
                     },
                   ]}
-                  actions={["edit", "delete"]}
                   handleActionClick={onActionClicked}
                   handleLinkClick={onLinkClicked}
                 />
@@ -615,129 +465,84 @@ export default function GroupProfile() {
                     pagerows
                     columns={[
                       {
-                        id: "id",
-                        label: "ID",
-                        minWidth: 50,
-                        color: (value) => "blue",
-                      },
-                      {
                         id: "name",
-                        label: "Group Name",
-                        minWidth: 170,
-                        color: (value) => "blue",
-                        type: "link",
-                      },
-                      {
-                        id: "admin",
-                        label: "Admin",
+                        label: "Name",
                         minWidth: 100,
-                        align: "center",
                         color: (value) => "blue",
                       },
                       {
-                        id: "joined",
-                        label: "Joined",
+                        id: "date",
+                        label: "Date",
                         minWidth: 70,
                         align: "center",
                         format: (value) => value.toLocaleString("en-US"),
                         color: (value) => "blue",
                       },
                       {
-                        id: "members",
-                        label: "Members",
+                        id: "location",
+                        label: "Location",
+                        minWidth: 100,
+                        align: "center",
+                        color: (value) => "blue",
+                      },
+                      {
+                        id: "description",
+                        label: "Description",
+                        minWidth: 100,
+                        align: "center",
+                        color: (value) => "green",
+                      },
+                      {
+                        id: "schedule",
+                        label: "Schedule",
                         minWidth: 100,
                         align: "center",
                         format: (value) => value.toLocaleString("en-US"),
                         color: (value) => "blue",
                       },
-                      {
-                        id: "status",
-                        label: "Status",
-                        minWidth: 100,
-                        align: "center",
-                        color: (value) =>
-                          value.startsWith("Not")
-                            ? "red"
-                            : value.startsWith("Waiting")
-                            ? "black"
-                            : "green",
-                      },
                     ]}
                     rows={[
                       {
-                        id: 1,
-                        name: "Lion Dance",
-                        admin: "sarahdoe",
-                        joined: "19/06/2020",
-                        members: 5,
-                        status: "Published",
+                        name: "HipHop",
+                        date: "19/06/2020",
+                        schedule: "2 times a week",
+                        location: "Nairobi, Kenya",
+                        description:
+                          "lorem ipsum dolor sit amet lorem ipsum again",
                       },
                       {
-                        id: 2,
-                        name: "Lion Dance",
-                        admin: "sarahdoe",
-                        joined: "19/06/2020",
-                        members: 5,
-                        status: "Published",
+                        name: "HipHop",
+                        date: "19/06/2020",
+                        schedule: "2 times a week",
+                        location: "Nairobi, Kenya",
+                        description:
+                          "lorem ipsum dolor sit amet lorem ipsum again",
                       },
                       {
-                        id: 3,
-                        name: "Lion Dance",
-                        admin: "sarahdoe",
-                        joined: "19/06/2020",
-                        members: 5,
-                        status: "Published",
+                        name: "HipHop",
+                        date: "19/06/2020",
+                        schedule: "2 times a week",
+                        location: "Nairobi, Kenya",
+                        description:
+                          "lorem ipsum dolor sit amet lorem ipsum again",
                       },
                       {
-                        id: 4,
-                        name: "Lion Dance",
-                        admin: "sarahdoe",
-                        joined: "19/06/2020",
-                        members: 5,
-                        status: "Published",
+                        name: "HipHop",
+                        date: "19/06/2020",
+                        schedule: "2 times a week",
+                        location: "Nairobi, Kenya",
+                        description:
+                          "lorem ipsum dolor sit amet lorem ipsum again",
                       },
                       {
-                        id: 5,
-                        name: "Lion Dance",
-                        admin: "sarahdoe",
-                        joined: "19/06/2020",
-                        members: 5,
-                        status: "Not Published",
-                      },
-                      {
-                        id: 6,
-                        name: "Lion Dance",
-                        admin: "sarahdoe",
-                        joined: "19/06/2020",
-                        members: 5,
-                        status: "Published",
-                      },
-                      {
-                        id: 7,
-                        name: "Lion Dance",
-                        admin: "sarahdoe",
-                        joined: "19/06/2020",
-                        members: 5,
-                        status: "Published",
-                      },
-                      {
-                        id: 8,
-                        name: "Lion Dance",
-                        admin: "sarahdoe",
-                        joined: "19/06/2020",
-                        members: 5,
-                        status: "Not Published",
-                      },
-                      {
-                        id: 9,
-                        name: "Lion Dance",
-                        admin: "sarahdoe",
-                        joined: "19/06/2020",
-                        members: 5,
-                        status: "Published",
+                        name: "HipHop",
+                        date: "19/06/2020",
+                        schedule: "2 times a week",
+                        location: "Nairobi, Kenya",
+                        description:
+                          "lorem ipsum dolor sit amet lorem ipsum again",
                       },
                     ]}
-                    actions={["edit", "delete"]}
                     handleActionClick={onActionClicked}
                     handleLinkClick={onLinkClicked}
                   />

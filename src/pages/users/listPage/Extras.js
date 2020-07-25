@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import ButtonToggleInput from "../../../components/buttonToggleInput/ButtonToggleInput";
 import Button from "../../../components/button/Button";
 import CustomTable from "../../../components/table/CustomTable";
@@ -40,121 +40,6 @@ export default function Extras() {
           </div>
         </div>
       </div>
-      {/* <div className="intro-y box my-4">
-        <div className="mt-10">
-          <span className="text-red-600 capitalize my-5">ads</span>
-          <CustomTable
-          pagination
-          search
-          pagerows
-          columns={[
-            { id: "id", label: "ID", minWidth: 170, color: (value) => "blue" },
-            {
-              id: "name",
-              label: "Name",
-              minWidth: 100,
-              color: (value) => "blue",
-              type: "link",
-            },
-            {
-              id: "username",
-              label: "Username",
-              minWidth: 170,
-              align: "center",
-              color: (value) => "blue",
-            },
-            {
-              id: "joined",
-              label: "Joined",
-              minWidth: 170,
-              align: "center",
-              format: (value) => value.toLocaleString("en-US"),
-              color: (value) => "blue",
-            },
-            {
-              id: "status",
-              label: "Status",
-              minWidth: 170,
-              align: "center",
-              color: (value) =>
-                value.startsWith("Not")
-                  ? "red"
-                  : value.startsWith("Waiting")
-                  ? "black"
-                  : "green",
-            },
-          ]}
-          rows={[
-            {
-              id: 1,
-              name: "India",
-              username: "IN",
-              joined: 1324171354,
-              status: "Published",
-            },
-            {
-              id: 2,
-              name: "India",
-              username: "IN",
-              joined: 1324171354,
-              status: "Published",
-            },
-            {
-              id: 3,
-              name: "China",
-              username: "CN",
-              joined: 1403500365,
-              status: "Not-Published",
-            },
-            {
-              id: 4,
-              name: "Italy",
-              username: "IT",
-              joined: 60483973,
-              status: "Published",
-            },
-            {
-              id: 5,
-              name: "United States",
-              username: "US",
-              joined: 327167434,
-              status: "Published",
-            },
-            {
-              id: 6,
-              name: "Canada",
-              username: "CA",
-              joined: 37602103,
-              status: "Published",
-            },
-            {
-              id: 7,
-              name: "Australia",
-              username: "AU",
-              joined: 25475400,
-              status: "Waiting",
-            },
-            {
-              id: 8,
-              name: "Germany",
-              username: "DE",
-              joined: 83019200,
-              status: "Not-Published",
-            },
-            {
-              id: 9,
-              name: "Ireland",
-              username: "IE",
-              joined: 4857000,
-              status: "Published",
-            },
-          ]}
-          actions={["edit", "delete"]}
-          handleActionClick={onActionClicked}
-          handleLinkClick={onLinkClicked}
-        />
-        </div>
-      </div> */}
       <div className="intro-y box py-4 my-8">
         <div className="px-10">
           <div className="m-8">
@@ -163,35 +48,31 @@ export default function Extras() {
           <div className="m-8">
             <CustomTable
               pagination
-              search
               pagerows
               columns={[
                 {
                   id: "id",
                   label: "ID",
+                  minWidth: 60,
+                  color: (value) => "blue",
+                },
+                {
+                  id: "title",
+                  label: "Title",
                   minWidth: 170,
                   color: (value) => "blue",
                 },
                 {
-                  id: "name",
-                  label: "Name",
+                  id: "adtype",
+                  label: "Ad Type",
                   minWidth: 100,
                   color: (value) => "blue",
-                  type: "link",
                 },
                 {
-                  id: "username",
-                  label: "Username",
-                  minWidth: 170,
+                  id: "budget",
+                  label: "Budget",
+                  minWidth: 100,
                   align: "center",
-                  color: (value) => "blue",
-                },
-                {
-                  id: "joined",
-                  label: "Joined",
-                  minWidth: 170,
-                  align: "center",
-                  format: (value) => value.toLocaleString("en-US"),
                   color: (value) => "blue",
                 },
                 {
@@ -199,80 +80,75 @@ export default function Extras() {
                   label: "Status",
                   minWidth: 170,
                   align: "center",
-                  color: (value) =>
-                    value.startsWith("Not")
-                      ? "red"
-                      : value.startsWith("Waiting")
-                      ? "black"
-                      : "green",
+                  color: (value) => (value.startsWith("Not") ? "red" : "green"),
                 },
               ]}
               rows={[
                 {
                   id: 1,
-                  name: "India",
-                  username: "IN",
-                  joined: 1324171354,
-                  status: "Published",
+                  title: "Performance",
+                  adtype: "Post",
+                  budget: `N${4000}`,
+                  status: "Active",
                 },
                 {
                   id: 2,
-                  name: "India",
-                  username: "IN",
-                  joined: 1324171354,
-                  status: "Published",
+                  title: "Performance",
+                  adtype: "Post",
+                  budget: `N${4000}`,
+                  status: "Not Active",
                 },
                 {
                   id: 3,
-                  name: "China",
-                  username: "CN",
-                  joined: 1403500365,
-                  status: "Not-Published",
+                  title: "Performance",
+                  adtype: "Post",
+                  budget: `N${4000}`,
+                  status: "Active",
                 },
                 {
                   id: 4,
-                  name: "Italy",
-                  username: "IT",
-                  joined: 60483973,
-                  status: "Published",
+                  title: "Performance",
+                  adtype: "Post",
+                  budget: `N${4000}`,
+                  status: "Active",
                 },
                 {
                   id: 5,
-                  name: "United States",
-                  username: "US",
-                  joined: 327167434,
-                  status: "Published",
+                  title: "Performance",
+                  adtype: "Post",
+                  budget: `N${4000}`,
+                  status: "Active",
                 },
                 {
                   id: 6,
-                  name: "Canada",
-                  username: "CA",
-                  joined: 37602103,
-                  status: "Published",
+                  title: "Performance",
+                  adtype: "Post",
+                  budget: `N${4000}`,
+                  status: "Active",
                 },
                 {
                   id: 7,
-                  name: "Australia",
-                  username: "AU",
-                  joined: 25475400,
-                  status: "Waiting",
+                  title: "Performance",
+                  adtype: "Post",
+                  budget: `N${4000}`,
+                  status: "Active",
                 },
                 {
                   id: 8,
-                  name: "Germany",
-                  username: "DE",
-                  joined: 83019200,
-                  status: "Not-Published",
+                  title: "Performance",
+                  adtype: "Post",
+                  budget: `N${4000}`,
+                  status: "Active",
                 },
                 {
                   id: 9,
-                  name: "Ireland",
-                  username: "IE",
-                  joined: 4857000,
-                  status: "Published",
+                  title: "Performance",
+                  adtype: "Post",
+                  budget: `N${4000}`,
+                  status: "Active",
                 },
               ]}
-              actions={["edit", "delete"]}
+              actions={["edit", "delete", "play"]}
               handleActionClick={onActionClicked}
               handleLinkClick={onLinkClicked}
             />
@@ -287,113 +163,156 @@ export default function Extras() {
           <div className="m-8">
             <CustomTable
               pagination
-              search
               pagerows
               columns={[
                 {
                   id: "id",
                   label: "ID",
-                  minWidth: 170,
+                  minWidth: 40,
                   color: (value) => "blue",
                 },
                 {
-                  id: "name",
-                  label: "Name",
-                  minWidth: 100,
+                  id: "title",
+                  label: "Title",
+                  minWidth: 70,
                   color: (value) => "blue",
-                  type: "link",
                 },
                 {
-                  id: "username",
-                  label: "Username",
-                  minWidth: 170,
+                  id: "buyer",
+                  label: "Buyers",
+                  minWidth: 50,
+                  color: (value) => "blue",
+                },
+                {
+                  id: "price",
+                  label: "Price",
+                  minWidth: 50,
                   align: "center",
-                  color: (value) => "blue",
-                },
-                {
-                  id: "joined",
-                  label: "Joined",
-                  minWidth: 170,
-                  align: "center",
-                  format: (value) => value.toLocaleString("en-US"),
                   color: (value) => "blue",
                 },
                 {
                   id: "status",
                   label: "Status",
-                  minWidth: 170,
+                  minWidth: 50,
                   align: "center",
-                  color: (value) =>
-                    value.startsWith("Not")
-                      ? "red"
-                      : value.startsWith("Waiting")
-                      ? "black"
-                      : "green",
+                  color: (value) => (value === "Active" ? "green" : "red"),
+                },
+                {
+                  id: "watch",
+                  label: "",
+                  minWidth: 50,
+                  align: "center",
+                  color: (value) => "blue",
                 },
               ]}
               rows={[
                 {
                   id: 1,
-                  name: "India",
-                  username: "IN",
-                  joined: 1324171354,
-                  status: "Published",
+                  title: "Performance",
+                  buyer: 440,
+                  price: `N${4000}`,
+                  watch: (
+                    <Link className="bg-green-700 text-white rounded-full px-6 py-2">
+                      Watch
+                    </Link>
+                  ),
+                  status: "Active",
                 },
                 {
                   id: 2,
-                  name: "India",
-                  username: "IN",
-                  joined: 1324171354,
-                  status: "Published",
+                  title: "Performance",
+                  buyer: 440,
+                  price: `N${4000}`,
+                  status: "Active",
+                  watch: (
+                    <Link className="bg-green-700 text-white rounded-full px-6 py-2">
+                      Watch
+                    </Link>
+                  ),
                 },
                 {
                   id: 3,
-                  name: "China",
-                  username: "CN",
-                  joined: 1403500365,
-                  status: "Not-Published",
+                  title: "Performance",
+                  buyer: 440,
+                  price: `N${4000}`,
+                  status: "Active",
+                  watch: (
+                    <Link className="bg-green-700 text-white rounded-full px-6 py-2">
+                      Watch
+                    </Link>
+                  ),
                 },
                 {
                   id: 4,
-                  name: "Italy",
-                  username: "IT",
-                  joined: 60483973,
-                  status: "Published",
+                  title: "Performance",
+                  buyer: 440,
+                  price: `N${4000}`,
+                  status: "Active",
+                  watch: (
+                    <Link className="bg-green-700 text-white rounded-full px-6 py-2">
+                      Watch
+                    </Link>
+                  ),
                 },
                 {
                   id: 5,
-                  name: "United States",
-                  username: "US",
-                  joined: 327167434,
-                  status: "Published",
+                  title: "Performance",
+                  buyer: 440,
+                  price: `N${4000}`,
+                  status: "Active",
+                  watch: (
+                    <Link className="bg-green-700 text-white rounded-full px-6 py-2">
+                      Watch
+                    </Link>
+                  ),
                 },
                 {
                   id: 6,
-                  name: "Canada",
-                  username: "CA",
-                  joined: 37602103,
-                  status: "Published",
+                  title: "Performance",
+                  buyer: 440,
+                  price: `N${4000}`,
+                  status: "Active",
+                  watch: (
+                    <Link className="bg-green-700 text-white rounded-full px-6 py-2">
+                      Watch
+                    </Link>
+                  ),
                 },
                 {
                   id: 7,
-                  name: "Australia",
-                  username: "AU",
-                  joined: 25475400,
-                  status: "Waiting",
+                  title: "Performance",
+                  buyer: 440,
+                  price: `N${4000}`,
+                  status: "Active",
+                  watch: (
+                    <Link className="bg-green-700 text-white rounded-full px-6 py-2">
+                      Watch
+                    </Link>
+                  ),
                 },
                 {
                   id: 8,
-                  name: "Germany",
-                  username: "DE",
-                  joined: 83019200,
-                  status: "Not-Published",
+                  title: "Performance",
+                  buyer: 440,
+                  price: `N${4000}`,
+                  status: "Active",
+                  watch: (
+                    <Link className="bg-green-700 text-white rounded-full px-6 py-2">
+                      Watch
+                    </Link>
+                  ),
                 },
                 {
                   id: 9,
-                  name: "Ireland",
-                  username: "IE",
-                  joined: 4857000,
-                  status: "Published",
+                  title: "Performance",
+                  buyer: 440,
+                  price: `N${4000}`,
+                  status: "Active",
+                  watch: (
+                    <Link className="bg-green-700 text-white rounded-full px-6 py-2">
+                      Watch
+                    </Link>
+                  ),
                 },
               ]}
               actions={["edit", "delete"]}

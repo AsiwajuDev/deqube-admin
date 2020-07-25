@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import Button from "../../../components/button/Button";
 import InputTextArea from "../../../components/inputTextArea/InputTextArea";
@@ -8,6 +8,15 @@ import CustomTable from "../../../components/table/CustomTable";
 import InputDropdown from "../../../components/inputDropdown/InputDropdown";
 
 export default function Profile() {
+  const history = useHistory();
+  const onLinkClicked = (e, payload) => {
+    console.log(JSON.stringify(payload));
+    history.push("/users/list-users/user");
+  };
+
+  const onActionClicked = (e, payload) => {
+    alert(JSON.stringify(payload));
+  };
   return (
     <div>
       <div className="">
@@ -17,7 +26,106 @@ export default function Profile() {
               <div className="w-full py-3 capitalize text-xl text-black">
                 Members
               </div>
-              {/* <CustomTable pagination pagerows /> */}
+              <CustomTable
+                pagination
+                pagerows
+                columns={[
+                  {
+                    id: "id",
+                    label: "ID",
+                    minWidth: 50,
+                    color: (value) => "blue",
+                  },
+                  {
+                    id: "name",
+                    label: "Name",
+                    minWidth: 170,
+                    color: (value) => "blue",
+                    type: "link",
+                  },
+                  {
+                    id: "username",
+                    label: "Username",
+                    minWidth: 100,
+                    align: "center",
+                    color: (value) => "blue",
+                  },
+                  {
+                    id: "joined",
+                    label: "Joined",
+                    minWidth: 100,
+                    align: "center",
+                    format: (value) => value.toLocaleString("en-US"),
+                    color: (value) => "blue",
+                  },
+                  {
+                    id: "status",
+                    label: "Status",
+                    minWidth: 100,
+                    align: "center",
+                    color: (value) => (value === "Accepted" ? "green" : "gray"),
+                  },
+                  {
+                    id: "role",
+                    label: "Role",
+                    minWidth: 100,
+                    align: "center",
+                    color: (value) => "black",
+                  },
+                ]}
+                rows={[
+                  {
+                    id: 1,
+                    name: "Sarah Doe",
+                    username: "/sarahdoe",
+                    joined: "19/08/2020",
+                    status: "Accepted",
+                    role: "Founder",
+                  },
+                  {
+                    id: 2,
+                    name: "Sarah Doe",
+                    username: "/sarahdoe",
+                    joined: "19/08/2020",
+                    status: "Waiting",
+                    role: "Admin",
+                  },
+                  {
+                    id: 3,
+                    name: "Sarah Doe",
+                    username: "/sarahdoe",
+                    joined: "19/08/2020",
+                    status: "Accepted",
+                    role: "Founder",
+                  },
+                  {
+                    id: 4,
+                    name: "Sarah Doe",
+                    username: "/sarahdoe",
+                    joined: "19/08/2020",
+                    status: "Accepted",
+                    role: "Founder",
+                  },
+                  {
+                    id: 5,
+                    name: "Sarah Doe",
+                    username: "/sarahdoe",
+                    joined: "19/08/2020",
+                    status: "Accepted",
+                    role: "Founder",
+                  },
+                  {
+                    id: 6,
+                    name: "Sarah Doe",
+                    username: "/sarahdoe",
+                    joined: "19/08/2020",
+                    status: "Accepted",
+                    role: "Founder",
+                  },
+                ]}
+                handleActionClick={onActionClicked}
+                handleLinkClick={onLinkClicked}
+              />
             </div>
             <div>
               <h4 className="uppercase">bio</h4>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import * as Icon from "react-feather";
 
@@ -18,6 +18,7 @@ const data = {
 };
 
 const ListAdminPage = () => {
+  const [openTab, setOpenTab] = useState(1);
   return (
     <div>
       <CustomBreadcrumb data={data} />
@@ -41,7 +42,26 @@ const ListAdminPage = () => {
           />
         </div>
       </div>
-      <ProfileCard tabAccount={<Account />} />
+      <ProfileCard
+        tabAccountLink={
+          <a
+            data-toggle="tab"
+            data-target="#account"
+            href="#account"
+            className={
+              "p-4 sm:mr-8 flex items-center " + (openTab === 1 ? "active" : "")
+            }
+            onClick={(e) => {
+              e.preventDefault();
+              setOpenTab(1);
+            }}
+          >
+            {openTab === 1 ? <Icon.User className="w-4 h-4 mr-2" /> : ""}
+            Account
+          </a>
+        }
+        tabAccount={<Account />}
+      />
     </div>
   );
 };

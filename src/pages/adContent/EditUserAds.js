@@ -26,7 +26,7 @@ export default function EditUserAds({ userImage }) {
       <CustomBreadcrumb data={data} />
       <div className="flex justify-between">
         <Link
-          to="/system-ads"
+          to="/ads/user-ads"
           className="text-red-700 flex mb-4 hover:text-red-700"
         >
           <Icon.ChevronLeft className="text-red-700" />

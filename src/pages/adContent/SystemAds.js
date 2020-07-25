@@ -18,12 +18,11 @@ const data = {
 const SystemAds = () => {
   const history = useHistory();
   const onLinkClicked = (e, payload) => {
-    console.log(JSON.stringify(payload));
-    history.push("/users/list-users/user");
+    // console.log(JSON.stringify(payload));
   };
 
   const onActionClicked = (e, payload) => {
-    alert(JSON.stringify(payload));
+    history.push("/ads/system-ads/edit-system-ad");
   };
   return (
     <div>
@@ -31,7 +30,7 @@ const SystemAds = () => {
       <div className="flex justify-end mt-3">
         <div className="intro-y flex justify-center col-span-12 items-center">
           <Link
-            to="/ads/create-system-ads"
+            to="/ads/system-ads/create-system-ad"
             className="bg-red-700 text-white font-bold py-2 mr-3 px-4 rounded"
             value="Add New System Ads"
           >
@@ -45,105 +44,72 @@ const SystemAds = () => {
           search
           pagerows
           columns={[
-            { id: "id", label: "ID", minWidth: 170, color: (value) => "blue" },
             {
-              id: "name",
-              label: "Name",
+              id: "id",
+              label: "ID",
+              align: "center",
               minWidth: 100,
               color: (value) => "blue",
-              type: "link",
             },
             {
-              id: "username",
-              label: "Username",
+              id: "title",
+              label: "Title",
               minWidth: 170,
               align: "center",
               color: (value) => "blue",
             },
             {
-              id: "joined",
-              label: "Joined",
+              id: "place",
+              label: "Place",
+              minWidth: 170,
+              align: "center",
+              color: (value) => "blue",
+            },
+            {
+              id: "date",
+              label: "Date",
               minWidth: 170,
               align: "center",
               format: (value) => value.toLocaleString("en-US"),
               color: (value) => "blue",
             },
-            {
-              id: "status",
-              label: "Status",
-              minWidth: 170,
-              align: "center",
-              color: (value) =>
-                value.startsWith("Not")
-                  ? "red"
-                  : value.startsWith("Waiting")
-                  ? "black"
-                  : "green",
-            },
           ]}
           rows={[
             {
               id: 1,
-              name: "India",
-              username: "IN",
-              joined: 1324171354,
-              status: "Published",
+              title: "Performance",
+              place: "Home Page",
+              date: "6 May, 2020",
             },
             {
               id: 2,
-              name: "India",
-              username: "IN",
-              joined: 1324171354,
-              status: "Published",
+              title: "Performance",
+              place: "Home Page",
+              date: "6 May, 2020",
             },
             {
               id: 3,
-              name: "China",
-              username: "CN",
-              joined: 1403500365,
-              status: "Not-Published",
+              title: "Performance",
+              place: "Home Page",
+              date: "6 May, 2020",
             },
             {
               id: 4,
-              name: "Italy",
-              username: "IT",
-              joined: 60483973,
-              status: "Published",
+              title: "Performance",
+              place: "Home Page",
+              date: "6 May, 2020",
             },
             {
               id: 5,
-              name: "United States",
-              username: "US",
-              joined: 327167434,
-              status: "Published",
+              title: "Performance",
+              place: "Home Page",
+              date: "6 May, 2020",
             },
             {
               id: 6,
-              name: "Canada",
-              username: "CA",
-              joined: 37602103,
-              status: "Published",
-            },
-            {
-              id: 7,
-              name: "Australia",
-              username: "AU",
-              joined: 25475400,
-              status: "Waiting",
-            },
-            {
-              id: 8,
-              name: "Germany",
-              username: "DE",
-              joined: 83019200,
-              status: "Not-Published",
-            },
-            {
-              id: 9,
-              name: "Ireland",
-              username: "IE",
-              joined: 4857000,
-              status: "Published",
+              title: "Performance",
+              place: "Home Page",
+              date: "6 May, 2020",
             },
           ]}
           actions={["edit", "delete"]}
