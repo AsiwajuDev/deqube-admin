@@ -81,8 +81,8 @@ const Payments = () => {
                 type: "button",
                 style: (value) =>
                   value === "Success"
-                    ? "rounded-full bg-green-600 "
-                    : "rounded-full bg-blue-600",
+                    ? "rounded-full bg-green-600 py-3"
+                    : "rounded-full bg-blue-600 py-3",
                 // backgroundColor: (value) =>
                 //   value === "Success" ? "green" : "blue",
               },

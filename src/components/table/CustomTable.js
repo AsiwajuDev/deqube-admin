@@ -253,27 +253,19 @@ export default function CustomTable({
   const getActionIconType = (type, index) => {
     switch (type) {
       case "delete":
-        return (
-          <Icon.Trash2
-            key={index}
-            color="red"
-            style={{ paddingTop: 0, paddingBottom: 0 }}
-          />
-        );
+        return <Icon.Trash2 key={index} color="red" />;
       case "edit":
-        return (
-          <Icon.Edit
-            key={index}
-            color="black"
-            style={{ paddingTop: 0, paddingBottom: 0 }}
-          />
-        );
+        return <Icon.Edit key={index} color="black" />;
       case "play":
         return <Icon.PlayCircle key={index} color="black" />;
       case "pause":
         return <Icon.PauseCircle key={index} color="black" />;
       case "attachment":
-        return <Icon.Paperclip key={index} color="black" />;
+        return <Icon.Paperclip key={index} color="blue" />;
+      case "correct":
+        return <Icon.CheckCircle key={index} color="green" />;
+      case "close":
+        return <Icon.XCircle key={index} color="red" />;
     }
   };
   return (
