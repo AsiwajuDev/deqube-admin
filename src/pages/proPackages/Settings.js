@@ -24,7 +24,7 @@ export default function Settings() {
         <div class="tab-content__pane active" id="dashboard">
           <div className="pl-4">
             <ButtonToggleInput
-              title="Enable Ads"
+              title="Enable Pro Packages"
               body="Enable users to be able to upgrade to the premium"
               bodyText="version of the site"
             />

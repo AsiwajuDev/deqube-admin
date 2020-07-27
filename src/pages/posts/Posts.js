@@ -67,8 +67,8 @@ const Posts = () => {
           rows={[
             {
               id: 1,
-              author: "India",
-              type: "IN",
+              author: "Sarah Doe",
+              type: "Profile Picture",
               time: "30 MIns Ago",
               link: "View",
               src:
@@ -76,8 +76,8 @@ const Posts = () => {
             },
             {
               id: 2,
-              author: "India",
-              type: "IN",
+              author: "Sarah Doe",
+              type: "Cover Picture",
               time: "30 MIns Ago",
               link: "View",
               src:
@@ -85,8 +85,8 @@ const Posts = () => {
             },
             {
               id: 3,
-              author: "India",
-              type: "IN",
+              author: "Sarah Doe",
+              type: "Profile Picture",
               time: "30 MIns Ago",
               link: "View",
               src:
@@ -94,8 +94,8 @@ const Posts = () => {
             },
             {
               id: 4,
-              author: "India",
-              type: "IN",
+              author: "Sarah Doe",
+              type: "Profile Picture",
               time: "30 MIns Ago",
               link: "View",
               src:
@@ -103,8 +103,8 @@ const Posts = () => {
             },
             {
               id: 5,
-              author: "India",
-              type: "IN",
+              author: "Sarah Doe",
+              type: "Profile Picture",
               time: "30 MIns Ago",
               link: "View",
               src:
@@ -112,8 +112,8 @@ const Posts = () => {
             },
             {
               id: 6,
-              author: "India",
-              type: "IN",
+              author: "Sarah Doe",
+              type: "Profile Picture",
               time: "30 MIns Ago",
               link: "View",
               src:
@@ -121,8 +121,8 @@ const Posts = () => {
             },
             {
               id: 7,
-              author: "India",
-              type: "IN",
+              author: "Sarah Doe",
+              type: "Profile Picture",
               time: "30 MIns Ago",
               link: "View",
               src:
@@ -130,8 +130,8 @@ const Posts = () => {
             },
             {
               id: 8,
-              author: "India",
-              type: "IN",
+              author: "Sarah Doe",
+              type: "Profile Picture",
               time: "30 MIns Ago",
               link: "View",
               src:
@@ -139,8 +139,8 @@ const Posts = () => {
             },
             {
               id: 9,
-              author: "India",
-              type: "IN",
+              author: "Sarah Doe",
+              type: "Profile Picture",
               time: "30 MIns Ago",
               link: "View",
               src:
