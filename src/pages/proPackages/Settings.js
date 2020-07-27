@@ -25,8 +25,8 @@ export default function Settings() {
           <div className="pl-4">
             <ButtonToggleInput
               title="Enable Ads"
-              body="Enable the directory for better SEO results"
-              bodyText="Make the website public to allow non logged users to view website content"
+              body="Enable users to be able to upgrade to the premium"
+              bodyText="version of the site"
             />
           </div>
           <div className="side-nav__devider my-6 border-t-2"></div>
@@ -42,7 +42,7 @@ export default function Settings() {
                     <div class="flex flex-col sm:flex-row mt-2">
                       <div class="mr-auto my-2">
                         <a href="#" class="text-lg font-medium">
-                          Admin can delete member
+                          Can view Qubed content
                         </a>
                       </div>
                       <div class="text-center">
@@ -52,7 +52,7 @@ export default function Settings() {
                     <div class="flex flex-col sm:flex-row mt-5">
                       <div class="mr-auto my-2">
                         <a href="#" class="text-lg font-medium">
-                          Admin can send invites
+                          Can upload Qubed content
                         </a>
                       </div>
                       <div class="text-center">
@@ -62,7 +62,7 @@ export default function Settings() {
                     <div class="flex flex-col sm:flex-row mt-5">
                       <div class="mr-auto my-2">
                         <a href="#" class="text-lg font-medium">
-                          Admin can ban a member
+                          C
                         </a>
                       </div>
                       <div class="text-center">
@@ -77,7 +77,7 @@ export default function Settings() {
                   <div class="flex flex-col sm:flex-row mt-2">
                     <div class="mr-auto my-2">
                       <a href="#" class="text-lg font-medium">
-                        Admin can delete Post
+                        Can follow other premium members
                       </a>
                     </div>
                     <div class="text-center">
