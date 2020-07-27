@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ButtonToggleInput from "../../../components/buttonToggleInput/ButtonToggleInput";
 import Button from "../../../components/button/Button";
 import InputDropdown from "../../../components/inputDropdown/InputDropdown";
 
 const GroupPrivacy = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <div className="intro-y box py-4">

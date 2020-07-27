@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
 
 import ButtonToggleInput from "../../../components/buttonToggleInput/ButtonToggleInput";
@@ -12,9 +12,14 @@ export default function Extras() {
 
   const history = useHistory();
   const onLinkClicked = (e, payload) => {
-    console.log(JSON.stringify(payload));
-    history.push("/users/list-users/user");
+    // console.log(JSON.stringify(payload));
+    // history.push("/users/list-users/user");
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <div className="intro-y box py-4">

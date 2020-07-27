@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import * as Icon from "react-feather";
 
@@ -17,6 +17,11 @@ export default function Settings() {
       },
     ],
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="">
       <CustomBreadcrumb data={data} />

@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "../../../components/button/Button";
 import InputDropdown from "../../../components/inputDropdown/InputDropdown";
 
 export default function Membership() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <div className="intro-y box py-10">

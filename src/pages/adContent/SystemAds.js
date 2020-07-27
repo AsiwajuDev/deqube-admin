@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 
 import CustomTable from "../../components/table/CustomTable";
@@ -24,6 +24,11 @@ const SystemAds = () => {
   const onActionClicked = (e, payload) => {
     history.push("/ads/system-ads/edit-system-ad");
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <CustomBreadcrumb data={data} />

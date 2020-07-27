@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
 import Card from "../../components/card/Card";
 import CustomTable from "../../components/table/CustomTable";
@@ -15,6 +15,10 @@ const data = {
 };
 
 const CoDEarnings = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const history = useHistory();
   const onLinkClicked = (e, payload) => {
     console.log(JSON.stringify(payload));

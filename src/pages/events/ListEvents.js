@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import CustomTable from "../../components/table/CustomTable";
 import Card from "../../components/card/Card";
@@ -7,13 +7,18 @@ import CustomBreadcrumb from "../../components/breadcrumb/CustomBreadcrumb";
 const ListEvents = () => {
   const history = useHistory();
   const onLinkClicked = (e, payload) => {
-    console.log(JSON.stringify(payload));
+    // console.log(JSON.stringify(payload));
     history.push("/events/list-events/event-details");
   };
 
   const onActionClicked = (e, payload) => {
     alert(JSON.stringify(payload));
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const data = {
     start: "Events",
     links: [

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "../../components/card/Card";
 import BarChart from "../../components/barChart/BarChart";
 import CustomBreadcrumb from "../../components/breadcrumb/CustomBreadcrumb";
@@ -33,6 +33,10 @@ const Earnings = () => {
       },
     ],
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import * as Icon from "react-feather";
 
@@ -20,12 +20,17 @@ const data = {
 const EventCategory = () => {
   const history = useHistory();
   const onLinkClicked = (e, payload) => {
-    console.log(JSON.stringify(payload));
+    // console.log(JSON.stringify(payload));
   };
 
   const onActionClicked = (e, payload) => {
     alert(JSON.stringify(payload));
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <CustomBreadcrumb data={data} />

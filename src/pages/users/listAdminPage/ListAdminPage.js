@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import * as Icon from "react-feather";
 
@@ -19,6 +19,11 @@ const data = {
 
 const ListAdminPage = () => {
   const [openTab, setOpenTab] = useState(1);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <CustomBreadcrumb data={data} />

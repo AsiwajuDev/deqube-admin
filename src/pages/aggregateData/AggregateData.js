@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import CustomTable from "../../components/table/CustomTable";
 import Button from "../../components/button/Button";
@@ -25,6 +25,10 @@ export default function AggregateData() {
       //To do
     }
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div>

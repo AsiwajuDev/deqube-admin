@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Button from "../../components/button/Button";
 import BannerInfo from "../../components/bannerInfo/BannerInfo";
@@ -15,6 +15,11 @@ const AddEmojis = () => {
       },
     ],
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <CustomBreadcrumb data={data} />

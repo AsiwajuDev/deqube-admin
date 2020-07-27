@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import CustomTable from "../../components/table/CustomTable";
 import Card from "../../components/card/Card";
@@ -23,6 +23,11 @@ const ListBanned = () => {
   const onActionClicked = (e, payload) => {
     alert(JSON.stringify(payload));
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <div className="top-bar text-lg text-gray-600 mt-1">List Banned</div>

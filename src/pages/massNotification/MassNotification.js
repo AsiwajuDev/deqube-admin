@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "../../components/button/Button";
 import BannerInfo from "../../components/bannerInfo/BannerInfo";
 import InputField from "../../components/inputField/InputField";
@@ -6,6 +6,10 @@ import InputTextArea from "../../components/inputTextArea/InputTextArea";
 import CustomBreadcrumb from "../../components/breadcrumb/CustomBreadcrumb";
 
 export default function MassNotification() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <div className="top-bar text-lg text-gray-600 mt-1">

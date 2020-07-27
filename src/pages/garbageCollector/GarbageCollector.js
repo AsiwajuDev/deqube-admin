@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import BannerInfo from "../../components/bannerInfo/BannerInfo";
 import InputDropdown from "../../components/inputDropdown/InputDropdown";
@@ -23,6 +23,10 @@ const GarbageCollector = () => {
       </option>
     );
   });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div>

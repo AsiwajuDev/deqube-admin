@@ -19,23 +19,13 @@ const NavMenuItem = ({
   let location = useLocation();
   let history = useHistory();
   let obj = {};
-  //dropdown open onClick
   const handleClick = (e) => {
     e.preventDefault();
-    //if (history.location.pathname === "/settings") {
     if (obj.type === "sub") {
-      //setOpen(!open);
-      //setOpen(open);
     } else {
       setOpen(!open);
     }
     onHandleClick(itemKey);
-    //} else {
-    //setOpen(open);
-    // }
-    console.log("Location: " + JSON.stringify(location));
-    console.log("History: " + JSON.stringify(history));
-    console.log("Key: " + id);
   };
   const handleSubClick = (value) => {
     //setMenuType(value);

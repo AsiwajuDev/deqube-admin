@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { Twemoji } from "react-emoji-render";
 
@@ -8,13 +8,18 @@ import CustomBreadcrumb from "../../components/breadcrumb/CustomBreadcrumb";
 export default function Emojis(props) {
   const history = useHistory();
   const onLinkClicked = (e, payload) => {
-    console.log(JSON.stringify(payload));
-    history.push("/users/list-users/user");
+    // console.log(JSON.stringify(payload));
+    // history.push("/users/list-users/user");
   };
 
   const onActionClicked = (e, payload) => {
     alert(JSON.stringify(payload));
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const data = {
     start: "Emojis",
     links: [

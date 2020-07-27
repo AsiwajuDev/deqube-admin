@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import Button from "../../../components/button/Button";
@@ -6,6 +6,10 @@ import InputTextArea from "../../../components/inputTextArea/InputTextArea";
 import TextField from "../../../components/TextField/TextField";
 
 export default function Profile() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <div className="">

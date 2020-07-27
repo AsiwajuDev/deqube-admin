@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "../../components/button/Button";
 import ButtonToggleInput from "../../components/buttonToggleInput/ButtonToggleInput";
 import CustomBreadcrumb from "../../components/breadcrumb/CustomBreadcrumb";
@@ -14,6 +14,10 @@ const data = {
 };
 
 export default function EmailNotification() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <CustomBreadcrumb data={data} />

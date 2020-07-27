@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import CustomTable from "../../components/table/CustomTable";
 import Card from "../../components/card/Card";
@@ -24,6 +24,11 @@ const ListAdmin = () => {
   const onActionClicked = (e, payload) => {
     alert(JSON.stringify(payload));
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <CustomBreadcrumb data={data} />

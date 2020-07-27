@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import BannerInfo from "../../components/bannerInfo/BannerInfo";
 import ButtonToggleInput from "../../components/buttonToggleInput/ButtonToggleInput";
 import InputField from "../../components/inputField/InputField";
@@ -16,6 +16,10 @@ const data = {
 };
 
 const Registration = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <CustomBreadcrumb data={data} />

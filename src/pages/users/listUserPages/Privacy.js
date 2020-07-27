@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ButtonToggleInput from "../../../components/buttonToggleInput/ButtonToggleInput";
 import TextField from "../../../components/TextField/TextField";
 import InputField from "../../../components/inputField/InputField";
 import Button from "../../../components/button/Button";
 
 const Privacy = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <div className="intro-y box py-4">

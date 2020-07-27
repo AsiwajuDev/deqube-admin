@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ToggleButton from "../../../components/buttonToggleInput/ToggleButton";
 import Card from "../../../components/card/Card";
 import Button from "../../../components/button/Button";
 
 export default function Account() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="">
       <div class="intro-y tab-content mt-5">

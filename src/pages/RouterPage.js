@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 
 import Dashboard from "./dashboard/Dashboard";
+import { Directory, CreateDirectory, UserDirectory } from "./directory";
 import {
   GeneralSettings,
   AdminSettings,
@@ -41,7 +42,6 @@ import Posts from "./posts/Posts";
 import { Reaction, AddReaction } from "./reaction/Index";
 import { Emojis, AddEmojis } from "./emojis/Index";
 import FollowSuggest from "./followSuggest/FollowSuggest";
-import Directory from "./directory/Directory";
 import GarbageCollector from "./garbageCollector/GarbageCollector";
 import { Earnings, ListSubscribers, Settings } from "./proPackages/Index";
 import { ListEvents, EventCategory, EventDetails } from "./events/Index";
@@ -51,8 +51,6 @@ import Reports from "./reports/Reports";
 import Verification from "./verification/Verification";
 import MassNotification from "./massNotification/MassNotification";
 import AggregateData from "./aggregateData/AggregateData";
-import CreateDirectory from "./directory/CreateDirectory";
-import UserDirectory from "./directory/UserDirectory";
 
 const RouterPage = () => {
   return (

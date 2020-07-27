@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ToggleButton from "../../../components/buttonToggleInput/ToggleButton";
 import InputDropdown from "../../../components/inputDropdown/InputDropdown";
 import CustomTable from "../../../components/table/CustomTable";
@@ -13,6 +13,11 @@ export default function Account() {
   const onActionClicked = (e, payload) => {
     alert(JSON.stringify(payload));
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="">
       <div class="intro-y tab-content mt-5">
@@ -233,13 +238,4 @@ export default function Account() {
       </div>
     </div>
   );
-}
-
-{
-  /* <div className="intro-y col-span-12 flex items-center m-8 pr-16">
-<Button
-  className="bg-red-700 text-white font-bold py-2 px-4 rounded"
-  value="Save Changes"
-/>
-</div> */
 }

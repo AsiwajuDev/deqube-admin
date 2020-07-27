@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Card from "../../components/card/Card";
 import BarChart from "../../components/barChart/BarChart";
@@ -23,6 +23,11 @@ const Dashboard = () => {
       position: "center",
     },
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <div className="top-bar text-lg text-gray-600 mt-1">Dashboard</div>

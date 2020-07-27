@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import ButtonToggleInput from "../../components/buttonToggleInput/ButtonToggleInput";
 import InputDropdown from "../../components/inputDropdown/InputDropdown";
@@ -6,6 +6,10 @@ import Button from "../../components/button/Button";
 import InputTags from "../../components/inputTags/InputTags";
 
 const FollowSuggest = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <div className="top-bar text-lg text-gray-600 mt-1">Follow Suggest</div>

@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import CustomTable from "../../../components/table/CustomTable";
 
 export default function Activity() {
   const history = useHistory();
   const onLinkClicked = (e, payload) => {
-    console.log(JSON.stringify(payload));
-    history.push("/users/list-users/user");
+    // console.log(JSON.stringify(payload));
+    // history.push("/users/list-users/user");
   };
 
   const onActionClicked = (e, payload) => {
     alert(JSON.stringify(payload));
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <div className="mt-10">

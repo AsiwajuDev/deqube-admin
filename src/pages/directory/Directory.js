@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
 
 import Card from "../../components/card/Card";
@@ -8,13 +8,17 @@ import Button from "../../components/button/Button";
 const Directory = () => {
   const history = useHistory();
   const onLinkClicked = (e, payload) => {
-    console.log(JSON.stringify(payload));
     history.push("/directory/user");
   };
 
   const onActionClicked = (e, payload) => {
     alert(JSON.stringify(payload));
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <div className="top-bar text-lg text-gray-600 mt-1">Directory</div>

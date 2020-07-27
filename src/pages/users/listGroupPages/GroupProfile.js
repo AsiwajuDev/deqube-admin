@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 import Button from "../../../components/button/Button";
@@ -17,6 +17,11 @@ export default function GroupProfile() {
     console.log(JSON.stringify(payload));
     history.push("/users/list-users/user");
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <div className="">

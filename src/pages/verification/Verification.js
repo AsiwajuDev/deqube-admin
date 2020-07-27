@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 import Card from "../../components/card/Card";
@@ -27,6 +27,11 @@ const Verification = () => {
       //To do
     }
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <VerifyModal show={show} handleClose={onClose} />

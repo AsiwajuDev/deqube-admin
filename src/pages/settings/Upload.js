@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ButtonToggleInput from "../../components/buttonToggleInput/ButtonToggleInput";
 import Button from "../../components/button/Button";
 import InputField from "../../components/inputField/InputField";
@@ -16,6 +16,10 @@ const data = {
 };
 
 export default function Upload() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <CustomBreadcrumb data={data} />

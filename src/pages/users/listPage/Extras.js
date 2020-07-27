@@ -7,8 +7,8 @@ import CustomTable from "../../../components/table/CustomTable";
 export default function Extras() {
   const history = useHistory();
   const onLinkClicked = (e, payload) => {
-    console.log(JSON.stringify(payload));
-    history.push("/users/list-users/user");
+    // console.log(JSON.stringify(payload));
+    // history.push("/users/list-users/user");
   };
 
   const onActionClicked = (e, payload) => {

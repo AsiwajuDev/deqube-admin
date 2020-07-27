@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Button from "../../components/button/Button";
 import BannerInfo from "../../components/bannerInfo/BannerInfo";
@@ -16,6 +16,10 @@ const data = {
 };
 
 const AddReaction = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <CustomBreadcrumb data={data} />
