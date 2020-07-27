@@ -8,10 +8,9 @@ export default function AggregateData() {
   const history = useHistory();
   let [show, setShow] = useState(false);
   const onLinkClicked = (e, payload) => {
-    console.log(JSON.stringify(payload));
-    history.push("/users/list-users/user");
+    // console.log(JSON.stringify(payload));
+    // history.push("/users/list-users/user");
   };
-
   const onClose = (status) => {
     setShow(!show);
   };
@@ -26,6 +25,7 @@ export default function AggregateData() {
       //To do
     }
   };
+
   return (
     <div>
       <VerifyModal show={show} handleClose={onClose} />
