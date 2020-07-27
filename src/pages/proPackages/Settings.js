@@ -41,7 +41,7 @@ export default function Settings() {
                   <div class="px-5 py-2">
                     <div class="flex flex-col sm:flex-row mt-2">
                       <div class="mr-auto my-2">
-                        <a href="#" class="text-lg font-medium">
+                        <a href="#" class="text-base font-medium">
                           Can view Qubed content
                         </a>
                       </div>
@@ -51,7 +51,7 @@ export default function Settings() {
                     </div>
                     <div class="flex flex-col sm:flex-row mt-5">
                       <div class="mr-auto my-2">
-                        <a href="#" class="text-lg font-medium">
+                        <a href="#" class="text-base font-medium">
                           Can upload Qubed content
                         </a>
                       </div>
@@ -61,7 +61,7 @@ export default function Settings() {
                     </div>
                     <div class="flex flex-col sm:flex-row mt-5">
                       <div class="mr-auto my-2">
-                        <a href="#" class="text-lg font-medium">
+                        <a href="#" class="text-base font-medium">
                           C
                         </a>
                       </div>
@@ -76,7 +76,7 @@ export default function Settings() {
                 <div class="px-5 py-2 my-2">
                   <div class="flex flex-col sm:flex-row mt-2">
                     <div class="mr-auto my-2">
-                      <a href="#" class="text-lg font-medium">
+                      <a href="#" class="text-base font-medium">
                         Can follow other premium members
                       </a>
                     </div>
@@ -86,7 +86,7 @@ export default function Settings() {
                   </div>
                   <div class="flex flex-col sm:flex-row mt-5">
                     <div class="mr-auto my-2">
-                      <a href="#" class="text-lg font-medium">
+                      <a href="#" class="text-base font-medium">
                         Admin can ban a member
                       </a>
                     </div>
@@ -96,7 +96,7 @@ export default function Settings() {
                   </div>
                   <div class="flex flex-col sm:flex-row mt-5">
                     <div class="mr-auto my-2">
-                      <a href="#" class="text-lg font-medium">
+                      <a href="#" class="text-base font-medium">
                         Admin can delete Post
                       </a>
                     </div>
