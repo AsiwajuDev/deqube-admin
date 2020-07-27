@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 import Card from "../../components/card/Card";
 import CustomTable from "../../components/table/CustomTable";
@@ -9,7 +9,7 @@ const Directory = () => {
   const history = useHistory();
   const onLinkClicked = (e, payload) => {
     console.log(JSON.stringify(payload));
-    history.push("/users/list-users/user");
+    history.push("/directory/user");
   };
 
   const onActionClicked = (e, payload) => {
@@ -25,10 +25,12 @@ const Directory = () => {
           <Card cardTitle="116,000" cardBody="Attributes" />
         </div>
         <div className="intro-y col-span-12 flex items-center justify-center sm:justify-end m-8 mr-0">
-          <Button
+          <Link
             className="bg-red-700 text-white font-bold py-2 px-4 rounded"
-            value="Create New Directory"
-          />
+            to="/directory/add-directory"
+          >
+            Create New Directory
+          </Link>{" "}
         </div>
       </div>
       <div style={{ marginTop: "50px" }}>

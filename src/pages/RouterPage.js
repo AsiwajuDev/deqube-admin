@@ -51,6 +51,8 @@ import Reports from "./reports/Reports";
 import Verification from "./verification/Verification";
 import MassNotification from "./massNotification/MassNotification";
 import AggregateData from "./aggregateData/AggregateData";
+import CreateDirectory from "./directory/CreateDirectory";
+import UserDirectory from "./directory/UserDirectory";
 
 const RouterPage = () => {
   return (
@@ -59,7 +61,9 @@ const RouterPage = () => {
       <Route path="/dashboard" name="dashboard" component={Dashboard} />
 
       {/* Direcotry Route */}
-      <Route path="/directory" name="directory" component={Directory} />
+      <Route path="/directory" name="directory" component={Directory} exact />
+      <Route path="/directory/add-directory" component={CreateDirectory} />
+      <Route path="/directory/user" component={UserDirectory} />
 
       {/* Settings Route */}
       <Route
