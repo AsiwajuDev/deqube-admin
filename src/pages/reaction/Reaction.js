@@ -43,7 +43,7 @@ export default function Reaction() {
           search
           pagerows
           columns={[
-            { id: "id", label: "ID", minWidth: 170, color: (value) => "blue" },
+            { id: "id", label: "ID", minWidth: 100, color: (value) => "blue" },
             {
               id: "preview",
               label: "Preview",

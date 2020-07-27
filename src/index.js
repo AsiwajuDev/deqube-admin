@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { store } from "./store";
 
 import "./assets/main.css";
+import "./index.css";
 import "react-notifications/lib/notifications.css";
 
 ReactDOM.render(

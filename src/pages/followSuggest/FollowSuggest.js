@@ -3,7 +3,7 @@ import React from "react";
 import ButtonToggleInput from "../../components/buttonToggleInput/ButtonToggleInput";
 import InputDropdown from "../../components/inputDropdown/InputDropdown";
 import Button from "../../components/button/Button";
-import InputPrependGroup from "../../components/inputPrependGroup/InputPrependGroup";
+import InputTags from "../../components/inputTags/InputTags";
 
 const FollowSuggest = () => {
   return (
@@ -35,7 +35,8 @@ const FollowSuggest = () => {
             <p className="text-gray-500 mb-4">
               Shows, Videos, Recommendation etc
             </p>
-            <InputPrependGroup prependLabel="Olive Group" />
+            <InputTags />
+            {/* <InputPrependGroup prependLabel="Olive Group" /> */}
           </div>
           <div className="intro-y col-span-12 sm:col-span-6 mb-3 mr-6">
             <p className="text-lg my-2">Genre</p>
@@ -53,7 +54,8 @@ const FollowSuggest = () => {
             <p className="text-gray-500 mb-4">
               Shows, Videos, Recommendation etc
             </p>
-            <InputPrependGroup prependLabel="Olive Group" />
+            <InputTags />
+            {/* <InputPrependGroup prependLabel="Olive Group" /> */}
           </div>
           <div className="intro-y col-span-12 sm:col-span-6 mb-3 mr-6">
             <p className="text-lg my-2">Genre</p>
@@ -71,7 +73,8 @@ const FollowSuggest = () => {
             <p className="text-gray-500 mb-4">
               Shows, Videos, Recommendation etc
             </p>
-            <InputPrependGroup prependLabel="Olive Group" />
+            <InputTags />
+            {/* <InputPrependGroup prependLabel="Olive Group" /> */}
           </div>
           <div className="intro-y col-span-12 sm:col-span-6 mb-3 mr-6">
             <p className="text-lg my-2">Genre</p>
@@ -89,7 +92,8 @@ const FollowSuggest = () => {
             <p className="text-gray-500 mb-4">
               Shows, Videos, Recommendation etc
             </p>
-            <InputPrependGroup prependLabel="Olive Group" />
+            <InputTags />
+            {/* <InputPrependGroup prependLabel="Olive Group" /> */}
           </div>
         </div>
         <Button

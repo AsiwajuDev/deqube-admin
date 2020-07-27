@@ -7,11 +7,11 @@ import CustomBreadcrumb from "../../components/breadcrumb/CustomBreadcrumb";
 
 const AddEmojis = () => {
   const data = {
-    start: "Verification",
+    start: "Emojis",
     links: [
       {
-        label: "Verification",
-        url: "/verification",
+        label: "Add New Emojis",
+        url: "/emojis/add-emojis",
       },
     ],
   };
