@@ -31,7 +31,7 @@ const CoDSettings = () => {
       <CustomBreadcrumb data={data} />
       <div className="pl-4">
         <ButtonToggleInput
-          title="Enable Ads"
+          title="Enable Content on Demand"
           body="Enable the directory for better SEO results"
           bodyText="Make the website public to allow non logged users to view website content"
         />

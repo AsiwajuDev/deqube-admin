@@ -18,12 +18,7 @@ const AddEmojis = () => {
   return (
     <div>
       <CustomBreadcrumb data={data} />
-      <div className="intro-y col-span-12 flex items-center justify-center sm:justify-end mb-8">
-        <Button
-          className="bg-red-700 text-white font-bold py-2 px-4 rounded"
-          value="Mark All As safe"
-        />
-      </div>
+
       <BannerInfo
         svgClassName="fill-current h-6 w-6 text-white-500 mr-4 my-4"
         bannerTitle="Mass Notofication"
@@ -39,6 +34,12 @@ const AddEmojis = () => {
           <span className="text-2xl">Class</span>
           <InputField type="text" className="input w-full border flex-1" />
         </div>
+      </div>
+      <div className="intro-y col-span-12 flex items-center justify-center sm:justify-end mb-8">
+        <Button
+          className="bg-red-700 text-white font-bold py-2 px-4 rounded"
+          value="Save"
+        />
       </div>
     </div>
   );
