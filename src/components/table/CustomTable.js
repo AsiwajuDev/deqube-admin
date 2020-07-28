@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     maxHeight: 900,
-    maxWidth: 980,
+    // maxWidth: 980,
   },
   paginationContainer: {
     marginTop: 20,
@@ -288,7 +288,7 @@ export default function CustomTable({
     }
   };
   return (
-    <Grid conatiner>
+    <Grid conatiner className="w-full">
       <Grid item>
         <Grid container justify="space-between" alignItems="flex-start">
           <Grid item>

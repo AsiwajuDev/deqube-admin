@@ -8,7 +8,8 @@ import VerifyModal from "../../components/verifyModal/VerifyModal";
 
 const Verification = () => {
   const history = useHistory();
-  let [show, setShow] = useState(false);
+  const [show, setShow] = useState(false);
+  console.log(show);
   const onLinkClicked = (e, payload) => {
     // console.log(JSON.stringify(payload));
     // history.push("/users/list-users/user");

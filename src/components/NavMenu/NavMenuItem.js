@@ -25,12 +25,12 @@ const NavMenuItem = ({
     } else {
       setOpen(!open);
     }
-    onHandleClick(itemKey);
+    // onHandleClick(itemKey);
   };
   const handleSubClick = (value) => {
     //setMenuType(value);
     obj = { type: "sub" };
-    console.log("Sub Key: " + value);
+    // console.log("Sub Key: " + value);
   };
   //render sub-menu-items
   const renderSubItems = () => {
